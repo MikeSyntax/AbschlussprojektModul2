@@ -1,21 +1,29 @@
-class RouletteGames(tableNumber: Int): Casino(tableNumber){
+class RouletteGames(tableNumber: Int){
 
 
-    fun playerNumber(player: CasinoPlayer){                                           //Diese Funktion lässt den Spieler auf eine random Zahl setzen
-        var numbersOne = (0..36).random()
-        var amount = (0..50).random()
-        print("Spieler ${player.name} hat $amount € auf die $numbersOne gesetzt,")
-        BetNumber("Nummer $numbersOne", 36, numbersOne)
+    fun playerNumber(player: CasinoPlayer): Int {                                           //Diese Funktion lässt den Spieler auf eine random Zahl einen random Betrag zwischen 10 und 50 euro setzen
+        var number = (0..36).random()
+        var amount = (10..50).random()
+        print("Spieler ${player.name} hat $amount € auf die $number gesetzt,")
+        BetNumber("Nummer $number", 36, number)
         player.cash = player.cash - amount
         println(" somit verbleiben noch ${player.cash} € zum spielen")
+        return number
     }
 
     fun playerRedOrBlack(player: CasinoPlayer) {                                      //Diese Funktion lässt den Spieler random auf rot oder schwarz setzen
         var numbersRedOrBlack = (1..2).random()
+        var amount = (10..50).random()
         if (numbersRedOrBlack == 1) {
-            println("Spieler ${player.name} hat auf rot gesetzt")
+            print("Spieler ${player.name} hat $amount € auf rot gesetzt")
+            BetColor("rot", 2, "rot" )
+            player.cash = player.cash - amount
+            println(" somit verbleiben noch ${player.cash} € zum spielen")
         } else if (numbersRedOrBlack == 2) {
-            println("Spieler ${player.name} hat auf schwarz gesetzt")
+            print("Spieler ${player.name} hat $amount € auf schwarz gesetzt")
+            BetColor("schwarz", 2, "schwarz" )
+            player.cash = player.cash - amount
+            println(" somit verbleiben noch ${player.cash} € zum spielen")
         } else {
             println("Falsche Eingabe")
         }

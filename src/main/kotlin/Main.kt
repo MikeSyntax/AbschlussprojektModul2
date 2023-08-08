@@ -41,13 +41,13 @@ fun main(){
 
     rouletteGames.games(klaus)                                              //Willkommen Klaus am Roulettetisch 1 und Auswahl treffen
     println("")
-   /* rouletteGames.games(tatjana)
+    rouletteGames.games(tatjana)
     println("")
     rouletteGames.games(mike)
     println("")
     rouletteGames.games(salva)
     println("")
-    rouletteGames.games(claudia)*/
+    rouletteGames.games(claudia)
 
 
     print("Nichts geht mehr")

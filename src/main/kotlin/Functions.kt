@@ -1,4 +1,3 @@
-var listOfLastNumbers: MutableList<String> = mutableListOf("23: impair, rouge", "15: impair, noir", "7: impair, rouge", "28: pair, noir", "25: impair, rouge", "2: pair, noir", "25: impair, rouge", "24: pair, noir", "24: pair, noir", "4: pair, noir")
 
 //Die Liste wird mit dieser Schleife untereinander ausgegeben
 fun printNumbers(list: List<String>) {
