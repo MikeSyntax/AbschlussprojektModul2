@@ -1,4 +1,4 @@
-open class Roulette(tableNumber: Int, var groupierName: String, var tipForEmployees: Double, var bankTable: Double): Casino(tableNumber){
+open class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmployees: Double, var bankTable: Double): Casino(tableNumber){
 
     init {
         println("Das Roulette wurde mit der Tisch Nr. $tableNumber instanziiert")
@@ -6,7 +6,7 @@ open class Roulette(tableNumber: Int, var groupierName: String, var tipForEmploy
 
     constructor(tableNumber: Int, groupierName: String, tipForEmployees: Double): this(tableNumber, groupierName, tipForEmployees, 100000.00){
 
-        println("Das Roulette für Tisch Nr. $tableNumber wurde mit dem secondären Constructor instanziiert")
+        println("Das Roulette für Tisch Nr. $tableNumber wurde mit dem sekundären Konstruktor instanziiert")
 
     }
     fun printInfo(){
@@ -23,4 +23,10 @@ open class Roulette(tableNumber: Int, var groupierName: String, var tipForEmploy
     fun countTip(){
         println("In der Trinkgeldkasse am Roulettetisch $tableNumber befinden sich insgesamt $tipForEmployees€")
     }
+
+    fun rollingNumbers(): Int {
+        val tableNumbers = (0..36).random()
+        return tableNumbers
+    }
+
 }
