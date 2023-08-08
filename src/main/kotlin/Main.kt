@@ -29,9 +29,13 @@ fun main(){
     println("")
 
     var klaus: Player = Player("Klaus", 1000.00, true)
-    var gamesIntro: GamesInRoulette = GamesInRoulette(1)
-    gamesIntro.games(player, numbers)
-    playerNumber(klaus)
-    println("Das Rouletterad dreht sich, nichts geht mehr und es ist die ${rollingNumbers()}")
+    var tatjana: Player = Player("Tatjana", 500.00, true)
+   // var gamesIntro: GamesInRoulette = GamesInRoulette(1)
+
+
+    GamesInRoulette(1)                                             //Willkommen Klaus am Roulettetisch 1 und Auswahl treffen
+    GamesInRoulette.gam
+   // gamesIntro.games(tatjana)
+   // println("Das Rouletterad dreht sich, nichts geht mehr und es ist die ${rollingNumbers()}")
 
 }

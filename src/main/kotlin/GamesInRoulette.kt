@@ -1,6 +1,6 @@
 open class GamesInRoulette(tableNumber: Int) {
     var goPlay = !false
-    fun games(player: Player, numbers: Numbers){
+    fun games(player: Player){
         while (goPlay) {
             println("Willkommen ${player.name} am Roulette Tisch 1")
             println("Du kannst zwischen folgenden Spielen am Roulette wählen")
@@ -8,11 +8,11 @@ open class GamesInRoulette(tableNumber: Int) {
             println("Triff bitte jetzt deine Auswahl")
             var choice = readln().toInt()
             when (choice){
-                 1 -> {playerNumber(player)
+                 1 -> {playerNumber(player)                             //Auf Zahlen setzen
                  }
-                /* 2 -> {geradeUngeradeSetzen()
+                 2 -> {playerRedOrBlack(player)                         //Auf Rot oder Schwarz setzen
                  }
-                 3 -> {rotSchwarzSezten()
+                 /*3 -> {geradeUngeradeSetzen()
                  }
                  4 -> {drittelSetzen()
                  }
