@@ -5,7 +5,7 @@ fun printNumbers(list: List<String>) {
         println(number)
     }
 }
-//Funktion rot/schwarz gerade/ungerade und zero - Info aus der Map
+//Funktion rot/schwarz gerade/ungerade und zero - Info aus der Map unter NumberInfo.kt
 fun getNumberInfo(number: Int): NumberInfo? {
     return numberInfoMap[number]
 }

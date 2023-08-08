@@ -3,6 +3,7 @@ class RouletteGames(tableNumber: Int){
     fun playerNumber(player: CasinoPlayer): Int {                                           //Diese Funktion lässt den Spieler auf eine random Zahl einen random Betrag zwischen 10 und 50 euro setzen
         var number = (0..36).random()
         var amount = (10..50).random()
+        player.yourNumber = number                                                          //Die Nummer wird in der Klasse des Spieler unter seinem Namen gespeichert
         print("Spieler ${player.name} hat $amount € auf die $number gesetzt,")
         BetNumber("Nummer $number", 36, number)
         player.cash = player.cash - amount

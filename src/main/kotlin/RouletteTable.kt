@@ -1,12 +1,12 @@
 class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmployees: Double, var bankTable: Double): Casino(tableNumber){
 
-    init {
+   /* init {
         println("Das Roulette wurde mit der Tisch Nr. $tableNumber instanziiert")
-    }
+    }*/
 
     constructor(tableNumber: Int, groupierName: String, tipForEmployees: Double): this(tableNumber, groupierName, tipForEmployees, 100000.00){
 
-        println("Das Roulette für Tisch Nr. $tableNumber wurde mit dem sekundären Konstruktor instanziiert")
+       // println("Das Roulette für Tisch Nr. $tableNumber wurde mit dem sekundären Konstruktor instanziiert")
 
     }
     fun printInfo(){

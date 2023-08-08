@@ -16,7 +16,7 @@ fun main(){
 
     rouletteAtTable2.printInfo()
 
-    println("")
+   /* println("")
 
     rouletteAtTable1.countBank()
     rouletteAtTable1.countTip()
@@ -24,24 +24,26 @@ fun main(){
     println("")
 
     rouletteAtTable2.countBank()
-    rouletteAtTable2.countTip()
+    rouletteAtTable2.countTip() */
 
     println("")
 
-    var klaus: CasinoPlayer = CasinoPlayer("Klaus", 1000.00, true)
-    var tatjana: CasinoPlayer = CasinoPlayer("Tatjana", 500.00, true)
-    var mike: CasinoPlayer = CasinoPlayer("Mike", 50.00, true)
-    var salva: CasinoPlayer = CasinoPlayer("Salva", 1500.00, false)
-    var claudia: CasinoPlayer = CasinoPlayer("Claudia", 100.00, false)
-    var gonzales: CasinoPlayer = CasinoPlayer("Gonzales", 100000.00, true, true)
+    val players = mutableListOf(
+        CasinoPlayer("Klaus", 1000.00, true),
+       CasinoPlayer("Tatjana", 500.00, true),
+        CasinoPlayer("Mike", 50.00, true),
+        CasinoPlayer("Salva", 1500.00, false),
+        CasinoPlayer("Claudia", 100.00, false),
+        CasinoPlayer("Gonzales", 100000.00, true, true)
+    )
 
     println("")
 
     var rouletteGames: RouletteGames = RouletteGames(1)          //Instanziierung der RouletteGames an Tisch 1
 
-
-    rouletteGames.games(klaus)                                              //Willkommen Klaus am Roulettetisch 1 und Auswahl treffen
-    println("")
+    for (player in players) {
+        rouletteGames.games(player)                                             //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
+        println("")
     /*rouletteGames.games(tatjana)
     println("")
     rouletteGames.games(mike)
@@ -49,11 +51,13 @@ fun main(){
     rouletteGames.games(salva)
     println("")
     rouletteGames.games(claudia)*/
-
-
+    }
+    println("==================================")
     print("Nichts geht mehr")
     var rouletteNumber = rouletteAtTable1.rollingNumbers()                  //das Rouletterad am Tisch 1 dreht sich und gibt eine zufällige Zahl als tableNumber zurück welche in der Klasse Roulette ermittelt wird
     println(" und es ist die $rouletteNumber")
+    println("==================================")
+
     rouletteAtTable1.infoOfNumbers(rouletteNumber)                          //Rückmeldung ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
 
     println("\n")
@@ -62,5 +66,7 @@ fun main(){
     println("Anzeige der letzten 10 Zahlen, ")
     printNumbers(listOfLastNumbers)                                         //Anzeigen der bearbeiteten Liste untereinander
 
-    println("${rouletteGames.playerNumber(klaus)}")
+    for (player in players) {
+        println("${player.name} hatte die Zahl ${player.yourNumber} gewählt")
+    }
 }
