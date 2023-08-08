@@ -1,6 +1,5 @@
 class RouletteGames(tableNumber: Int){
 
-
     fun playerNumber(player: CasinoPlayer): Int {                                           //Diese Funktion lässt den Spieler auf eine random Zahl einen random Betrag zwischen 10 und 50 euro setzen
         var number = (0..36).random()
         var amount = (10..50).random()

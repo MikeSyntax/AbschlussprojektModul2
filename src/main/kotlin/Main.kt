@@ -39,15 +39,16 @@ fun main(){
 
     var rouletteGames: RouletteGames = RouletteGames(1)          //Instanziierung der RouletteGames an Tisch 1
 
+
     rouletteGames.games(klaus)                                              //Willkommen Klaus am Roulettetisch 1 und Auswahl treffen
     println("")
-    rouletteGames.games(tatjana)
+    /*rouletteGames.games(tatjana)
     println("")
     rouletteGames.games(mike)
     println("")
     rouletteGames.games(salva)
     println("")
-    rouletteGames.games(claudia)
+    rouletteGames.games(claudia)*/
 
 
     print("Nichts geht mehr")
@@ -61,5 +62,5 @@ fun main(){
     println("Anzeige der letzten 10 Zahlen, ")
     printNumbers(listOfLastNumbers)                                         //Anzeigen der bearbeiteten Liste untereinander
 
-
+    println("${rouletteGames.playerNumber(klaus)}")
 }
