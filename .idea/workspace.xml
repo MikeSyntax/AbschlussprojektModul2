@@ -4,18 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Abschlussprojekt 08.08 gegen 08.34">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/NumberInfo.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteGames.kt" afterDir="false" />
+    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Abschlussprojekt 08.08 gegen 13.34">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Bet.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/BetColor.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/BetEven.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/BetNumber.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/GlobaleVariablen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/EmployeesCasino.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CasinoEmployees.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Funktions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Functions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/GamesInRoulette.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/CasinoEmployees.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CasinoEmployees.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Functions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Functions.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Numbers.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CasinoPlayer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Roulette.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteTable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/NumberInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/NumberInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteGames.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteGames.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteTable.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +26,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
+        <option value="Class" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -93,14 +95,22 @@
       <option name="project" value="LOCAL" />
       <updated>1691476471660</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Abschlussprojekt 08.08 gegen 13.34">
+      <created>1691494738011</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691494738011</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Beginn Abschlussprojekt" />
     <MESSAGE value="Abschlussprojekt 07.08 gegen 20.30Uhr" />
     <MESSAGE value="Abschlussprojekt 08.08 gegen 08.34" />
-    <option name="LAST_COMMIT_MESSAGE" value="Abschlussprojekt 08.08 gegen 08.34" />
+    <MESSAGE value="Abschlussprojekt 08.08 gegen 13.34" />
+    <option name="LAST_COMMIT_MESSAGE" value="Abschlussprojekt 08.08 gegen 13.34" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -37,9 +37,9 @@ fun main(){
 
     println("")
 
-    var rouletteGames: RouletteGames = RouletteGames(1)        //Instanziierung der RouletteGames an Tisch 1
+    var rouletteGames: RouletteGames = RouletteGames(1)          //Instanziierung der RouletteGames an Tisch 1
 
-    rouletteGames.games(klaus)                                             //Willkommen Klaus am Roulettetisch 1 und Auswahl treffen
+    rouletteGames.games(klaus)                                              //Willkommen Klaus am Roulettetisch 1 und Auswahl treffen
     println("")
    /* rouletteGames.games(tatjana)
     println("")
@@ -51,15 +51,15 @@ fun main(){
 
 
     print("Nichts geht mehr")
-    var tableNumber = rouletteAtTable1.rollingNumbers()                 //das Rouletterad am Tisch 1 dreht sich und gibt eine zufällige Zahl als tableNumber zurück welche in der Klasse Roulette ermittelt wird
-    println(" und es ist die $tableNumber")
-    infoOfNumbers(tableNumber)
+    var rouletteNumber = rouletteAtTable1.rollingNumbers()                  //das Rouletterad am Tisch 1 dreht sich und gibt eine zufällige Zahl als tableNumber zurück welche in der Klasse Roulette ermittelt wird
+    println(" und es ist die $rouletteNumber")
+    rouletteAtTable1.infoOfNumbers(rouletteNumber)                          //Rückmeldung ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
 
     println("\n")
 
-    rouletteNumbers(getInfo(tableNumber))                               //Hinzufügen der Nummer zur Liste der letzen 10 Zahlen wobei die 1 rausfällt und die neue Zahl ans Ende gesetzt wird
+    rouletteNumbers(getInfo(rouletteNumber))                                //Hinzufügen der Nummer zur Liste der letzen 10 Zahlen wobei die 1 rausfällt und die neue Zahl ans Ende gesetzt wird
     println("Anzeige der letzten 10 Zahlen, ")
-    printNumbers(listOfLastNumbers)                                     //Anzeigen der bearbeiteten Liste untereinander
+    printNumbers(listOfLastNumbers)                                         //Anzeigen der bearbeiteten Liste untereinander
 
 
 }

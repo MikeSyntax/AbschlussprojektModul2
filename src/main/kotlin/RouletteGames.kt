@@ -1,9 +1,13 @@
-open class RouletteGames(tableNumber: Int) {
+class RouletteGames(tableNumber: Int): Casino(tableNumber){
 
 
     fun playerNumber(player: CasinoPlayer){                                           //Diese Funktion lässt den Spieler auf eine random Zahl setzen
         var numbersOne = (0..36).random()
-        println("Spieler ${player.name} hat auf die $numbersOne gesetzt")
+        var amount = (0..50).random()
+        print("Spieler ${player.name} hat $amount € auf die $numbersOne gesetzt,")
+        BetNumber("Nummer $numbersOne", 36, numbersOne)
+        player.cash = player.cash - amount
+        println(" somit verbleiben noch ${player.cash} € zum spielen")
     }
 
     fun playerRedOrBlack(player: CasinoPlayer) {                                      //Diese Funktion lässt den Spieler random auf rot oder schwarz setzen
@@ -55,7 +59,7 @@ open class RouletteGames(tableNumber: Int) {
     fun games(player: CasinoPlayer){
             println("Willkommen ${player.name} am Roulette Tisch 1")
             println("Du kannst zwischen folgenden Spielen am Roulette wählen")
-            println("1 = Auf Zahl setzen\n2 = auf gerade/ungerade setzen\n3 = auf rot oder schwarz setzen\n4 = auf 1./2.oder 3. Drittel setzen\n5 = auf 1. oder 2. Hälfte setzen")
+            println("1 = Auf Zahl setzen\n2 = auf Gerade/Ungerade setzen\n3 = auf Rot oder Schwarz setzen\n4 = auf 1.,2.oder 3.Drittel setzen\n5 = auf 1. oder 2. Hälfte setzen")
             println("Triff bitte jetzt deine Auswahl")
             var choice = readln().toInt()
             when (choice){

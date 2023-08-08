@@ -1,4 +1,4 @@
-open class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmployees: Double, var bankTable: Double): Casino(tableNumber){
+class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmployees: Double, var bankTable: Double): Casino(tableNumber){
 
     init {
         println("Das Roulette wurde mit der Tisch Nr. $tableNumber instanziiert")
@@ -25,8 +25,39 @@ open class RouletteTable(tableNumber: Int, var groupierName: String, var tipForE
     }
 
     fun rollingNumbers(): Int {
-        val tableNumbers = (0..36).random()
-        return tableNumbers
+        return (0..36).random()
+
     }
+
+    fun infoOfNumbers(rouletteNumbers: Int){
+        when {
+            (rouletteNumbers in first) -> { print("Die Zahl liegt im ersten Drittel zwischen 1-12")
+            }
+            (rouletteNumbers in second) -> { print("Die Zahl liegt im zweiten Drittel zwischen 13-24")
+            }
+            (rouletteNumbers in third) -> { print("Die Zahl liegt im dritten Drittel zwischen 25-36")
+            }
+        }
+        when {
+            (rouletteNumbers in firstHalf) -> { print(" und in der ersten Hälfte zwischen 1-18")
+            }
+            (rouletteNumbers in secondHalf) -> print(" und in der zweiten Hälfte zwischen 19-36")
+        }
+        when {
+            (rouletteNumbers in blackNumbers) -> { print(" sie ist schwarz")
+            }
+            (rouletteNumbers in redNumbers) -> { print(" sie ist rot")
+            }
+        }
+        when {
+            (rouletteNumbers in numberIsEven) -> { print(" und gerade")
+            }
+            (rouletteNumbers in numberIsNotEven) -> { print(" und ungerade")
+            }
+            (rouletteNumbers in specialNumber) -> { print("Die Zahl ist Zero")
+            }
+        }
+    }
+
 
 }

@@ -11,14 +11,13 @@ fun getNumberInfo(number: Int): NumberInfo? {
     return numberInfoMap[number]
 }
 //Funktion Rot oder Schwarz die Info abholen und entsprechende Ausgabe
-fun getInfo(tableNumber: Int) : String {
-    val numberInfo = getNumberInfo(tableNumber)
+fun getInfo(rouletteNumber: Int) : String {
+    val numberInfo = getNumberInfo(rouletteNumber)
     if (numberInfo != null) {
-        val zero = if (tableNumber == 0) "Zero" else ""
+        val zero = if (rouletteNumber == 0) "Zero" else ""
         val evenOrNot = if (numberInfo.isEven) "pair" else "impair"
         val redOrBlack = if (numberInfo.isRed) "rouge" else "noir"
-        val print = ("$tableNumber: $evenOrNot, $redOrBlack, $zero")
-        return print
+        return ("$rouletteNumber: $evenOrNot, $redOrBlack, $zero")
     } else {
         return "Ungültige Zahl"
     }
