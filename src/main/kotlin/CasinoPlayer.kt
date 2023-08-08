@@ -1,5 +1,5 @@
 class CasinoPlayer(val name: String, var cash: Double, var drink: Boolean) {
-    var yourNumber: Int = 0
+    var yourNumber: Int = 0                                                                 //Hier werden die gewählten Zahlen der Spieler abgespeichert um später die Gewinne zu berechnen
 
     /*init {
         println("Der Spieler $name wurde initialisiert. $name hat $cash € und er hat ein Getränk $drink")

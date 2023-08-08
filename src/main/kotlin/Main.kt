@@ -44,14 +44,9 @@ fun main(){
     for (player in players) {
         rouletteGames.games(player)                                             //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
         println("")
-    /*rouletteGames.games(tatjana)
-    println("")
-    rouletteGames.games(mike)
-    println("")
-    rouletteGames.games(salva)
-    println("")
-    rouletteGames.games(claudia)*/
     }
+
+
     println("==================================")
     print("Nichts geht mehr")
     var rouletteNumber = rouletteAtTable1.rollingNumbers()                  //das Rouletterad am Tisch 1 dreht sich und gibt eine zufällige Zahl als tableNumber zurück welche in der Klasse Roulette ermittelt wird
@@ -67,6 +62,6 @@ fun main(){
     printNumbers(listOfLastNumbers)                                         //Anzeigen der bearbeiteten Liste untereinander
 
     for (player in players) {
-        println("${player.name} hatte die Zahl ${player.yourNumber} gewählt")
+        println("${player.name} hatte die Zahl ${player.yourNumber} gewählt") //Anzeigen der gewählten Zahlen um jetzt die Gewinne zu prüfen
     }
 }
