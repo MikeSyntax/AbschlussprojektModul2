@@ -1,24 +1,24 @@
 fun main(){
 
     var rouletteAtTable1: RouletteTable = RouletteTable(1,"Klaus Dieter", 0.00)
-    var klausDieter: CasinoEmployees = CasinoEmployees("Klaus Dieter", "Groupier", 45)
+    var klausDieter: CasinoEmployees = CasinoEmployees(1, "Klaus Dieter", "Groupier", 45)
     rouletteAtTable1.printInfo()
 
     println("")
 
     var rouletteAtTable2: RouletteTable = RouletteTable(2,"Sascha Grammel", 0.00, 500000.00)
-    var sascha: CasinoEmployees = CasinoEmployees("Sascha Grammel", "Groupier", 34)
+    var sascha: CasinoEmployees = CasinoEmployees(1, "Sascha Grammel", "Groupier", 34)
     rouletteAtTable2.printInfo()
 
     println("")
 
     val players = mutableListOf(
-        CasinoPlayer("Klaus", 600.00, true, 0.01),
-        CasinoPlayer("Tatjana", 500.00, true, 0.01),
-        CasinoPlayer("Mike", 750.00, true, 0.02),
-        CasinoPlayer("Salva", 800.00, false, 0.04),
-        CasinoPlayer("Claudia", 1000.00, false,0.03),
-        CasinoPlayer("Gonzales", 10000.00, true, 0.1,true)
+        CasinoPlayer(1,"Klaus", 600.00, true, 0.01),
+        CasinoPlayer(1,"Tatjana", 500.00, true, 0.01),
+        CasinoPlayer(1,"Mike", 750.00, true, 0.02),
+        CasinoPlayer(1,"Salva", 800.00, false, 0.04),
+        CasinoPlayer(1,"Claudia", 1000.00, false,0.03),
+        CasinoPlayer(1,"Gonzales", 10000.00, true, 0.1,true)
     )
 
     println("")
@@ -78,6 +78,6 @@ fun main(){
 
     }
 
-    println("All players are out of money. Game over.")
+    println("Alle Spieler haben kein Geld mehr!")
 
 }
