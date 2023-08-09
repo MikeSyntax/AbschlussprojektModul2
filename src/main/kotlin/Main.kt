@@ -13,17 +13,24 @@ fun main(){
     println("")
 
     val players = mutableListOf(
-        CasinoPlayer("Klaus", 1000.00, true, 0.01),
+        CasinoPlayer("Klaus", 600.00, true, 0.01),
         CasinoPlayer("Tatjana", 500.00, true, 0.01),
         CasinoPlayer("Mike", 750.00, true, 0.02),
-        CasinoPlayer("Salva", 1500.00, false, 0.04),
-        CasinoPlayer("Claudia", 10000.00, false,0.03),
-        CasinoPlayer("Gonzales", 100000.00, true, 0.1,true)
+        CasinoPlayer("Salva", 800.00, false, 0.04),
+        CasinoPlayer("Claudia", 1000.00, false,0.03),
+        CasinoPlayer("Gonzales", 10000.00, true, 0.1,true)
     )
 
     println("")
 
     var rouletteGames: RouletteGames = RouletteGames(1)          //Instanziierung der RouletteGames an Tisch 1
+
+
+    for (player in players) {                                               //Schleife falls ein Spieler kein Geld mehr hat
+        if (player.cash <= 0) {
+            println("${player.name} hat kein Geld mehr und muss den Tisch verlassen")
+            continue
+        }
 
     for (player in players) {
         rouletteGames.games(player, rouletteAtTable1)                       //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
@@ -54,4 +61,23 @@ fun main(){
 
     rouletteAtTable1.countBank()
     rouletteAtTable1.countTip()
+
+    println("")
+
+    println("Machen Sie Ihre Einsätze, neues Spiel, neues Glück")
+
+            player.yourNumber = 0                                                                 //zurücksetzen der Variablen aus der CasinoPlayer Klasse
+            player.yourAmount= 0
+            player.redBlack= 0
+            player.evenOrNot = 0
+            player.thirdThird = 0
+            player.half = 0
+
+            println("")
+
+
+    }
+
+    println("All players are out of money. Game over.")
+
 }
