@@ -28,7 +28,82 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
 
     fun rollingNumbers(): Int {
         return (0..36).random()
+    }
 
+    fun goPlay(players: List<CasinoPlayer>, rouletteGames: RouletteGames, rouletteTable: RouletteTable) {
+
+        for (player in players) {
+            rouletteGames.games(player, rouletteTable)                                         //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
+            println("")
+        }
+
+        println("==================================")
+        print("Nichts geht mehr")
+        var rouletteNumber = rouletteTable.rollingNumbers()                     //das Rouletterad am Tisch 1 dreht sich und gibt eine zufällige Zahl als tableNumber zurück welche in der Klasse Roulette ermittelt wird
+        println(" und es ist die $rouletteNumber")
+        println("==================================")
+
+        rouletteTable.infoOfNumbers(rouletteNumber)                             //Rückmeldung ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
+
+        println("\n")
+
+        rouletteNumbers(getInfo(rouletteNumber))                                //Hinzufügen der Nummer zur Liste der letzen 10 Zahlen wobei die 1 rausfällt und die neue Zahl ans Ende gesetzt wird
+        println("Anzeige der letzten 10 Zahlen, ")
+        printNumbers(listOfLastNumbers)                                         //Anzeigen der bearbeiteten Liste untereinander
+
+        println("")
+
+        for (player in players) {
+            println(
+                "${player.name} hat ${player.getWin(rouletteNumber, rouletteTable)}")      //Gewinne jedes einzelnen Spielers prüfen
+        }
+
+        println("")
+
+        rouletteTable.countBank()                                            //Aufrufen der Methode über den Stand der Bank
+        rouletteTable.countTip()                                             //Aufrufen der Methode über den Stand der Trinkgeldkasse für die Angestellten
+
+        println("")
+
+        println("Machen Sie Ihre Einsätze, neues Spiel, neues Glück")
+
+        for (player in players) {
+            player.reset()                                                          //zurücksezten der Variablen in CasinoPlayer für das neue Spiel
+        }
+        println("")
+
+    }
+
+    //Die Liste wird mit dieser Schleife untereinander ausgegeben
+    fun printNumbers(list: List<String>) {
+        for (number in list){
+            println(number)
+        }
+    }
+
+    //Funktion rot/schwarz gerade/ungerade und zero - Info aus der Map unter NumberInfo.kt
+    fun getNumberInfo(number: Int): NumberInfo? {
+        return numberInfoMap[number]
+    }
+
+    //Funktion Rot oder Schwarz die Info abholen und entsprechende Ausgabe
+    fun getInfo(rouletteNumber: Int) : String {
+        val numberInfo = getNumberInfo(rouletteNumber)
+        if (numberInfo != null) {
+            val zero = if (rouletteNumber == 0) "Zero" else ""
+            val evenOrNot = if (numberInfo.isEven) "pair" else "impair"
+            val redOrBlack = if (numberInfo.isRed) "rouge" else "noir"
+            return ("$rouletteNumber: $evenOrNot, $redOrBlack, $zero")
+        } else {
+            return "Ungültige Zahl"
+        }
+    }
+
+    //Liste mit den gefallenen Kugeln plus die neue und die erste wird entfernt
+    fun rouletteNumbers(getInfo: String) : MutableList <String> {
+        listOfLastNumbers.add(getInfo)
+        listOfLastNumbers.removeFirst()                                  //Änderung mit if > 10 ersten Eintrag entfernen
+        return listOfLastNumbers
     }
 
     fun infoOfNumbers(rouletteNumbers: Int){
@@ -60,6 +135,4 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
             }
         }
     }
-
-
 }
