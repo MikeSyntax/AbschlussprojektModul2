@@ -1,12 +1,13 @@
 import kotlin.math.round
 
 class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var drink: Boolean, var tip: Double): Casino(tableNumber){
-    var yourNumber: Int = 0                                                                 //Hier werden die gewählten Zahlen der Spieler abgespeichert um später die Gewinne zu berechnen
-    var yourAmount: Int = 0
-    var redBlack: Int = 0
-    var evenOrNot: Int = 0
-    var thirdThird: Int = 0
-    var half: Int = 0
+
+    var yourNumber: Int = -1                                                                 //Hier werden die gewählten Zahlen der Spieler abgespeichert um später die Gewinne zu berechnen
+    var yourAmount: Int = -1
+    var redBlack: Int = -1
+    var evenOrNot: Int = -1
+    var thirdThird: Int = -1
+    var half: Int = -1
 
     /*init {
         println("Der Spieler $name wurde initialisiert. $name hat $cash € und er hat ein Getränk $drink")
@@ -25,7 +26,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
-                return "Gewonnen! Neuer Cashbestand: ${round(cash*100)/100} und gibt ${round(tipAmount*100)/100}€ Trinkgeld"
+                return "${(winAmount - yourAmount)} gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
             }
             (redNumbers.contains(number) && redBlack == 1) -> {
                 cash += (yourAmount * 2)
@@ -34,7 +35,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
-                return "Gewonnen! Neuer Cashbestand: ${round(cash*100)/100} und gibt ${round(tipAmount*100)/100}€ Trinkgeld"
+                return "${(winAmount - yourAmount)} gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
+
             }
             (blackNumbers.contains(number) && redBlack == 2) -> {
                 cash += (yourAmount * 2)
@@ -43,7 +45,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
-                return "Gewonnen! Neuer Cashbestand: ${round(cash*100)/100} und gibt ${round(tipAmount*100)/100}€ Trinkgeld"
+                return "${(winAmount - yourAmount)} gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
+
             }
             (numberIsEven.contains(number) && evenOrNot == 1) -> {
                 cash += (yourAmount * 2)
@@ -52,7 +55,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
-                return "Gewonnen! Neuer Cashbestand: ${round(cash*100)/100} und gibt ${round(tipAmount*100)/100}€ Trinkgeld"
+                return "${(winAmount - yourAmount)} gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
+
             }
             (numberIsNotEven.contains(number) && evenOrNot == 2) -> {
                 cash += (yourAmount * 2)
@@ -61,7 +65,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
-                return "Gewonnen! Neuer Cashbestand: ${round(cash*100)/100} und gibt ${round(tipAmount*100)/100}€ Trinkgeld"
+                return "${(winAmount - yourAmount)} gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
+
             }
             (first.contains(number) && thirdThird == 1) -> {
                 cash += (yourAmount * 3)
@@ -70,7 +75,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
-                return "Gewonnen! Neuer Cashbestand: ${round(cash*100)/100} und gibt ${round(tipAmount*100)/100}€ Trinkgeld"
+                return "${(winAmount - yourAmount)} gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
+
             }
             (second.contains(number) && thirdThird == 2) -> {
                 cash += (yourAmount * 3)
@@ -79,7 +85,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
-                return "Gewonnen! Neuer Cashbestand: ${round(cash*100)/100} und gibt ${round(tipAmount*100)/100}€ Trinkgeld"
+                return "${(winAmount - yourAmount)} gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
+
             }
             (third.contains(number) && thirdThird == 3) -> {
                 cash += (yourAmount * 3)
@@ -88,7 +95,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
-                return "Gewonnen! Neuer Cashbestand: ${round(cash*100)/100} und gibt ${round(tipAmount*100)/100}€ Trinkgeld"
+                return "${(winAmount - yourAmount)} gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
+
             }
             (firstHalf.contains(number) && half == 1) -> {
                 cash += (yourAmount * 2)
@@ -97,7 +105,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
-                return "Gewonnen! Neuer Cashbestand: ${round(cash*100)/100} und gibt ${round(tipAmount*100)/100}€ Trinkgeld"
+                return "${(winAmount - yourAmount)} gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
+
             }
             (secondHalf.contains(number) && half == 2) -> {
                 cash += (yourAmount * 2)
@@ -106,12 +115,22 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
-                return "Gewonnen! Neuer Cashbestand: ${round(cash*100)/100} und gibt ${round(tipAmount*100)/100}€ Trinkgeld"
+                return "${(winAmount - yourAmount)} gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
+
             }
             else -> {
                 return "leider verloren"
             }
         }
+    }
+
+    fun reset(){
+        yourNumber = -1                                           //zurücksetzen der Variablen aus der CasinoPlayer Klasse
+        yourAmount= -1
+        redBlack= -1
+        evenOrNot = -1
+        thirdThird = -1
+        half = -1
     }
 
     fun introduce() {

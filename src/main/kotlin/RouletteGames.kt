@@ -2,7 +2,7 @@ import kotlin.math.round
 
 class RouletteGames(tableNumber: Int){
 
-    fun playerNumber(player: CasinoPlayer, rouletteTable: RouletteTable){                                           //Diese Funktion lässt den Spieler auf eine random Zahl einen random Betrag zwischen 10 und 50 euro setzen
+    fun playerNumber(player: CasinoPlayer, rouletteTable: RouletteTable){                   //Diese Funktion lässt den Spieler auf eine random Zahl einen random Betrag zwischen 10 und 50 euro setzen
         var number = (0..36).random()
         var amount = (10..350).random()
         player.yourNumber = number                                                          //Die Nummer wird in der Klasse des Spieler unter seinem Namen gespeichert
@@ -13,10 +13,10 @@ class RouletteGames(tableNumber: Int){
         println(" somit verbleiben noch ${ round(player.cash*100) /100}€ zum spielen")
     }
 
-    fun playerRedOrBlack(player: CasinoPlayer, rouletteTable: RouletteTable) {                                      //Diese Funktion lässt den Spieler random auf rot oder schwarz setzen
+    fun playerRedOrBlack(player: CasinoPlayer, rouletteTable: RouletteTable) {              //Diese Funktion lässt den Spieler random auf rot oder schwarz setzen
         var numbersRedOrBlack = (1..2).random()
         var amount = (10..350).random()
-        player.redBlack = numbersRedOrBlack                                                       //Die Nummer wird in der Klasse des Spieler unter seinem Namen gespeichert
+        player.redBlack = numbersRedOrBlack                                                 //Die Nummer wird in der Klasse des Spieler unter seinem Namen gespeichert
         player.yourAmount = amount
         rouletteTable.bankTable = rouletteTable.bankTable + amount
         if (numbersRedOrBlack == 1) {
@@ -32,10 +32,10 @@ class RouletteGames(tableNumber: Int){
         }
     }
 
-    fun playerEvenOrNotEven(player: CasinoPlayer, rouletteTable: RouletteTable) {                                      //Diese Funktion lässt den Spieler random auf gerade oder ungerade setzen
+    fun playerEvenOrNotEven(player: CasinoPlayer, rouletteTable: RouletteTable) {           //Diese Funktion lässt den Spieler random auf gerade oder ungerade setzen
         var numbersEvenOrNotEven = (1..2).random()
         var amount = (10..350).random()
-        player.evenOrNot = numbersEvenOrNotEven                                                       //Die Nummer wird in der Klasse des Spieler unter seinem Namen gespeichert
+        player.evenOrNot = numbersEvenOrNotEven                                             //Die Nummer wird in der Klasse des Spieler unter seinem Namen gespeichert
         player.yourAmount = amount
         rouletteTable.bankTable = rouletteTable.bankTable + amount
         if (numbersEvenOrNotEven == 1) {
@@ -51,10 +51,10 @@ class RouletteGames(tableNumber: Int){
         }
     }
 
-    fun playerThird(player: CasinoPlayer, rouletteTable: RouletteTable) {                                      //Diese Funktion lässt den Spieler random auf das 1.,2. oder 3.Drittel setzen
+    fun playerThird(player: CasinoPlayer, rouletteTable: RouletteTable) {                   //Diese Funktion lässt den Spieler random auf das 1.,2. oder 3.Drittel setzen
         var numbersThird = (1..3).random()
         var amount = (10..350).random()
-        player.thirdThird = numbersThird                                                       //Die Nummer wird in der Klasse des Spieler unter seinem Namen gespeichert
+        player.thirdThird = numbersThird                                                    //Die Nummer wird in der Klasse des Spieler unter seinem Namen gespeichert
         player.yourAmount = amount
         rouletteTable.bankTable = rouletteTable.bankTable + amount
         if (numbersThird == 1) {
@@ -74,10 +74,10 @@ class RouletteGames(tableNumber: Int){
         }
     }
 
-    fun playerFirstOrSecondHalf(player: CasinoPlayer, rouletteTable: RouletteTable) {                                      //Diese Funktion lässt den Spieler random auf die 1. oder 2. Hälfte setzen
+    fun playerFirstOrSecondHalf(player: CasinoPlayer, rouletteTable: RouletteTable) {       //Diese Funktion lässt den Spieler random auf die 1. oder 2. Hälfte setzen
         var numbersFirstOrSecondHalf = (1..2).random()
         var amount = (10..350).random()
-        player.half = numbersFirstOrSecondHalf                                                       //Die Nummer wird in der Klasse des Spieler unter seinem Namen gespeichert
+        player.half = numbersFirstOrSecondHalf                                              //Die Nummer wird in der Klasse des Spieler unter seinem Namen gespeichert
         player.yourAmount = amount
         rouletteTable.bankTable = rouletteTable.bankTable + amount
         if (numbersFirstOrSecondHalf == 1) {
