@@ -10,9 +10,9 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
 
     }
     fun printInfo(){
-        println("Tischnummer: $tableNumber")
-        println("Groupiername: $groupierName")
-        println("Trinkgeldkasse : $tipForEmployees€")
+        print("Tischnummer: $tableNumber ")
+        print("Groupiername: $groupierName ")
+        print("Trinkgeldkasse : $tipForEmployees€ ")
         println("Bank am Tisch : $bankTable€")
     }
 
