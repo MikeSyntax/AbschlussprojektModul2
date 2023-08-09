@@ -6,10 +6,9 @@ class RouletteGames(tableNumber: Int){
         player.yourNumber = number                                                          //Die Nummer wird in der Klasse des Spieler unter seinem Namen gespeichert
         player.yourAmount = amount
         rouletteTable.bankTable = rouletteTable.bankTable + amount
-        print("Spieler ${player.name} hat $amount € auf die $number gesetzt,")
+        print("Spieler ${player.name} hat $amount€ auf die $number gesetzt,")
         player.cash = player.cash - amount
-        println(" somit verbleiben noch ${player.cash} € zum spielen")
-
+        println(" somit verbleiben noch ${player.cash}€ zum spielen")
     }
 
     fun playerRedOrBlack(player: CasinoPlayer, rouletteTable: RouletteTable) {                                      //Diese Funktion lässt den Spieler random auf rot oder schwarz setzen
@@ -19,13 +18,13 @@ class RouletteGames(tableNumber: Int){
         player.yourAmount = amount
         rouletteTable.bankTable = rouletteTable.bankTable + amount
         if (numbersRedOrBlack == 1) {
-            print("Spieler ${player.name} hat $amount € auf rot gesetzt")
+            print("Spieler ${player.name} hat $amount€ auf rot gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${player.cash} € zum spielen")
+            println(" somit verbleiben noch ${player.cash}€ zum spielen")
         } else if (numbersRedOrBlack == 2) {
-            print("Spieler ${player.name} hat $amount € auf schwarz gesetzt")
+            print("Spieler ${player.name} hat $amount€ auf schwarz gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${player.cash} € zum spielen")
+            println(" somit verbleiben noch ${player.cash}€ zum spielen")
         } else {
             println("Falsche Eingabe")
         }
@@ -38,13 +37,13 @@ class RouletteGames(tableNumber: Int){
         player.yourAmount = amount
         rouletteTable.bankTable = rouletteTable.bankTable + amount
         if (numbersEvenOrNotEven == 1) {
-            print("Spieler ${player.name} hat $amount € auf gerade gesetzt")
+            print("Spieler ${player.name} hat $amount€ auf gerade gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${player.cash} € zum spielen")
+            println(" somit verbleiben noch ${player.cash}€ zum spielen")
         } else if (numbersEvenOrNotEven == 2) {
-            print("Spieler ${player.name} hat $amount € auf ungerade gesetzt")
+            print("Spieler ${player.name} hat $amount€ auf ungerade gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${player.cash} € zum spielen")
+            println(" somit verbleiben noch ${player.cash}€ zum spielen")
         } else {
             println("Falsche Eingabe")
         }
@@ -57,17 +56,17 @@ class RouletteGames(tableNumber: Int){
         player.yourAmount = amount
         rouletteTable.bankTable = rouletteTable.bankTable + amount
         if (numbersThird == 1) {
-            print("Spieler ${player.name} hat $amount € auf das 1.Drittel gesetzt")
+            print("Spieler ${player.name} hat $amount€ auf das 1.Drittel gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${player.cash} € zum spielen")
+            println(" somit verbleiben noch ${player.cash}€ zum spielen")
         } else if (numbersThird == 2) {
-            print("Spieler ${player.name} hat $amount € auf das 2.Drittel gesetzt")
+            print("Spieler ${player.name} hat $amount€ auf das 2.Drittel gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${player.cash} € zum spielen")
+            println(" somit verbleiben noch ${player.cash}€ zum spielen")
         } else if  (numbersThird == 3) {
-            print("Spieler ${player.name} hat $amount € auf das 3.Drittel gesetzt")
+            print("Spieler ${player.name} hat $amount€ auf das 3.Drittel gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${player.cash} € zum spielen")
+            println(" somit verbleiben noch ${player.cash}€ zum spielen")
         } else {
             println("Falsche Eingabe")
         }
@@ -80,13 +79,13 @@ class RouletteGames(tableNumber: Int){
         player.yourAmount = amount
         rouletteTable.bankTable = rouletteTable.bankTable + amount
         if (numbersFirstOrSecondHalf == 1) {
-            print("Spieler ${player.name} hat $amount € auf die 1.Hälfte gesetzt")
+            print("Spieler ${player.name} hat $amount€ auf die 1.Hälfte gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${player.cash} € zum spielen")
+            println(" somit verbleiben noch ${player.cash}€ zum spielen")
         } else if (numbersFirstOrSecondHalf == 2) {
-            print("Spieler ${player.name} hat $amount € auf die 2. Hälfte gesetzt")
+            print("Spieler ${player.name} hat $amount€ auf die 2. Hälfte gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${player.cash} € zum spielen")
+            println(" somit verbleiben noch ${player.cash}€ zum spielen")
         } else {
             println("Falsche Eingabe")
         }

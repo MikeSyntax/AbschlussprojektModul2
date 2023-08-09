@@ -1,3 +1,5 @@
+import kotlin.math.round
+
 class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmployees: Double, var bankTable: Double): Casino(tableNumber){
 
    /* init {
@@ -21,7 +23,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
     }
 
     fun countTip(){
-        println("In der Trinkgeldkasse am Roulettetisch $tableNumber befinden sich insgesamt $tipForEmployees€")
+        println("In der Trinkgeldkasse am Roulettetisch $tableNumber befinden sich insgesamt ${ round(tipForEmployees*100) /100}€")
     }
 
     fun rollingNumbers(): Int {

@@ -13,12 +13,12 @@ fun main(){
     println("")
 
     val players = mutableListOf(
-        CasinoPlayer("Klaus", 1000.00, true, 0.1),
-        CasinoPlayer("Tatjana", 500.00, true),
+        CasinoPlayer("Klaus", 1000.00, true, 0.01),
+        CasinoPlayer("Tatjana", 500.00, true, 0.01),
         CasinoPlayer("Mike", 750.00, true, 0.02),
         CasinoPlayer("Salva", 1500.00, false, 0.04),
-        CasinoPlayer("Claudia", 10000.00, false),
-        CasinoPlayer("Gonzales", 100000.00, true, true)
+        CasinoPlayer("Claudia", 10000.00, false,0.03),
+        CasinoPlayer("Gonzales", 100000.00, true, 0.1,true)
     )
 
     println("")
@@ -26,7 +26,7 @@ fun main(){
     var rouletteGames: RouletteGames = RouletteGames(1)          //Instanziierung der RouletteGames an Tisch 1
 
     for (player in players) {
-        rouletteGames.games(player, rouletteAtTable1)                                             //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
+        rouletteGames.games(player, rouletteAtTable1)                       //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
         println("")
     }
 
@@ -53,4 +53,5 @@ fun main(){
     println("")
 
     rouletteAtTable1.countBank()
+    rouletteAtTable1.countTip()
 }
