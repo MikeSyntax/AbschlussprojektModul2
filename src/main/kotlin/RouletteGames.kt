@@ -1,27 +1,27 @@
 class RouletteGames(tableNumber: Int){
 
-    fun playerNumber(player: CasinoPlayer): Int {                                           //Diese Funktion lässt den Spieler auf eine random Zahl einen random Betrag zwischen 10 und 50 euro setzen
+    fun playerNumber(player: CasinoPlayer){                                           //Diese Funktion lässt den Spieler auf eine random Zahl einen random Betrag zwischen 10 und 50 euro setzen
         var number = (0..36).random()
         var amount = (10..50).random()
         player.yourNumber = number                                                          //Die Nummer wird in der Klasse des Spieler unter seinem Namen gespeichert
+        player.yourAmount = amount
         print("Spieler ${player.name} hat $amount € auf die $number gesetzt,")
-        BetNumber("Nummer $number", 36, number)
         player.cash = player.cash - amount
         println(" somit verbleiben noch ${player.cash} € zum spielen")
-        return number
+
     }
 
     fun playerRedOrBlack(player: CasinoPlayer) {                                      //Diese Funktion lässt den Spieler random auf rot oder schwarz setzen
         var numbersRedOrBlack = (1..2).random()
         var amount = (10..50).random()
+        player.redBlack = numbersRedOrBlack                                                       //Die Nummer wird in der Klasse des Spieler unter seinem Namen gespeichert
+        player.yourAmount = amount
         if (numbersRedOrBlack == 1) {
             print("Spieler ${player.name} hat $amount € auf rot gesetzt")
-            BetColor("rot", 2, "rot" )
             player.cash = player.cash - amount
             println(" somit verbleiben noch ${player.cash} € zum spielen")
         } else if (numbersRedOrBlack == 2) {
             print("Spieler ${player.name} hat $amount € auf schwarz gesetzt")
-            BetColor("schwarz", 2, "schwarz" )
             player.cash = player.cash - amount
             println(" somit verbleiben noch ${player.cash} € zum spielen")
         } else {

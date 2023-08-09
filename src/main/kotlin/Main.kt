@@ -30,7 +30,7 @@ fun main(){
 
     val players = mutableListOf(
         CasinoPlayer("Klaus", 1000.00, true),
-       CasinoPlayer("Tatjana", 500.00, true),
+        CasinoPlayer("Tatjana", 500.00, true),
         CasinoPlayer("Mike", 50.00, true),
         CasinoPlayer("Salva", 1500.00, false),
         CasinoPlayer("Claudia", 100.00, false),
@@ -61,7 +61,12 @@ fun main(){
     println("Anzeige der letzten 10 Zahlen, ")
     printNumbers(listOfLastNumbers)                                         //Anzeigen der bearbeiteten Liste untereinander
 
+    println("\n")
+
     for (player in players) {
-        println("${player.name} hatte die Zahl ${player.yourNumber} gewählt") //Anzeigen der gewählten Zahlen um jetzt die Gewinne zu prüfen
+        println("${player.name} hat ${player.getWin(rouletteNumber)}") //Gewinne jedes einzelnen Spielers prüfen
     }
+
+
+
 }
