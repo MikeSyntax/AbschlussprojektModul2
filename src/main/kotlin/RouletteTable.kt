@@ -11,29 +11,30 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
        // println("Das Roulette für Tisch Nr. $tableNumber wurde mit dem sekundären Konstruktor instanziiert")
 
     }
+    //Methode zur Ausgabe aller Infos über den Roulettetisch
     fun printInfo(){
         print("Tischnummer: $tableNumber ")
         print("Groupiername: $groupierName ")
         print("Trinkgeldkasse : $tipForEmployees€ ")
         println("Bank am Tisch : $bankTable€")
     }
-
+    //Methode zum Anzeigen des Standes der Bank am Roulettetisch
     fun countBank(){
         println("In der Bank am Roulettetisch $tableNumber befinden sich insgesamt $bankTable€")
     }
-
+    //Methode zum Anzeigen der Trinkgeldkasse
     fun countTip(){
         println("In der Trinkgeldkasse am Roulettetisch $tableNumber befinden sich insgesamt ${ round(tipForEmployees*100) /100}€")
     }
-
+    //Methode zum Roulette Rad, die Kugel soll rollen und random eine Zahl auswählen
     fun rollingNumbers(): Int {
         return (0..36).random()
     }
-
+    //Hauptmethode zum Spielen mit Eingabe des Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der der Variablen mit den gespeicherten Spielerwahlen
     fun goPlay(players: List<CasinoPlayer>, rouletteGames: RouletteGames, rouletteTable: RouletteTable) {
 
         for (player in players) {
-            rouletteGames.games(player, rouletteTable)                                         //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
+            rouletteGames.games(player, rouletteTable)                           //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
             println("")
         }
 
@@ -43,35 +44,28 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
         println(" und es ist die $rouletteNumber")
         println("==================================")
 
-        rouletteTable.infoOfNumbers(rouletteNumber)                             //Rückmeldung ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
-
+        rouletteTable.infoOfNumbers(rouletteNumber)                             //Methode für die Rückmeldung ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
         println("\n")
-
         rouletteNumbers(getInfo(rouletteNumber))                                //Hinzufügen der Nummer zur Liste der letzen 10 Zahlen wobei die 1 rausfällt und die neue Zahl ans Ende gesetzt wird
         println("Anzeige der letzten 10 Zahlen, ")
         printNumbers(listOfLastNumbers)                                         //Anzeigen der bearbeiteten Liste untereinander
-
         println("")
 
         for (player in players) {
-            println(
-                "${player.name} hat ${player.getWin(rouletteNumber, rouletteTable)}")      //Gewinne jedes einzelnen Spielers prüfen
+            println("${player.name} hat ${player.getWin(rouletteNumber, rouletteTable)}")      //Gewinne jedes einzelnen Spielers prüfen
         }
 
         println("")
-
-        rouletteTable.countBank()                                            //Aufrufen der Methode über den Stand der Bank
-        rouletteTable.countTip()                                             //Aufrufen der Methode über den Stand der Trinkgeldkasse für die Angestellten
-
+        rouletteTable.countBank()                                               //Aufrufen der Methode über den Stand der Bank
+        rouletteTable.countTip()                                                //Aufrufen der Methode über den Stand der Trinkgeldkasse für die Angestellten
         println("")
-
         println("Machen Sie Ihre Einsätze, neues Spiel, neues Glück")
 
         for (player in players) {
-            player.reset()                                                          //zurücksezten der Variablen in CasinoPlayer für das neue Spiel
+            player.reset()                                                      //zurücksezten der Variablen in CasinoPlayer für das neue Spiel
         }
-        println("")
 
+        println("")
     }
 
     //Die Liste wird mit dieser Schleife untereinander ausgegeben

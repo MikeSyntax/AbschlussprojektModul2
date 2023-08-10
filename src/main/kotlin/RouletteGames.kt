@@ -109,6 +109,9 @@ class RouletteGames(tableNumber: Int){
                  }
                  5 -> {playerFirstOrSecondHalf(player, rouletteTable)                  //Auf 1. oder 2. Hälfte setzen
                  }
+                else -> { println("ungültige Eingabe, bitte gib eine Zahl von 1-5 ein") //Falls ungültige Eingabe, neue Eingabe starten
+                    games(player, rouletteTable)
+                }
             }
         }
     }

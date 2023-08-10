@@ -134,7 +134,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
     }
 
     fun introduce() {
-        println("Hallo, ich bin $name")
+        println("Hallo, ich bin $name und spiele an Tisch $tableNumber")
     }
 
 }
