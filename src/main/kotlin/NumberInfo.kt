@@ -39,3 +39,29 @@ val numberInfoMap = mapOf(
     35 to NumberInfo(false, false, false),
     36 to NumberInfo(true, true, false)
 )
+/*
+enum class NumberType {
+    EVEN,
+    ODD,
+    RED,
+    BLACK,
+    GREEN
+}
+
+data class NumberInfoEnum(val type: NumberType)
+
+
+// Map mit den Informationen zu den Nummern
+val numberInfoMapEnum = mapOf(
+    0 to NumberInfoEnum(NumberType.GREEN),   // Zero ist grün
+    1 to NumberInfoEnum(NumberType.RED, NumberType.ODD),
+    2 to NumberInfoEnum(NumberType.BLACK),
+)
+
+data class NumberInfobald(val type: NumberType)
+
+// Map mit den Informationen zu den Nummern
+val numberInfoMap = mapOf(
+    0 to NumberInfobald(NumberType.GREEN),
+    1 to NumberInfobald(NumberType.RED, NumberType.ODD),   // Nummer 1 ist rot und ungerade
+    2 to NumberInfobald(NumberType.BLACK, NumberType.EVEN),*/

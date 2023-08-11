@@ -99,7 +99,7 @@ class RouletteHighroller(tableNumber: Int): RouletteGames(tableNumber) {
     }
 
     override fun games(player: CasinoPlayer, rouletteTable: RouletteTable) {
-        println("Willkommen ${player.name} am Roulette Tisch 2, du kannst zwischen folgenden Spielen am Roulette wählen, triff bitte jetzt deine Auswahl")
+        println("\nWillkommen ${player.name} am Roulette Tisch 2, du kannst zwischen folgenden Spielen am Roulette wählen, triff bitte jetzt deine Auswahl")
         println("| [1] = Auf Zahl setzen | [2] = auf Gerade/Ungerade setzen | [3] = auf Rot oder Schwarz setzen | [4] = auf 1.,2.oder 3.Drittel setzen | [5] = auf 1. oder 2. Hälfte setzen |")
 
         try {
