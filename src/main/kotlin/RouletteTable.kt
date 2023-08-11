@@ -148,7 +148,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
             println("============================================================================================================")
             println("============================================================================================================")
             println("Achtung es findet ein Groupierwechsel statt, bitte keine Einsätze im Moment")
-            println("Willkommen im Casino am Tisch ${rouletteTable.tableNumber} mein Name ist ${newGroupier.name} und ich bin für die nächsten Runden Ihr ${casinoEmployees.job}")
+            println("Willkommen am Tisch ${rouletteTable.tableNumber} mein Name ist ${newGroupier.name} und ich bin für die nächsten Runden Ihr ${casinoEmployees.job}")
             rouletteTable.countBank()
             rouletteTable.countTip()
             println("Vielen Dank für die Trinkgelder, wir werden diese unter den Kollegen verteilen")

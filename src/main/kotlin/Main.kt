@@ -53,6 +53,9 @@ fun main() {
     for (player in players) {
         player.introduce()
     }
+
+    println("")
+
     for (player in playersHighroller) {
         player.introduce()
     }
