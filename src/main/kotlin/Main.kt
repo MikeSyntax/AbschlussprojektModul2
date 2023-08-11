@@ -17,9 +17,9 @@ fun main() {
 
     var klaus: CasinoPlayer = CasinoPlayer(1, "Klaus", 500.00, true, 0.01)
     var tatjana: CasinoPlayer = CasinoPlayer(1, "Tatjana", 500.00, true, 0.01)
-    var mike: CasinoPlayer = CasinoPlayer(1, "Mike", 550.00, true, 0.02)
+    var mike: CasinoPlayer = CasinoPlayer(1, "Mike", 500.00, true, 0.02)
     var salva: CasinoPlayer = CasinoPlayer(1, "Salva", 500.00, false, 0.04)
-    var claudia: CasinoPlayer = CasinoPlayer(1, "Claudia", 1000.00, false, 0.03)
+    var claudia: CasinoPlayer = CasinoPlayer(1, "Claudia", 500.00, false, 0.03)
 
     var gonzales: CasinoPlayer = CasinoPlayer(2, "Gonzales", 10000.00, true, 0.1, true)
     var silvio: CasinoPlayer = CasinoPlayer(2, "Silvio", 10000.00, true, 0.08, true)
@@ -49,7 +49,12 @@ fun main() {
         round++
         rouletteAtTable1.changeGroupier(groupiers, rouletteAtTable1)
 
-    } while (goOn1 && goOn2)
+
+    } while (goOn1 || goOn2)
+
+
+    println("´`´`´`´`´`´`´`´`´`´`")
     println("Das Spiel ist vorbei")
+    println("´`´`´`´`´`´`´`´`´`´`")
 
 }

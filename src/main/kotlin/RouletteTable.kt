@@ -162,7 +162,9 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
         }
         if (players.isEmpty()) {
             goOn1 = false
-            println("Alle Spieler an Tisch 1 haben kein Geld mehr!")
+            println("|––––––––––––––––––––––––––--–––––––––––––-––––-|")
+            println("| Alle Spieler an Tisch 1 haben kein Geld mehr! |")
+            println("|––––––––––––––––––––––––––--–––––––––––––-––––-|")
         }
     }
 
@@ -261,8 +263,11 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
             printListInfoAfterRemovingHighroller(playersHighroller)
         }
         if (playersHighroller.isEmpty()) {
-            goOn1 = false
-            println("Alle Spieler an Tisch 2 haben kein Geld mehr!")
+            goOn2 = false
+            println("|––––––––––––––––––––––––––--–––––––––––––-––––-|")
+            println("| Alle Spieler an Tisch 2 haben kein Geld mehr! |")
+            println("|––––––––––––––––––––––––––--–––––––––––––-––––-|")
+
         }
     }
 
