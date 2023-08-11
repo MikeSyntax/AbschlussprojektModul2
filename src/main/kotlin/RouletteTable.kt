@@ -106,7 +106,16 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
         println("")
     }
 
-
+    fun changeGroupier(groupiers: List<CasinoEmployees>, rouletteTable: RouletteTable){
+        if (round == 10){
+            var newGroupier = groupiers.random()
+            println("============================================================================================")
+            println("Achtung es findet ein Groupierwechsel statt, bitte keine Einsätze im Moment")
+            println("Willkommen im Casino am Tisch ${rouletteTable.tableNumber} mein Name ist ${newGroupier.name} und ich bin für die nächsten Runden Ihr Groupier ")
+            println("============================================================================================")
+            round = 0
+        }
+    }
 
     //Die Liste wird mit dieser Schleife untereinander ausgegeben
     fun printNumbers(list: List<String>) {
