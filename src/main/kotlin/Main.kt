@@ -1,9 +1,29 @@
 fun main() {
     println("")
+    println("          d8888b   d8888b  d88888b          d8888b     d8b    d8b   db  db   dD \n" +
+            "          88   8D    88    88               88   8D  d8   8b  888o  88  88  8P  \n" +
+            "          88   88    88    88ooooo          88oooY   88ooo88  88V8o 88  88 8P   \n" +
+            "          88   88    88    88               88   b   88   88  88 V8o88  88 8b   \n" +
+            "          88   8D    88    88               88   8D  88   88  88  V888  88  88  \n" +
+            "          Y8888Y   Y8888Y  Y88888Y          Y8888P   YP   YP  VP   V8P  YP   YD \n" +
+            "                                                                         \n" +
+            "                                                                         \n" +
+            "           d888b   d88888b  db   d8b   db  d8888b  d8b   db  d8b   db  d888888b \n" +
+            "          88  88b  88       88   I8I   88    88    888o  88  888o  88     88    \n" +
+            "          88       8888888  88   I8I   88    88    88V8o 88  88V8o 88     88    \n" +
+            "          88  888  88       Y8   I8I   88    88    88 V8o88  88 V8o88     88    \n" +
+            "          88   8   88        8b d8 8b d8     88    88  V888  88  V888     88    \n" +
+            "           Y888P   Y88888P    8b8   8d8    Y8888P  VP   V8P  VP   V8P     YP    \n" +
+            "                                                                                  ")
+
+
+
+
 
     var rouletteAtTable1: RouletteTable = RouletteTable(1, "Klaus Dieter", 0.00)
     var klausDieter: CasinoEmployees = CasinoEmployees(1, "Klaus Dieter", "Groupier", 36)
     var rainer: CasinoEmployees = CasinoEmployees(1,"Rainer", "Groupier", 48)
+    var ernst: CasinoEmployees = CasinoEmployees(1,"Ernst", "Groupier", 31)
     rouletteAtTable1.printInfo()
 
     println("")
@@ -26,7 +46,7 @@ fun main() {
 
     val players: MutableList<CasinoPlayer> = mutableListOf(klaus, tatjana, mike, salva, claudia)
     val playersHighroller: MutableList<CasinoPlayer> = mutableListOf(gonzales, silvio)
-    val groupiers: MutableList<CasinoEmployees> = mutableListOf(rainer, klausDieter)
+    val groupiers: MutableList<CasinoEmployees> = mutableListOf(rainer, ernst)
 
     println("")
 
@@ -47,14 +67,13 @@ fun main() {
         rouletteAtTable2.removePlayerHighrollerWithNoMoney(playersHighroller)
 
         round++
-        rouletteAtTable1.changeGroupier(groupiers, rouletteAtTable1)
-
+        rouletteAtTable1.changeGroupier(groupiers, rouletteAtTable1, klausDieter)
 
     } while (goOn1 || goOn2)
 
 
-    println("´`´`´`´`´`´`´`´`´`´`")
-    println("Das Spiel ist vorbei")
-    println("´`´`´`´`´`´`´`´`´`´`")
+        println("´`´`´`´`´`´`´`´`´`´`´`´`")
+        println("| Das Spiel ist vorbei |")
+        println("´`´`´`´`´`´`´`´`´`´`´`´`")
 
 }

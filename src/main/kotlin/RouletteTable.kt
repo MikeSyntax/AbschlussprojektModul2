@@ -138,17 +138,25 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
         println("")
     }
 
-    fun changeGroupier(groupiers: List<CasinoEmployees>, rouletteTable: RouletteTable) {
-        if (round == 10) {
-            var newGroupier = groupiers.random()
-            println("============================================================================================")
+    fun changeGroupier(groupiers: MutableList<CasinoEmployees>, rouletteTable: RouletteTable, casinoEmployees: CasinoEmployees) {
+        if (round == 5) {
+            var oldGroupier = casinoEmployees
+            var newGroupier = groupiers.first()
+            var activeGroupier = newGroupier
+            groupiers.remove(activeGroupier)
+            groupiers.add(oldGroupier)
+            println("============================================================================================================")
+            println("============================================================================================================")
             println("Achtung es findet ein Groupierwechsel statt, bitte keine Einsätze im Moment")
-            println("Willkommen im Casino am Tisch ${rouletteTable.tableNumber} mein Name ist ${newGroupier.name} und ich bin für die nächsten Runden Ihr ")
-            println("============================================================================================")
+            println("Willkommen im Casino am Tisch ${rouletteTable.tableNumber} mein Name ist ${newGroupier.name} und ich bin für die nächsten Runden Ihr ${casinoEmployees.job}")
+            rouletteTable.countBank()
+            rouletteTable.countTip()
+            println("Vielen Dank für die Trinkgelder, wir werden diese unter den Kollegen verteilen")
+            println("============================================================================================================")
+            println("============================================================================================================")
             round = 0
         }
     }
-
 
     fun removePlayerWithNoMoney(players: MutableList<CasinoPlayer>) {                                           //Schleife falls ein Spieler kein Geld mehr hat
         var removePlayer = players.filter { player -> player.cash <= 0 }
@@ -170,6 +178,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
 
     fun printListInfoAfterRemoving(players: List<CasinoPlayer>) {
         println("Folgende Spieler verbleiben")
+        println("---------------------------")
         for (player in players) {
             println("${player.name}")
         }
@@ -273,6 +282,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
 
     fun printListInfoAfterRemovingHighroller(playersHighroller: List<CasinoPlayer>) {
         println("Folgende Spieler verbleiben")
+        println("---------------------------")
         for (player in playersHighroller) {
             println("${player.name}")
         }
