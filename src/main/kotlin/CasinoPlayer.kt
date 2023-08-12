@@ -8,6 +8,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
     var evenOrNot: Int = -1
     var thirdThird: Int = -1
     var half: Int = -1
+    var skipRound = false
 
     /*init {
         println("Der Spieler $name wurde initialisiert. $name hat $cash € und er hat ein Getränk $drink")
@@ -118,6 +119,10 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 return "${(winAmount - yourAmount)}€ gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
 
             }
+            (skipRound) -> {
+                return  "für diese Runde ausgesetzt"
+            }
+
             else -> {
                 return "leider verloren"
             }
@@ -131,6 +136,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
         evenOrNot = -1
         thirdThird = -1
         half = -1
+        skipRound = false
     }
 
     fun introduce() {

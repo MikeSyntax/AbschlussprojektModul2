@@ -93,9 +93,15 @@ open class RouletteGames(tableNumber: Int){
         }
     }
 
+    open fun playerSkipRound(player: CasinoPlayer, rouletteTable: RouletteTable){
+        println("Spieler ${player.name} setzt eine Runde aus.")
+        player.skipRound = true
+    }
+
     open fun games(player: CasinoPlayer, rouletteTable: RouletteTable){
             println("\nWillkommen ${player.name} am Roulette Tisch 1, du kannst zwischen folgenden Spielen am Roulette wählen, triff bitte jetzt deine Auswahl")
-            println("| [1] = Auf Zahl setzen | [2] = auf Gerade/Ungerade setzen | [3] = auf Rot oder Schwarz setzen | [4] = auf 1.,2.oder 3.Drittel setzen | [5] = auf 1. oder 2. Hälfte setzen |")
+            println("| [1] = Auf Zahl setzen | [2] = auf Gerade/Ungerade setzen | [3] = auf Rot oder Schwarz setzen |\n" +
+                    "| [4] = auf 1.,2. oder 3.Drittel setzen | [5] = auf 1. oder 2. Hälfte setzen | [6] = Aussetzen |")
         try {
             var choice = readln().toInt()
             when (choice) {
@@ -119,8 +125,11 @@ open class RouletteGames(tableNumber: Int){
                     playerFirstOrSecondHalf(player, rouletteTable)                  //Auf 1. oder 2. Hälfte setzen
                 }
 
+                6 -> {
+                    playerSkipRound(player, rouletteTable)                          //Eine Runde aussetzen
+                }
                 else -> {
-                    println("ungültige Eingabe, bitte gib eine Zahl von [1] - [5] ein") //Falls ungültige Eingabe, neue Eingabe starten
+                    println("ungültige Eingabe, bitte gib eine Zahl von [1] - [6] ein") //Falls ungültige Eingabe, neue Eingabe starten
                     games(player, rouletteTable)
                 }
             }

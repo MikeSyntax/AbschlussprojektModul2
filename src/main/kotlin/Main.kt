@@ -21,15 +21,15 @@ fun main() {
 
 
     var rouletteAtTable1: RouletteTable = RouletteTable(1, "Klaus Dieter", 0.00)
-    var klausDieter: CasinoEmployees = CasinoEmployees(1, "Klaus Dieter", "Groupier", 36)
-    var rainer: CasinoEmployees = CasinoEmployees(1,"Rainer", "Groupier", 48)
-    var ernst: CasinoEmployees = CasinoEmployees(1,"Ernst", "Groupier", 31)
+    var klausDieter: CasinoEmployees = CasinoEmployees(1, "Klaus Dieter", "Croupier", 36)
+    var rainer: CasinoEmployees = CasinoEmployees(1,"Rainer", "Croupier", 48)
+    var ernst: CasinoEmployees = CasinoEmployees(1,"Ernst", "Croupier", 31)
     rouletteAtTable1.printInfo()
 
     println("")
 
     var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha Grammel", 0.00, 500000.00)                       //Vorbereitung für den zweiten Tisch
-    var sascha: CasinoEmployees = CasinoEmployees(2, "Sascha Grammel", "Groupier", 45)
+    var sascha: CasinoEmployees = CasinoEmployees(2, "Sascha Grammel", "Croupier", 45)
     rouletteAtTable2.printInfo()
 
     var rouletteGames: RouletteGames = RouletteGames(1)                         //Instanziierung der RouletteGames an Tisch 1
@@ -46,7 +46,7 @@ fun main() {
 
     val players: MutableList<CasinoPlayer> = mutableListOf(klaus, tatjana, mike, salva, claudia)
     val playersHighroller: MutableList<CasinoPlayer> = mutableListOf(gonzales, silvio)
-    val groupiers: MutableList<CasinoEmployees> = mutableListOf(rainer, ernst)
+    val groupiers: MutableList<CasinoEmployees> = mutableListOf(rainer, ernst, klausDieter)
 
     println("")
 

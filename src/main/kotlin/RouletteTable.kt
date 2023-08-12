@@ -6,12 +6,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
         println("Das Roulette wurde mit der Tisch Nr. $tableNumber instanziiert")
     }*/
 
-    constructor(tableNumber: Int, groupierName: String, tipForEmployees: Double) : this(
-        tableNumber,
-        groupierName,
-        tipForEmployees,
-        100000.00
-    ) {
+    constructor(tableNumber: Int, groupierName: String, tipForEmployees: Double) : this(tableNumber, groupierName, tipForEmployees, 100000.00) {
 
         // println("Das Roulette für Tisch Nr. $tableNumber wurde mit dem sekundären Konstruktor instanziiert")
 
@@ -20,7 +15,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
     //Methode zur Ausgabe aller Infos über den Roulettetisch
     fun printInfo() {
         print("Tischnummer: $tableNumber ")
-        print("Groupiername: $groupierName ")
+        print("Croupier Name: $groupierName ")
         print("Trinkgeldkasse : $tipForEmployees€ ")
         println("Bank am Tisch : $bankTable€")
     }
@@ -43,11 +38,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
     //Hauptmethode zum Spielen mit Eingabe des Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der der Variablen mit den gespeicherten Spielerwahlen
     fun goPlay(players: List<CasinoPlayer>, rouletteGames: RouletteGames, rouletteTable: RouletteTable) {
 
-        for (player in players) {
-            rouletteGames.games(
-                player,
-                rouletteTable
-            )                           //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
+        for (player in players) { rouletteGames.games(player, rouletteTable)                           //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
             println("")
         }
 
@@ -66,14 +57,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
         println("")
 
         for (player in players) {
-            println(
-                "${player.name} hat ${
-                    player.getWin(
-                        rouletteNumber,
-                        rouletteTable
-                    )
-                }"
-            )      //Gewinne jedes einzelnen Spielers prüfen
+            println("${player.name} hat ${player.getWin(rouletteNumber, rouletteTable)}")      //Gewinne jedes einzelnen Spielers prüfen
         }
 
         println("")
@@ -92,11 +76,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
     //Hauptmethode zum Spielen des Highroller Tisches mit Eingabe des Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der der Variablen mit den gespeicherten Spielerwahlen
     fun goPlayHighroler(players: List<CasinoPlayer>, rouletteGames: RouletteGames, rouletteTable: RouletteTable) {
 
-        for (player in players) {
-            rouletteGames.games(
-                player,
-                rouletteTable
-            )                           //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
+        for (player in players) { rouletteGames.games(player, rouletteTable)                           //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
             println("")
         }
 
@@ -115,14 +95,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
         println("")
 
         for (player in players) {
-            println(
-                "${player.name} hat ${
-                    player.getWin(
-                        rouletteNumber,
-                        rouletteTable
-                    )
-                }"
-            )      //Gewinne jedes einzelnen Spielers prüfen
+            println("${player.name} hat ${player.getWin(rouletteNumber, rouletteTable)}")      //Gewinne jedes einzelnen Spielers prüfen
         }
 
         println("")
@@ -140,20 +113,18 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
 
     fun changeGroupier(groupiers: MutableList<CasinoEmployees>, rouletteTable: RouletteTable, casinoEmployees: CasinoEmployees) {
         if (round == 5) {
-            var oldGroupier = casinoEmployees
             var newGroupier = groupiers.first()
-            var activeGroupier = newGroupier
-            groupiers.remove(activeGroupier)
-            groupiers.add(oldGroupier)
-            println("============================================================================================================")
-            println("============================================================================================================")
-            println("Achtung es findet ein Groupierwechsel statt, bitte keine Einsätze im Moment")
-            println("Willkommen am Tisch ${rouletteTable.tableNumber} mein Name ist ${newGroupier.name} und ich bin für die nächsten Runden Ihr ${casinoEmployees.job}")
+            groupiers.remove(newGroupier)
+            println("===========================================================================================|")
+            println("===========================================================================================|")
+            println("ACHTUNG es findet ein Croupier Wechsel statt, bitte keine Einsätze im Moment               |")
+            println("Willkommen am Tisch ${rouletteTable.tableNumber} mein Name ist ${newGroupier.name} und ich bin für die nächsten Runden Ihr ${casinoEmployees.job}|")
             rouletteTable.countBank()
             rouletteTable.countTip()
-            println("Vielen Dank für die Trinkgelder, wir werden diese unter den Kollegen verteilen")
-            println("============================================================================================================")
-            println("============================================================================================================")
+            println("Vielen Dank für die Trinkgelder, wir werden diese unter den Kollegen verteilen             |")
+            println("===========================================================================================|")
+            println("===========================================================================================|")
+            groupiers.add(newGroupier)
             round = 0
         }
     }
@@ -180,7 +151,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
         println("Folgende Spieler verbleiben")
         println("---------------------------")
         for (player in players) {
-            println("${player.name}")
+            println(player.name)
         }
     }
 
@@ -284,7 +255,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
         println("Folgende Spieler verbleiben")
         println("---------------------------")
         for (player in playersHighroller) {
-            println("${player.name}")
+            println(player.name)
         }
     }
 }
