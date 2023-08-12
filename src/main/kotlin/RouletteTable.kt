@@ -51,9 +51,9 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
 
         rouletteTable.infoOfNumbers(rouletteNumber)                             //Methode für die Rückmeldung ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
         println("\n")
-        rouletteNumbers(getInfo(rouletteNumber))                                //Hinzufügen der Nummer zur Liste der letzen 10 Zahlen wobei die 1 rausfällt und die neue Zahl ans Ende gesetzt wird
+        rouletteNumbers1(getInfo(rouletteNumber))                                //Hinzufügen der Nummer zur Liste der letzen 10 Zahlen wobei die 1 rausfällt und die neue Zahl ans Ende gesetzt wird
         println("Anzeige der letzten 10 Zahlen, ")
-        printNumbers(listOfLastNumbers)                                         //Anzeigen der bearbeiteten Liste untereinander
+        printNumbers(listOfLastNumbers1)                                         //Anzeigen der bearbeiteten Liste untereinander
         println("")
 
         for (player in players) {
@@ -89,9 +89,9 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
 
         rouletteTable.infoOfNumbers(rouletteNumber)                             //Methode für die Rückmeldung ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
         println("\n")
-        rouletteNumbers(getInfo(rouletteNumber))                                //Hinzufügen der Nummer zur Liste der letzen 10 Zahlen wobei die 1 rausfällt und die neue Zahl ans Ende gesetzt wird
+        rouletteNumbers2(getInfo(rouletteNumber))                                //Hinzufügen der Nummer zur Liste der letzen 10 Zahlen wobei die 1 rausfällt und die neue Zahl ans Ende gesetzt wird
         println("Anzeige der letzten 10 Zahlen, ")
-        printNumbers(listOfLastNumbers)                                         //Anzeigen der bearbeiteten Liste untereinander
+        printNumbers(listOfLastNumbers2)                                         //Anzeigen der bearbeiteten Liste untereinander
         println("")
 
         for (player in players) {
@@ -181,10 +181,17 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
     }
 
     //Liste mit den gefallenen Kugeln plus die neue und die erste wird entfernt
-    fun rouletteNumbers(getInfo: String): MutableList<String> {
-        listOfLastNumbers.add(getInfo)
-        listOfLastNumbers.removeFirst()                                  //Änderung mit if > 10 ersten Eintrag entfernen
-        return listOfLastNumbers
+    fun rouletteNumbers1(getInfo: String): MutableList<String> {
+        listOfLastNumbers1.add(getInfo)
+        listOfLastNumbers1.removeFirst()                                  //Änderung mit if > 10 ersten Eintrag entfernen
+        return listOfLastNumbers1
+    }
+
+    //HighrollerListe mit den gefallenen Kugeln plus die neue und die erste wird entfernt
+    fun rouletteNumbers2(getInfo: String): MutableList<String> {
+        listOfLastNumbers2.add(getInfo)
+        listOfLastNumbers2.removeFirst()                                  //Änderung mit if > 10 ersten Eintrag entfernen
+        return listOfLastNumbers2
     }
 
     fun infoOfNumbers(rouletteNumbers: Int) {
