@@ -4,10 +4,10 @@ class CasinoHighrollerEmployees(tableNumber: Int, name: String, job: String, age
             println("Mein Name ist $name und ich bin heute Ihr $job an Tisch Nummer $tableNumber")
         }*/
 
-    fun changeHighrollerGroupier(highroller: MutableList<CasinoHighrollerEmployees>, rouletteTable: RouletteTable) {
+    fun changeHighrollerGroupier(highrollerGroupiers: MutableList<CasinoHighrollerEmployees>, rouletteTable: RouletteTable) {
         if (roundHighroller == 7) {
-            var newGroupier = highroller.first()
-            highroller.remove(newGroupier)
+            var newGroupier = highrollerGroupiers.first()
+            highrollerGroupiers.remove(newGroupier)
             println("=================================================================================================|")
             println("=================================================================================================|")
             println("ACHTUNG es findet ein Croupier Wechsel statt, bitte keine Einsätze im Moment                     |")
@@ -17,7 +17,7 @@ class CasinoHighrollerEmployees(tableNumber: Int, name: String, job: String, age
             println("Vielen Dank für die Trinkgelder, wir werden diese unter den Kollegen verteilen                   |")
             println("=================================================================================================|")
             println("=================================================================================================|")
-            highroller.add(newGroupier)
+            highrollerGroupiers.add(newGroupier)
             roundHighroller = 0
         }
     }
