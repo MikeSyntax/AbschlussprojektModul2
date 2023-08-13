@@ -29,7 +29,8 @@ fun main() {
     println("")
 
     var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha Grammel", 0.00, 500000.00)                       //Vorbereitung für den zweiten Tisch
-    var sascha: CasinoEmployees = CasinoEmployees(2, "Sascha Grammel", "Croupier", 45)
+    var sascha: CasinoHighrollerEmployees = CasinoHighrollerEmployees(2, "Sascha Grammel", "Croupier", 45)
+    var christian: CasinoHighrollerEmployees = CasinoHighrollerEmployees(2,"Christian", "Croupier", 57)
     rouletteAtTable2.printInfo()
 
     var rouletteGames: RouletteGames = RouletteGames(1)                         //Instanziierung der RouletteGames an Tisch 1
@@ -47,7 +48,7 @@ fun main() {
     val players: MutableList<CasinoPlayer> = mutableListOf(klaus, tatjana, mike, salva, claudia)
     val playersHighroller: MutableList<CasinoPlayer> = mutableListOf(gonzales, silvio)
     val groupiers: MutableList<CasinoEmployees> = mutableListOf(rainer, ernst, klausDieter)
-
+    val highroller : MutableList<CasinoHighrollerEmployees> = mutableListOf(christian, sascha)
     println("")
 
     for (player in players) {
@@ -70,7 +71,9 @@ fun main() {
         rouletteAtTable2.removePlayerHighrollerWithNoMoney(playersHighroller)
 
         round++
-        rouletteAtTable1.changeGroupier(groupiers, rouletteAtTable1, klausDieter)
+        klausDieter.changeGroupier(groupiers, rouletteAtTable1)
+        roundHighroller++
+        sascha.changeHighrollerGroupier(highroller, rouletteAtTable2)
 
     } while (goOn1 || goOn2)
 

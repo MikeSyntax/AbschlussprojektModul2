@@ -111,23 +111,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
         println("")
     }
 
-    fun changeGroupier(groupiers: MutableList<CasinoEmployees>, rouletteTable: RouletteTable, casinoEmployees: CasinoEmployees) {
-        if (round == 5) {
-            var newGroupier = groupiers.first()
-            groupiers.remove(newGroupier)
-            println("===========================================================================================|")
-            println("===========================================================================================|")
-            println("ACHTUNG es findet ein Croupier Wechsel statt, bitte keine Einsätze im Moment               |")
-            println("Willkommen am Tisch ${rouletteTable.tableNumber} mein Name ist ${newGroupier.name} und ich bin für die nächsten Runden Ihr ${casinoEmployees.job}|")
-            rouletteTable.countBank()
-            rouletteTable.countTip()
-            println("Vielen Dank für die Trinkgelder, wir werden diese unter den Kollegen verteilen             |")
-            println("===========================================================================================|")
-            println("===========================================================================================|")
-            groupiers.add(newGroupier)
-            round = 0
-        }
-    }
+
 
     fun removePlayerWithNoMoney(players: MutableList<CasinoPlayer>) {                                           //Schleife falls ein Spieler kein Geld mehr hat
         var removePlayer = players.filter { player -> player.cash <= 0 }
