@@ -27,6 +27,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                Thread.sleep(1000)
                 return "${(winAmount - yourAmount)}€ gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
             }
             (redNumbers.contains(number) && redBlack == 1) -> {
@@ -36,6 +37,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                Thread.sleep(1000)
                 return "${(winAmount - yourAmount)}€ gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
 
             }
@@ -46,6 +48,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                Thread.sleep(1000)
                 return "${(winAmount - yourAmount)}€ gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
 
             }
@@ -56,6 +59,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                Thread.sleep(1000)
                 return "${(winAmount - yourAmount)}€ gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
 
             }
@@ -66,6 +70,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                Thread.sleep(1000)
                 return "${(winAmount - yourAmount)}€ gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
 
             }
@@ -76,6 +81,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                Thread.sleep(1000)
                 return "${(winAmount - yourAmount)}€ gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
 
             }
@@ -86,6 +92,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                Thread.sleep(1000)
                 return "${(winAmount - yourAmount)}€ gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
 
             }
@@ -96,6 +103,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                Thread.sleep(1000)
                 return "${(winAmount - yourAmount)}€ gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
 
             }
@@ -106,6 +114,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                Thread.sleep(1000)
                 return "${(winAmount - yourAmount)}€ gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
 
             }
@@ -116,14 +125,17 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 cash -= tipAmount
                 rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                Thread.sleep(1000)
                 return "${(winAmount - yourAmount)}€ gewonnen! Neuer Cashbestand abzügl. ${round(tipAmount*100)/100}€ Trinkgeld ergibt ${round(cash*100)/100}€"
 
             }
             (skipRound) -> {
+                Thread.sleep(1000)
                 return  "für diese Runde ausgesetzt"
             }
 
             else -> {
+                Thread.sleep(1000)
                 return "leider verloren"
             }
         }
@@ -141,7 +153,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
 
     fun introduce() {
         println("Hallo, ich bin $name und spiele an Tisch $tableNumber")
-        Thread.sleep(500)
+        Thread.sleep(1000)
     }
 
 }

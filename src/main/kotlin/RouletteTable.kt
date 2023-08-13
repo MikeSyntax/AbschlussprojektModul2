@@ -74,9 +74,9 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
     }
 
     //Hauptmethode zum Spielen des Highroller Tisches mit Eingabe des Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der der Variablen mit den gespeicherten Spielerwahlen
-    fun goPlayHighroler(playersHighroller: MutableList<CasinoPlayer>, rouletteGames: RouletteGames, rouletteTable: RouletteTable) {
+    fun goPlayHighroler(playersHighroller: MutableList<CasinoPlayer>, rouletteGamesHighroller: RouletteGames, rouletteTable: RouletteTable) {
 
-        for (player in playersHighroller) { rouletteGames.games(player, rouletteTable)                           //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
+        for (player in playersHighroller) { rouletteGamesHighroller.games(player, rouletteTable)                           //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
             println("")
         }
 
