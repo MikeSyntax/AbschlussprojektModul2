@@ -141,6 +141,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
 
     fun introduce() {
         println("Hallo, ich bin $name und spiele an Tisch $tableNumber")
+        Thread.sleep(500)
     }
 
 }
