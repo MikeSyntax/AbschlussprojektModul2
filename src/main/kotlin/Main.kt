@@ -54,7 +54,7 @@ fun main() {
     println("")
     println("Hier wird die Einlasskontrolle durchgeführt und das Alter geprüft")
     for (player in playersWantEntrance) {
-        entrance.entranceControl(player, playersWantEntrance, players)
+        entrance.entranceControl(player, players)
     }
 
     println("")

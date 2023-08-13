@@ -69,8 +69,8 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
         for (player in players) {
             player.reset()                                                      //zurücksezten der Variablen in CasinoPlayer für das neue Spiel
         }
-
         println("")
+
     }
 
     //Hauptmethode zum Spielen des Highroller Tisches mit Eingabe des Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der der Variablen mit den gespeicherten Spielerwahlen
