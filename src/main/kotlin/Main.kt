@@ -18,18 +18,16 @@ fun main() {
 
 
 
-
-
-    var rouletteAtTable1: RouletteTable = RouletteTable(1, "Klaus Dieter", 0.00)
-    var klausDieter: CasinoEmployees = CasinoEmployees(1, "Klaus Dieter", "Croupier", 36)
+    var rouletteAtTable1: RouletteTable = RouletteTable(1, "Dieter", 0.00)
+    var dieter: CasinoEmployees = CasinoEmployees(1, "Dieter", "Croupier", 36)
     var rainer: CasinoEmployees = CasinoEmployees(1,"Rainer", "Croupier", 48)
     var ernst: CasinoEmployees = CasinoEmployees(1,"Ernst", "Croupier", 31)
     rouletteAtTable1.printInfo()
 
     println("")
 
-    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha Grammel", 0.00, 500000.00)                       //Vorbereitung für den zweiten Tisch
-    var sascha: CasinoHighrollerEmployees = CasinoHighrollerEmployees(2, "Sascha Grammel", "Croupier", 45)
+    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 500000.00)                       //Vorbereitung für den zweiten Tisch
+    var sascha: CasinoHighrollerEmployees = CasinoHighrollerEmployees(2, "Sascha", "Croupier", 45)
     var christian: CasinoHighrollerEmployees = CasinoHighrollerEmployees(2,"Christian", "Croupier", 57)
     rouletteAtTable2.printInfo()
 
@@ -47,7 +45,7 @@ fun main() {
 
     val players: MutableList<CasinoPlayer> = mutableListOf(klaus, tatjana, mike, salva, claudia)
     val playersHighroller: MutableList<CasinoPlayer> = mutableListOf(gonzales, silvio)
-    val groupiers: MutableList<CasinoEmployees> = mutableListOf(rainer, ernst, klausDieter)
+    val groupiers: MutableList<CasinoEmployees> = mutableListOf(rainer, ernst, dieter)
     val highroller : MutableList<CasinoHighrollerEmployees> = mutableListOf(christian, sascha)
     println("")
 
@@ -71,7 +69,7 @@ fun main() {
         rouletteAtTable2.removePlayerHighrollerWithNoMoney(playersHighroller)
 
         round++
-        klausDieter.changeGroupier(groupiers, rouletteAtTable1)
+        dieter.changeGroupier(groupiers, rouletteAtTable1)
         roundHighroller++
         sascha.changeHighrollerGroupier(highroller, rouletteAtTable2)
 
