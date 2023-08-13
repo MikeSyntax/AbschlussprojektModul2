@@ -36,16 +36,16 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
     }
 
     //Hauptmethode zum Spielen mit Eingabe des Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der der Variablen mit den gespeicherten Spielerwahlen
-    fun goPlay(players: List<CasinoPlayer>, rouletteGames: RouletteGames, rouletteTable: RouletteTable) {
+    fun goPlay(players: MutableList<CasinoPlayer>, rouletteGames: RouletteGames, rouletteTable: RouletteTable) {
 
-        for (player in players) { rouletteGames.games(player, rouletteTable)                           //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
+        for (player in players) {
+            rouletteGames.games(player, rouletteTable)                           //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
             println("")
         }
 
         println("==================================")
         print("Nichts geht mehr")
-        var rouletteNumber =
-            rouletteTable.rollingNumbers()                     //das Rouletterad am Tisch 1 dreht sich und gibt eine zufällige Zahl als tableNumber zurück welche in der Klasse Roulette ermittelt wird
+        var rouletteNumber = rouletteTable.rollingNumbers()                     //das Rouletterad am Tisch 1 dreht sich und gibt eine zufällige Zahl als tableNumber zurück welche in der Klasse Roulette ermittelt wird
         println(" und es ist die $rouletteNumber")
         println("==================================")
 
@@ -74,16 +74,15 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
     }
 
     //Hauptmethode zum Spielen des Highroller Tisches mit Eingabe des Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der der Variablen mit den gespeicherten Spielerwahlen
-    fun goPlayHighroler(players: List<CasinoPlayer>, rouletteGames: RouletteGames, rouletteTable: RouletteTable) {
+    fun goPlayHighroler(playersHighroller: MutableList<CasinoPlayer>, rouletteGames: RouletteGames, rouletteTable: RouletteTable) {
 
-        for (player in players) { rouletteGames.games(player, rouletteTable)                           //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
+        for (player in playersHighroller) { rouletteGames.games(player, rouletteTable)                           //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
             println("")
         }
 
         println("==================================")
         print("Nichts geht mehr")
-        var rouletteNumber =
-            rouletteTable.rollingNumbers()                     //das Rouletterad am Tisch 1 dreht sich und gibt eine zufällige Zahl als tableNumber zurück welche in der Klasse Roulette ermittelt wird
+        var rouletteNumber = rouletteTable.rollingNumbers()                     //das Rouletterad am Tisch 1 dreht sich und gibt eine zufällige Zahl als tableNumber zurück welche in der Klasse Roulette ermittelt wird
         println(" und es ist die $rouletteNumber")
         println("==================================")
 
@@ -94,7 +93,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
         printNumbers(listOfLastNumbers2)                                         //Anzeigen der bearbeiteten Liste untereinander
         println("")
 
-        for (player in players) {
+        for (player in playersHighroller) {
             println("${player.name} hat ${player.getWin(rouletteNumber, rouletteTable)}")      //Gewinne jedes einzelnen Spielers prüfen
         }
 
@@ -104,7 +103,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
         println("")
         println("Machen Sie Ihre Einsätze, neues Spiel, neues Glück")
 
-        for (player in players) {
+        for (player in playersHighroller) {
             player.reset()                                                      //zurücksezten der Variablen in CasinoPlayer für das neue Spiel
         }
 

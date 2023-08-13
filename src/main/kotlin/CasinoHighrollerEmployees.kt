@@ -1,5 +1,8 @@
 class CasinoHighrollerEmployees(tableNumber: Int, name: String, job: String, age: Int): CasinoEmployees(tableNumber, name, job, age) {
 
+    /* init {
+            println("Mein Name ist $name und ich bin heute Ihr $job an Tisch Nummer $tableNumber")
+        }*/
 
     fun changeHighrollerGroupier(highroller: MutableList<CasinoHighrollerEmployees>, rouletteTable: RouletteTable) {
         if (roundHighroller == 7) {

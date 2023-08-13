@@ -1,6 +1,6 @@
 import kotlin.math.round
 
-class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var drink: Boolean, var tip: Double): Casino(tableNumber){
+class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var drink: Boolean, var tip: Double, var age: Int): Casino(tableNumber){
 
     var yourNumber: Int = -1                                                                 //Hier werden die gewählten Zahlen der Spieler abgespeichert um später die Gewinne zu berechnen
     var yourAmount: Int = -1
@@ -14,7 +14,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
         println("Der Spieler $name wurde initialisiert. $name hat $cash € und er hat ein Getränk $drink")
     }*/
 
-    constructor(tableNumber: Int, name: String, cash: Double, drink: Boolean, tip: Double, highRoller: Boolean) : this(tableNumber, name, cash, drink, tip) {
+    constructor(tableNumber: Int, name: String, cash: Double, drink: Boolean, tip: Double, age: Int, highRoller: Boolean) : this(tableNumber, name, cash, drink, tip, age) {
         //println("Spieler $name wurde mit dem sekundären Konstruktor initialisiert und ist ein Highroller $highRoller")
     }
 

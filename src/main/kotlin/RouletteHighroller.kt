@@ -103,45 +103,45 @@ class RouletteHighroller(tableNumber: Int): RouletteGames(tableNumber) {
         player.skipRound = true
     }
 
-    override fun games(player: CasinoPlayer, rouletteTable: RouletteTable) {
-        println("\nWillkommen ${player.name} am Roulette Tisch 1, du kannst zwischen folgenden Spielen am Roulette wählen, triff bitte jetzt deine Auswahl")
+    override fun games(playerHighroller: CasinoPlayer, rouletteTable: RouletteTable) {
+        println("\nWillkommen ${playerHighroller.name} am Roulette Tisch 2, du kannst zwischen folgenden Spielen am Roulette wählen, triff bitte jetzt deine Auswahl")
         println("| [1] = Auf Zahl setzen | [2] = auf Gerade/Ungerade setzen | [3] = auf Rot oder Schwarz setzen |\n" +
                 "| [4] = auf 1.,2. oder 3.Drittel setzen | [5] = auf 1. oder 2. Hälfte setzen | [6] = Aussetzen |")
         try {
             var choice = readln().toInt()
             when (choice) {
                 1 -> {
-                    playerNumber(player, rouletteTable)                             //Auf Zahlen setzen
+                    playerNumber(playerHighroller, rouletteTable)                             //Auf Zahlen setzen
                 }
 
                 2 -> {
-                    playerRedOrBlack(player, rouletteTable)                         //Auf Rot oder Schwarz setzen
+                    playerRedOrBlack(playerHighroller, rouletteTable)                         //Auf Rot oder Schwarz setzen
                 }
 
                 3 -> {
-                    playerEvenOrNotEven(player, rouletteTable)                      //Auf Gerade oder Ungerade setzten
+                    playerEvenOrNotEven(playerHighroller, rouletteTable)                      //Auf Gerade oder Ungerade setzten
                 }
 
                 4 -> {
-                    playerThird(player, rouletteTable)                              //Auf 1.2.oder 3.Drittel setzen
+                    playerThird(playerHighroller, rouletteTable)                              //Auf 1.2.oder 3.Drittel setzen
                 }
 
                 5 -> {
-                    playerFirstOrSecondHalf(player, rouletteTable)                  //Auf 1. oder 2. Hälfte setzen
+                    playerFirstOrSecondHalf(playerHighroller, rouletteTable)                  //Auf 1. oder 2. Hälfte setzen
                 }
 
                 6 -> {
-                    playerSkipRound(player, rouletteTable)                          //Eine Runde aussetzen
+                    playerSkipRound(playerHighroller, rouletteTable)                          //Eine Runde aussetzen
                 }
 
                 else -> {
                     println("ungültige Eingabe, bitte gib eine Zahl von [1] - [6] ein") //Falls ungültige Eingabe, neue Eingabe starten
-                    games(player, rouletteTable)
+                    games(playerHighroller, rouletteTable)
                 }
             }
         } catch (ausnahme: Exception) {
             println("Diese Eingabe war falsch, es wird automatisch per Default auf Zahl gesetzt")
-            playerNumber(player, rouletteTable)
+            playerNumber(playerHighroller, rouletteTable)
         }
     }
 }

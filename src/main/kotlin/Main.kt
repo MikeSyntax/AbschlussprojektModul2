@@ -34,27 +34,37 @@ fun main() {
     var rouletteGames: RouletteGames = RouletteGames(1)                         //Instanziierung der RouletteGames an Tisch 1
     var rouletteGamesHighroller: RouletteHighroller = RouletteHighroller(2)     //Instanziierung der RouletteGames an Tisch 2
 
-    var klaus: CasinoPlayer = CasinoPlayer(1, "Klaus", 500.00, true, 0.01)
-    var tatjana: CasinoPlayer = CasinoPlayer(1, "Tatjana", 500.00, true, 0.01)
-    var mike: CasinoPlayer = CasinoPlayer(1, "Mike", 500.00, true, 0.02)
-    var salva: CasinoPlayer = CasinoPlayer(1, "Salva", 500.00, false, 0.04)
-    var claudia: CasinoPlayer = CasinoPlayer(1, "Claudia", 500.00, false, 0.03)
+    var klaus: CasinoPlayer = CasinoPlayer(1, "Klaus", 500.00, true, 0.01,23)
+    var tatjana: CasinoPlayer = CasinoPlayer(1, "Tatjana", 500.00, true, 0.01,59)
+    var mike: CasinoPlayer = CasinoPlayer(1, "Mike", 500.00, true, 0.02,45)
+    var salva: CasinoPlayer = CasinoPlayer(1, "Salva", 500.00, false, 0.04,71)
+    var claudia: CasinoPlayer = CasinoPlayer(1, "Claudia", 500.00, false, 0.03,26)
+    var enrico: CasinoPlayer = CasinoPlayer(1,"Enrico", 50.00, false, 0.00, 19)
 
-    var gonzales: CasinoPlayer = CasinoPlayer(2, "Gonzales", 10000.00, true, 0.1, true)
-    var silvio: CasinoPlayer = CasinoPlayer(2, "Silvio", 10000.00, true, 0.08, true)
+    var gonzales: CasinoPlayer = CasinoPlayer(2, "Gonzales", 10000.00, true, 0.1, 26,true)
+    var silvio: CasinoPlayer = CasinoPlayer(2, "Silvio", 10000.00, true, 0.08, 65,true)
 
-    val players: MutableList<CasinoPlayer> = mutableListOf(klaus, tatjana, mike, salva, claudia)
+    val entrance : CasinoEntranceControl = CasinoEntranceControl()
+    val playersWantEntrance: MutableList<CasinoPlayer> = mutableListOf(klaus, tatjana, mike, salva, claudia, enrico)
+    val players: MutableList<CasinoPlayer> = mutableListOf()
     val playersHighroller: MutableList<CasinoPlayer> = mutableListOf(gonzales, silvio)
     val groupiers: MutableList<CasinoEmployees> = mutableListOf(rainer, ernst, dieter)
-    val highroller : MutableList<CasinoHighrollerEmployees> = mutableListOf(christian, sascha)
-    println("")
+    val highrollerGroupiers : MutableList<CasinoHighrollerEmployees> = mutableListOf(christian, sascha)
 
+    println("")
+    println("Hier wird die Einlasskontrolle durchgeführt und das Alter geprüft")
+    for (player in playersWantEntrance) {
+        entrance.entranceControl(player, playersWantEntrance, players)
+    }
+
+    println("")
+    println("Tisch Nummer ${rouletteAtTable1.tableNumber}")
     for (player in players) {
         player.introduce()
     }
 
     println("")
-
+    println("Tisch Nummer ${rouletteAtTable2.tableNumber}")
     for (player in playersHighroller) {
         player.introduce()
     }
@@ -71,7 +81,7 @@ fun main() {
         round++
         dieter.changeGroupier(groupiers, rouletteAtTable1)
         roundHighroller++
-        sascha.changeHighrollerGroupier(highroller, rouletteAtTable2)
+        sascha.changeHighrollerGroupier(highrollerGroupiers, rouletteAtTable2)
 
     } while (goOn1 || goOn2)
 

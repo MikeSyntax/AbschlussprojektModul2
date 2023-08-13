@@ -1,5 +1,8 @@
 open class CasinoEmployees(tableNumber: Int, var name: String, var job: String, var age: Int): RouletteGames(tableNumber){
 
+    /* init {
+        println("Mein Name ist $name und ich bin heute Ihr $job an Tisch Nummer $tableNumber")
+    }*/
 
     fun changeGroupier(groupiers: MutableList<CasinoEmployees>, rouletteTable: RouletteTable) {
         if (round == 5) {
