@@ -1,6 +1,6 @@
 import kotlin.math.round
 
-class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmployees: Double, var bankTable: Double, var mindestEinsatz: Double, var maximalerEinsatz: Double): Casino(tableNumber) {
+class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmployees: Double, var bankTable: Double, var minEinsatz: Double, var maximalerEinsatz: Double): Casino(tableNumber) {
 
     /* init {
         println("Das Roulette wurde mit der Tisch Nr. $tableNumber instanziiert")
@@ -12,13 +12,13 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
 
     }
 
-    //Methode zur Ausgabe aller Infos über den Roulettetisch
+    //Methode zur Ausgabe aller Informationen über den Roulettetisch
     fun printInfo() {
-        println("Tischnummer: ${FontColors.YELLOW.type}$tableNumber${FontColors.COLOREND.type} ")
-        println("Croupier Name: ${FontColors.YELLOW.type}$croupierName${FontColors.COLOREND.type} ")
-        println("Trinkgeldkasse : ${FontColors.YELLOW.type}$tipForEmployees€${FontColors.COLOREND.type} ")
-        println("Bank am Tisch : ${FontColors.YELLOW.type}$bankTable€${FontColors.COLOREND.type} ")
-        println("Mindesteinsatz: ${FontColors.YELLOW.type}$mindestEinsatz€${FontColors.COLOREND.type} ")
+        println("Tischnummer: ${FontColors.YELLOW.type}$tableNumber${FontColors.COLOREND.type}")
+        println("Croupier Name: ${FontColors.YELLOW.type}$croupierName${FontColors.COLOREND.type}")
+        println("Trinkgeldkasse : ${FontColors.YELLOW.type}$tipForEmployees€${FontColors.COLOREND.type}")
+        println("Bank am Tisch : ${FontColors.YELLOW.type}$bankTable€${FontColors.COLOREND.type}")
+        println("Mindesteinsatz: ${FontColors.YELLOW.type}$minEinsatz€${FontColors.COLOREND.type}")
         println("Maximaleinsatz: ${FontColors.YELLOW.type}$maximalerEinsatz€${FontColors.COLOREND.type}")
         Thread.sleep(1000)
     }
@@ -38,7 +38,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         return (0..36).random()
     }
 
-    //Hauptmethode zum Spielen mit Eingabe des Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der Variablen mit der gespeicherten Spielerauswahl
+    //Hauptmethode zum Spielen mit Eingabe der Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der Variablen mit der gespeicherten Spielerauswahl
     fun goPlay(players: MutableList<CasinoPlayer>, rouletteGames: RouletteGames, rouletteTable: RouletteTable) {
 
         for (player in players) {
@@ -153,7 +153,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         return numberInfoMap[number]
     }
 
-    //Funktion Rot oder Schwarz die Info abholen und entsprechende Ausgabe
+    //Funktion rot/schwarz und gerade/ungerade, die Informationen abholen und entsprechende Ausgabe
     fun getInfo(rouletteNumber: Int): String {
         val numberInfo = getNumberInfo(rouletteNumber)
         if (numberInfo != null) {
@@ -225,7 +225,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         }
     }
 
-    fun removePlayerHighRollerWithNoMoney(playersHighRoller: MutableList<CasinoPlayer>) {                                           //Schleife falls ein Spieler kein Geld mehr hat
+    fun removePlayerHighRollerWithNoMoney(playersHighRoller: MutableList<CasinoPlayer>) {                                           //Schleife, falls ein Spieler kein Geld mehr hat
         var removePlayer = playersHighRoller.filter { player -> player.cash <= 0 }
 
         for (player in removePlayer) {

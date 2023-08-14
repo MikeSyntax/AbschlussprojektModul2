@@ -11,7 +11,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
     var evenOrNot: Int = -1     // Wahl von Gerade (0) oder Ungerade (1)
     var thirdThird: Int = -1    // Wahl von Erstes Drittel (0), Zweites Drittel (1) oder Drittes Drittel (2)
     var half: Int = -1          // Wahl von Erste Hälfte (0) oder Zweite Hälfte (1)
-    var skipRound = false       // Flag, um eine Runde zu überspringen
+    var skipRound = false       // true/false, um eine Runde zu überspringen
+    var numberFreeChoice: Int = -1 // Wahl einer vom  Nutzer gewählten beliebigen Zahl
     /*init {
         println("Der Spieler $name wurde initialisiert. $name hat $cash € und er hat ein Getränk $drink")
     }*/
@@ -179,6 +180,20 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 return  "für diese Runde ausgesetzt"
             }
 
+            // Wenn die gewählte Zahl mit der vom Spieler gewählten Zahl übereinstimmt
+            (yourNumber == numberFreeChoice) -> {
+                // Erhöhe den Kontostand des Spielers um das Gewinnbetrag * 36
+                cash += (yourAmount * 36)
+                var winAmount = yourAmount * 36
+                var tipAmount = (winAmount - yourAmount) * tip
+                cash -= tipAmount
+                // Trinkgeld für die Angestellten erhöhen und den Bankbetrag der Tabelle reduzieren
+                rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
+                rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                Thread.sleep(1000)
+                // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
+                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount*100)/100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash*100)/100}€${FontColors.COLOREND.type}"
+            }
             // Andernfalls (wenn keine der vorherigen Bedingungen erfüllt ist)
             else -> {
                 Thread.sleep(1000)
@@ -195,6 +210,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
         thirdThird = -1
         half = -1
         skipRound = false
+        numberFreeChoice = -1
     }
 
     // Gibt eine Einführungsnachricht für den Spieler aus

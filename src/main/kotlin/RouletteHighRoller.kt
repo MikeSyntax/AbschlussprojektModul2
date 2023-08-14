@@ -98,15 +98,35 @@ class RouletteHighRoller(tableNumber: Int): RouletteGames(tableNumber) {
         }
     }
 
+    fun playerFreeChoiceNumber(player: CasinoPlayer, rouletteTable: RouletteTable) {
+        println("Bitte wähle eine Zahl zwischen 0-36")
+        var numberFreeChoice = readln()?.toIntOrNull()
+        println("Bitte gib jetzt den Einsatz ein, den du setzen möchtest")
+        var amount = readln()?.toIntOrNull()
+        if (amount != null && amount > 0 && amount <= player.cash) {
+            player.yourNumber = numberFreeChoice!!
+            player.yourAmount = amount
+            rouletteTable.bankTable +=  amount
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die ${FontColors.RED.type}$numberFreeChoice${FontColors.COLOREND.type} gesetzt,")
+            player.cash -= amount
+            println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
+        } else {
+            println("Der Einsatz ist leider höher als dein Cashbestand ${player.cash}, bitte versuche es nochmal ")
+            playerFreeChoiceNumber(player, rouletteTable)
+        }
+    }
+
     override fun playerSkipRound(playerHighRoller: CasinoPlayer, rouletteTable: RouletteTable){
         println("Spieler ${FontColors.RED.type}${playerHighRoller.name}${FontColors.COLOREND.type} setzt eine Runde aus.")
         playerHighRoller.skipRound = true
     }
 
     override fun games(playerHighRoller: CasinoPlayer, rouletteTable: RouletteTable) {
-        println("\nWillkommen ${playerHighRoller.name} am Roulette Tisch 2, du kannst zwischen folgenden Spielen wählen, triff deine Auswahl")
+        println("\nWeiter geht es mit ${playerHighRoller.name} am Roulette Tisch 2, du kannst zwischen\n" + "folgenden Spielen wählen, triff jetzt deine Auswahl:")
         println("[${FontColors.YELLOW.type}1${FontColors.COLOREND.type}] = Auf Zahl setzen\n[${FontColors.YELLOW.type}2${FontColors.COLOREND.type}] = auf Rot oder Schwarz setzen\n[${FontColors.YELLOW.type}3${FontColors.COLOREND.type}] = auf Gerade/Ungerade setzen" +
-                "\n[${FontColors.YELLOW.type}4${FontColors.COLOREND.type}] = auf 1.,2. oder 3.Drittel setzen\n[${FontColors.YELLOW.type}5${FontColors.COLOREND.type}] = auf 1. oder 2. Hälfte setzen\n[${FontColors.YELLOW.type}6${FontColors.COLOREND.type}] = Aussetzen")
+                "\n[${FontColors.YELLOW.type}4${FontColors.COLOREND.type}] = auf 1.,2. oder 3.Drittel setzen\n[${FontColors.YELLOW.type}5${FontColors.COLOREND.type}] = auf 1. oder 2. Hälfte setzen\n[${FontColors.YELLOW.type}6${FontColors.COLOREND.type}] = Aussetzen" +
+                    "\n[${FontColors.YELLOW.type}7${FontColors.COLOREND.type}] = Freie Zahlenauswahl und Betrag")
+
         try {
             var choice = readln().toInt()
             when (choice) {
@@ -132,6 +152,10 @@ class RouletteHighRoller(tableNumber: Int): RouletteGames(tableNumber) {
 
                 6 -> {
                     playerSkipRound(playerHighRoller, rouletteTable)                          //Eine Runde aussetzen
+                }
+
+                7 -> {
+                    playerFreeChoiceNumber(playerHighRoller, rouletteTable)                   //Freie Nummernwahl und Betragswahl durch readln Eingabe
                 }
 
                 else -> {
