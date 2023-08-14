@@ -1,12 +1,12 @@
 import kotlin.math.round
 
-class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmployees: Double, var bankTable: Double): Casino(tableNumber) {
+class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmployees: Double, var bankTable: Double, var mindestEinsatz: Double, var maximalerEinsatz: Double): Casino(tableNumber) {
 
     /* init {
         println("Das Roulette wurde mit der Tisch Nr. $tableNumber instanziiert")
     }*/
 
-    constructor(tableNumber: Int, croupierName: String, tipForEmployees: Double) : this(tableNumber, croupierName, tipForEmployees, 100000.00) {
+    constructor(tableNumber: Int, croupierName: String, tipForEmployees: Double) : this(tableNumber, croupierName, tipForEmployees, 100000.00, 10.00, 1000.00) {
 
         // println("Das Roulette für Tisch Nr. $tableNumber wurde mit dem sekundären Konstruktor instanziiert")
 
@@ -17,7 +17,10 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         print("Tischnummer: $tableNumber ")
         print("Croupier Name: $croupierName ")
         print("Trinkgeldkasse : $tipForEmployees€ ")
-        println("Bank am Tisch : $bankTable€")
+        print("Bank am Tisch : $bankTable€ ")
+        print("Mindesteinsatz: $mindestEinsatz€ ")
+        println("Maximaleinsatz: $maximalerEinsatz€")
+        Thread.sleep(1000)
     }
 
     //Methode zum Anzeigen des Standes der Bank am Roulettetisch
@@ -145,7 +148,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         }
     }
 
-    //Funktion rot/schwarz gerade/ungerade und zero - Info aus der Map unter NumberInfo.kt
+    //Funktion rot/schwarz gerade/ungerade und zero - Info aus der Map unter NumberInfo
     fun getNumberInfo(number: Int): NumberInfo? {
         return numberInfoMap[number]
     }

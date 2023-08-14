@@ -1,6 +1,8 @@
+import java.awt.Font
+
 fun main() {
     println("")
-    println("          d8888b   d8888b  d88888b          d8888b     d8b    d8b   db  db   dD        \n" +
+    println("${FontColors.GREEN.type}          d8888b   d8888b  d88888b          d8888b     d8b    d8b   db  db   dD        \n" +
             "          88   8D    88    88               88   8D  d8   8b  888o  88  88  8P         \n" +
             "          88   88    88    88888            88oooY   88ooo88  88V8o 88  88 8P          \n" +
             "          88   88    88    88               88   b   88   88  88 V8o88  88 8b          \n" +
@@ -14,10 +16,10 @@ fun main() {
             "          88  888  88       Y8   I8I   88    88    88 V8o88  88 V8o88     88           \n" +
             "          88   8   88        8b d8 8b d8     88    88  V888  88  V888     88           \n" +
             "           Y888P   Y88888P    8b8   8d8    Y8888P  VP   V8P  VP   V8P     YP           \n" +
-            "                                                                                         ")
+            "                                                                                         ${FontColors.COLOREND.type}")
 
 
-
+    Thread.sleep(1000)
     var rouletteAtTable1: RouletteTable = RouletteTable(1, "Dieter", 0.00)
     var dieter: CasinoEmployees = CasinoEmployees(1, "Dieter", "Croupier", 36)
     var rainer: CasinoEmployees = CasinoEmployees(1,"Rainer", "Croupier", 48)
@@ -26,7 +28,7 @@ fun main() {
 
     println("")
 
-    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 500000.00)                       //Vorbereitung für den zweiten Tisch
+    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 500000.00, 1000.00, 10000.00)                       //Vorbereitung für den zweiten Tisch
     var sascha: CasinoHighRollerEmployees = CasinoHighRollerEmployees(2, "Sascha", "Croupier", 45)
     var christian: CasinoHighRollerEmployees = CasinoHighRollerEmployees(2,"Christian", "Croupier", 57)
     rouletteAtTable2.printInfo()
@@ -45,7 +47,7 @@ fun main() {
     var silvio: CasinoPlayer = CasinoPlayer(2, "Silvio", 10000.00, true, 0.08, 65,true)
 
     val entrance : CasinoEntranceControl = CasinoEntranceControl()
-    val playersWantEntrance: MutableList<CasinoPlayer> = mutableListOf(klaus, tatjana, mike, salva, claudia, enrico)
+    val playersWantEntrance: MutableList<CasinoPlayer> = mutableListOf(klaus, tatjana, enrico, mike, salva, claudia)
     val players: MutableList<CasinoPlayer> = mutableListOf()
     val playersHighRoller: MutableList<CasinoPlayer> = mutableListOf(gonzales, silvio)
     val croupiers: MutableList<CasinoEmployees> = mutableListOf(rainer, ernst, dieter)
@@ -85,9 +87,8 @@ fun main() {
 
     } while (goOn1 || goOn2)
 
-
-        println("´`´`´`´`´`´`´`´`´`´`´`´`")
-        println("| Das Spiel ist vorbei |")
-        println("´`´`´`´`´`´`´`´`´`´`´`´`")
+        println("´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´")
+        println("| Alle Spieler haben ihr Geld verspielt, das Spiel ist vorbei |")
+        println("´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´")
 
 }

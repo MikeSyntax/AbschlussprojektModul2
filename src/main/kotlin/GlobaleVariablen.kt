@@ -1,5 +1,4 @@
 //Globale Variablen
-//val numbers: List<Int> = listOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36)
 val first: List<Int> = listOf(1,2,3,4,5,6,7,8,9,10,11,12)
 val second: List<Int> = listOf(13,14,15,16,17,18,19,20,21,22,23,24)
 val third: List<Int> = listOf(25,26,27,28,29,30,31,32,33,34,35,36)
@@ -14,7 +13,20 @@ var goOn1 = true
 var goOn2 = true
 var round = 0
 var roundHighRoller = 0
-//var exit = false
 
 var listOfLastNumbers1: MutableList<String> = mutableListOf("23: impair, rouge", "15: impair, noir", "7: impair, rouge", "28: pair, noir", "25: impair, rouge", "2: pair, noir", "25: impair, rouge", "24: pair, noir", "24: pair, noir", "4: pair, noir")
 var listOfLastNumbers2: MutableList<String> = mutableListOf("25: impair, rouge", "24: pair, noir", "24: pair, noir", "4: pair, noir", "23: impair, rouge", "15: impair, noir", "7: impair, rouge", "28: pair, noir", "25: impair, rouge", "2: pair, noir")
+
+
+
+
+
+
+
+
+
+
+
+
+
+//val numbers: List<Int> = listOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36)
