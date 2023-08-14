@@ -17,18 +17,24 @@ class CasinoHighRollerEmployees(tableNumber: Int, name: String, job: String, age
             // Entfernen des newCroupier-Elements aus der highRollerCroupiers-Liste
             highRollerCroupiers.remove(newCroupier)
 
-            // Ausgabe von dekorativen Zeichenketten in roter und grüner Farbe
+            //Änder des Croupiers auch am Roulettetisch
+            rouletteTable.croupierName = newCroupier.name
+
+            //Ausdrucken nur zur Kontrolle, ob sich der Croupier auch am Tisch geändert hat
+            //println(rouletteTable.croupierName)
+
+            // Ausgabe Informationen bezüglich des Croupiers Wechsel in roter und grüner Farbe
             println("${FontColors.RED.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|ACHTUNG es findet ein Croupier Wechsel statt, bitte keine Einsätze im Moment                     |${FontColors.COLOREND.type}")
             println("|Willkommen am TISCH ${rouletteTable.tableNumber} mein Name ist ${newCroupier.name} und ich bin für die nächsten Runden Ihr $job")
-            print("|${rouletteTable.countBank()}")
-            print("|${rouletteTable.countTip()}")
+            rouletteTable.countBank()
+            rouletteTable.countTip()
             println("${FontColors.GREEN.type}|Vielen Dank für die Trinkgelder, wir werden diese unter den Kollegen verteilen                   |${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.RED.type}|=================================================================================================|${FontColors.COLOREND.type}")
 
-            // Hinzufügen des newCroupier-Elements zurück zur highRollerCroupiers-Liste
+            // Hinzufügen des newCroupier wieder zurück zur highRollerCroupiers-Liste allerdings diesmal ans Ende der Liste
             highRollerCroupiers.add(newCroupier)
 
             // Zurücksetzen der Rundenzählervariable auf 0
