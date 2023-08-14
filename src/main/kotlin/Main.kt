@@ -60,13 +60,13 @@ fun main() {
     }
 
     println("")
-    println("${FontColors.GREEN.type}Tisch Nummer ${rouletteAtTable1.tableNumber}${FontColors.COLOREND.type}")
+    println("${FontColors.YELLOW.type}Tisch Nummer ${rouletteAtTable1.tableNumber}${FontColors.COLOREND.type}")
     for (player in players) {
         player.introduce()
     }
 
     println("")
-    println("${FontColors.GREEN.type}Tisch Nummer ${rouletteAtTable2.tableNumber}${FontColors.COLOREND.type}")
+    println("${FontColors.YELLOW.type}Tisch Nummer ${rouletteAtTable2.tableNumber}${FontColors.COLOREND.type}")
     for (player in playersHighRoller) {
         player.introduce()
     }

@@ -25,12 +25,12 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
 
     //Methode zum Anzeigen des Standes der Bank am Roulettetisch
     fun countBank() {
-        println("In der Bank am Roulettetisch $tableNumber befinden sich insgesamt $bankTable€")
+        println("In der Bank am Roulettetisch $tableNumber befinden sich insgesamt ${FontColors.RED.type}$bankTable€${FontColors.COLOREND.type}")
     }
 
     //Methode zum Anzeigen der Trinkgeldkasse
     fun countTip() {
-        println("In der Trinkgeldkasse am Roulettetisch $tableNumber befinden sich insgesamt ${round(tipForEmployees * 100) / 100}€")
+        println("In der Trinkgeldkasse am Roulettetisch $tableNumber befinden sich insgesamt ${FontColors.RED.type}${round(tipForEmployees * 100) / 100}€${FontColors.COLOREND.type}")
     }
 
     //Methode zum Roulette Rad, die Kugel soll rollen und random eine Zahl auswählen
@@ -67,7 +67,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         rouletteTable.countBank()                                               //Aufrufen der Methode über den Stand der Bank
         rouletteTable.countTip()                                                //Aufrufen der Methode über den Stand der Trinkgeldkasse für die Angestellten
         println("")
-        println("Machen Sie Ihre Einsätze, neues Spiel, neues Glück")
+        println("${FontColors.GREEN.type}Machen Sie Ihre Einsätze, neues Spiel, neues Glück${FontColors.COLOREND.type}")
 
         for (player in players) {
             player.reset()                                                      //zurücksezten der Variablen in CasinoPlayer für das neue Spiel
@@ -84,9 +84,9 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         }
 
         println("==================================")
-        print("Nichts geht mehr")
+        print("${FontColors.GREEN.type}Nichts geht mehr")
         var rouletteNumber = rouletteTable.rollingNumbers()                     //das Rouletterad am Tisch 1 dreht sich und gibt eine zufällige Zahl als tableNumber zurück welche in der Klasse Roulette ermittelt wird
-        println(" und es ist die $rouletteNumber")
+        println(" und es ist die $rouletteNumber${FontColors.COLOREND.type}")
         println("==================================")
 
         rouletteTable.infoOfNumbers(rouletteNumber)                             //Methode für die Rückmeldung ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
@@ -104,7 +104,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         rouletteTable.countBank()                                               //Aufrufen der Methode über den Stand der Bank
         rouletteTable.countTip()                                                //Aufrufen der Methode über den Stand der Trinkgeldkasse für die Angestellten
         println("")
-        println("Machen Sie Ihre Einsätze, neues Spiel, neues Glück")
+        println("${FontColors.GREEN.type}Machen Sie Ihre Einsätze, neues Spiel, neues Glück${FontColors.COLOREND.type}")
 
         for (player in playersHighRoller) {
             player.reset()                                                      //zurücksezten der Variablen in CasinoPlayer für das neue Spiel
