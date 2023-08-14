@@ -47,9 +47,9 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         }
 
         println("==================================")
-        print("Nichts geht mehr")
+        print("${FontColors.GREEN.type}Nichts geht mehr")
         var rouletteNumber = rouletteTable.rollingNumbers()                     //das Rouletterad am Tisch 1 dreht sich und gibt eine zufällige Zahl als tableNumber zurück welche in der Klasse Roulette ermittelt wird
-        println(" und es ist die $rouletteNumber")
+        println(" und es ist die $rouletteNumber${FontColors.COLOREND.type}")
         println("==================================")
 
         rouletteTable.infoOfNumbers(rouletteNumber)                             //Methode für die Rückmeldung ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
@@ -157,12 +157,12 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     fun getInfo(rouletteNumber: Int): String {
         val numberInfo = getNumberInfo(rouletteNumber)
         if (numberInfo != null) {
-            val zero = if (rouletteNumber == 0) "Zero" else ""
             val evenOrNot = if (numberInfo.isEven) "pair" else "impair"
-            val redOrBlack = if (numberInfo.isRed) "rouge" else "noir"
-            return ("$rouletteNumber: $evenOrNot, $redOrBlack, $zero")
+            val redOrBlack = if (numberInfo.isRed) "${FontColors.RED.type}rouge${FontColors.COLOREND.type}" else "noir"
+            return ("$rouletteNumber: $evenOrNot, $redOrBlack")
         } else {
-            return "Ungültige Zahl"
+            val zero = if (rouletteNumber == 0) "${FontColors.GREEN.type}Zero${FontColors.COLOREND.type}" else ""
+            return ("$rouletteNumber: $zero")
         }
     }
 

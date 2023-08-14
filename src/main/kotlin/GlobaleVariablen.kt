@@ -14,8 +14,8 @@ var goOn2 = true
 var round = 0
 var roundHighRoller = 0
 
-var listOfLastNumbers1: MutableList<String> = mutableListOf("23: impair, rouge", "15: impair, noir", "7: impair, rouge", "28: pair, noir", "25: impair, rouge", "2: pair, noir", "25: impair, rouge", "24: pair, noir", "24: pair, noir", "4: pair, noir")
-var listOfLastNumbers2: MutableList<String> = mutableListOf("25: impair, rouge", "24: pair, noir", "24: pair, noir", "4: pair, noir", "23: impair, rouge", "15: impair, noir", "7: impair, rouge", "28: pair, noir", "25: impair, rouge", "2: pair, noir")
+var listOfLastNumbers1: MutableList<String> = mutableListOf("23: impair, ${FontColors.RED.type}rouge${FontColors.COLOREND.type}", "15: impair, noir", "7: impair, ${FontColors.RED.type}rouge${FontColors.COLOREND.type}", "28: pair, noir", "25: impair, ${FontColors.RED.type}rouge${FontColors.COLOREND.type}", "2: pair, noir", "25: impair, ${FontColors.RED.type}rouge${FontColors.COLOREND.type}", "24: pair, noir", "24: pair, noir", "4: pair, noir")
+var listOfLastNumbers2: MutableList<String> = mutableListOf("25: impair, ${FontColors.RED.type}rouge${FontColors.COLOREND.type}", "24: pair, noir", "24: pair, noir", "4: pair, noir", "23: impair, ${FontColors.RED.type}rouge${FontColors.COLOREND.type}", "15: impair, noir", "7: impair, ${FontColors.RED.type}rouge${FontColors.COLOREND.type}", "28: pair, noir", "25: impair, ${FontColors.RED.type}rouge${FontColors.COLOREND.type}", "2: pair, noir")
 
 
 
