@@ -8,9 +8,12 @@ enum class FontColors(val type: String) {
 
 
 /*
+NUR ZUM KOPIEREN AUSKOMMENTIERT
+
 ${FontColors.RED.type}
 ${FontColors.GREEN.type}
 ${FontColors.YELLOW.type}
 
 ${FontColors.COLOREND.type}
+
 */

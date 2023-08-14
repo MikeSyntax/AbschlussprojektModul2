@@ -55,7 +55,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         rouletteTable.infoOfNumbers(rouletteNumber)                             //Methode für die Rückmeldung ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
         println("\n")
         rouletteNumbers1(getInfo(rouletteNumber))                                //Hinzufügen der Nummer zur Liste der letzen 10 Zahlen wobei die 1 rausfällt und die neue Zahl ans Ende gesetzt wird
-        println("Anzeige der letzten 10 Zahlen, ")
+        println("${FontColors.YELLOW.type}Anzeige der letzten 10 Zahlen an Tisch $tableNumber${FontColors.COLOREND.type}")
         printNumbers(listOfLastNumbers1)                                         //Anzeigen der bearbeiteten Liste untereinander
         println("")
 
@@ -92,7 +92,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         rouletteTable.infoOfNumbers(rouletteNumber)                             //Methode für die Rückmeldung ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
         println("\n")
         rouletteNumbers2(getInfo(rouletteNumber))                                //Hinzufügen der Nummer zur Liste der letzen 10 Zahlen wobei die 1 rausfällt und die neue Zahl ans Ende gesetzt wird
-        println("Anzeige der letzten 10 Zahlen, ")
+        println("${FontColors.YELLOW.type}Anzeige der letzten 10 Zahlen an Tisch $tableNumber${FontColors.COLOREND.type}")
         printNumbers(listOfLastNumbers2)                                         //Anzeigen der bearbeiteten Liste untereinander
         println("")
 
