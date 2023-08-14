@@ -14,11 +14,11 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
 
     //Methode zur Ausgabe aller Infos über den Roulettetisch
     fun printInfo() {
-        print("Tischnummer: ${FontColors.YELLOW.type}$tableNumber${FontColors.COLOREND.type} ")
-        print("Croupier Name: ${FontColors.YELLOW.type}$croupierName${FontColors.COLOREND.type} ")
-        print("Trinkgeldkasse : ${FontColors.YELLOW.type}$tipForEmployees€${FontColors.COLOREND.type} ")
-        print("Bank am Tisch : ${FontColors.YELLOW.type}$bankTable€${FontColors.COLOREND.type} ")
-        print("Mindesteinsatz: ${FontColors.YELLOW.type}$mindestEinsatz€${FontColors.COLOREND.type} ")
+        println("Tischnummer: ${FontColors.YELLOW.type}$tableNumber${FontColors.COLOREND.type} ")
+        println("Croupier Name: ${FontColors.YELLOW.type}$croupierName${FontColors.COLOREND.type} ")
+        println("Trinkgeldkasse : ${FontColors.YELLOW.type}$tipForEmployees€${FontColors.COLOREND.type} ")
+        println("Bank am Tisch : ${FontColors.YELLOW.type}$bankTable€${FontColors.COLOREND.type} ")
+        println("Mindesteinsatz: ${FontColors.YELLOW.type}$mindestEinsatz€${FontColors.COLOREND.type} ")
         println("Maximaleinsatz: ${FontColors.YELLOW.type}$maximalerEinsatz€${FontColors.COLOREND.type}")
         Thread.sleep(1000)
     }
@@ -38,7 +38,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         return (0..36).random()
     }
 
-    //Hauptmethode zum Spielen mit Eingabe des Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der der Variablen mit den gespeicherten Spielerwahlen
+    //Hauptmethode zum Spielen mit Eingabe des Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der Variablen mit der gespeicherten Spielerauswahl
     fun goPlay(players: MutableList<CasinoPlayer>, rouletteGames: RouletteGames, rouletteTable: RouletteTable) {
 
         for (player in players) {
@@ -48,13 +48,13 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
 
         println("==================================")
         print("${FontColors.GREEN.type}Nichts geht mehr")
-        var rouletteNumber = rouletteTable.rollingNumbers()                     //das Rouletterad am Tisch 1 dreht sich und gibt eine zufällige Zahl als tableNumber zurück welche in der Klasse Roulette ermittelt wird
+        var rouletteNumber = rouletteTable.rollingNumbers()                     //das Roulette Rad am Tisch 1 dreht sich und gibt eine zufällige Zahl als tableNumber zurück, welche in der Klasse Roulette ermittelt wird
         println(" und es ist die $rouletteNumber${FontColors.COLOREND.type}")
         println("==================================")
 
-        rouletteTable.infoOfNumbers(rouletteNumber)                             //Methode für die Rückmeldung ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
+        rouletteTable.infoOfNumbers(rouletteNumber)                             //Methode für die Rückmeldung, ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
         println("\n")
-        rouletteNumbers1(getInfo(rouletteNumber))                                //Hinzufügen der Nummer zur Liste der letzen 10 Zahlen wobei die 1 rausfällt und die neue Zahl ans Ende gesetzt wird
+        rouletteNumbers1(getInfo(rouletteNumber))                                //Hinzufügen der Nummer zur Liste der letzten 10 Zahlen wobei die 1 rausfällt und die neue Zahl ans Ende gesetzt wird
         println("${FontColors.YELLOW.type}Anzeige der letzten 10 Zahlen an Tisch $tableNumber${FontColors.COLOREND.type}")
         printNumbers(listOfLastNumbers1)                                         //Anzeigen der bearbeiteten Liste untereinander
         println("")
@@ -70,13 +70,13 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         println("${FontColors.GREEN.type}Machen Sie Ihre Einsätze, neues Spiel, neues Glück${FontColors.COLOREND.type}")
 
         for (player in players) {
-            player.reset()                                                      //zurücksezten der Variablen in CasinoPlayer für das neue Spiel
+            player.reset()                                                      //zurücksetzen der Variablen in CasinoPlayer für das neue Spiel
         }
         println("")
 
     }
 
-    //Hauptmethode zum Spielen des HighRoller Tisches mit Eingabe des Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der der Variablen mit den gespeicherten Spielerwahlen
+    //Hauptmethode zum Spielen des HighRoller Tisches mit Eingabe des Spielers welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der Variablen mit den gespeicherten Spielerwahlen
     fun goPlayHighRoller(playersHighRoller: MutableList<CasinoPlayer>, rouletteGamesHighRoller: RouletteGames, rouletteTable: RouletteTable) {
 
         for (player in playersHighRoller) { rouletteGamesHighRoller.games(player, rouletteTable)                           //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
@@ -89,9 +89,9 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         println(" und es ist die $rouletteNumber${FontColors.COLOREND.type}")
         println("==================================")
 
-        rouletteTable.infoOfNumbers(rouletteNumber)                             //Methode für die Rückmeldung ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
+        rouletteTable.infoOfNumbers(rouletteNumber)                             //Methode für die Rückmeldung, ob die Zahl rot/schwarz oder gerade/ungerade usw. ist
         println("\n")
-        rouletteNumbers2(getInfo(rouletteNumber))                                //Hinzufügen der Nummer zur Liste der letzen 10 Zahlen wobei die 1 rausfällt und die neue Zahl ans Ende gesetzt wird
+        rouletteNumbers2(getInfo(rouletteNumber))                                //Hinzufügen der Nummer zur Liste der letzten 10 Zahlen wobei die 1 rausfällt und die neue Zahl ans Ende gesetzt wird
         println("${FontColors.YELLOW.type}Anzeige der letzten 10 Zahlen an Tisch $tableNumber${FontColors.COLOREND.type}")
         printNumbers(listOfLastNumbers2)                                         //Anzeigen der bearbeiteten Liste untereinander
         println("")
@@ -107,7 +107,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         println("${FontColors.GREEN.type}Machen Sie Ihre Einsätze, neues Spiel, neues Glück${FontColors.COLOREND.type}")
 
         for (player in playersHighRoller) {
-            player.reset()                                                      //zurücksezten der Variablen in CasinoPlayer für das neue Spiel
+            player.reset()                                                      //zurücksetzen der Variablen in CasinoPlayer für das neue Spiel
         }
 
         println("")
@@ -115,7 +115,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
 
 
 
-    fun removePlayerWithNoMoney(playersHighRoller: MutableList<CasinoPlayer>) {                                           //Schleife falls ein Spieler kein Geld mehr hat
+    fun removePlayerWithNoMoney(playersHighRoller: MutableList<CasinoPlayer>) {                                           //Schleife, falls ein Spieler kein Geld mehr hat
         var removePlayer = playersHighRoller.filter { player -> player.cash <= 0 }
 
         for (player in removePlayer) {
@@ -148,7 +148,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         }
     }
 
-    //Funktion rot/schwarz gerade/ungerade und zero - Info aus der Map unter NumberInfo
+    //Funktion rot/schwarz gerade/ungerade und zero - Informationen aus der Map unter NumberInfo
     fun getNumberInfo(number: Int): NumberInfo? {
         return numberInfoMap[number]
     }

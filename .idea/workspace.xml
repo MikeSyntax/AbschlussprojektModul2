@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Abschlussprojekt 14.08 gegen 15.05Uhr">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/CasinoEmployees.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CasinoEmployees.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/CasinoHighRollerEmployees.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CasinoHighRollerEmployees.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteGames.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteGames.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteHighRoller.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteHighRoller.kt" afterDir="false" />
-    </list>
+    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Abschlussprojekt 14.08 gegen 16.00Uhr" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -347,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692018355038</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Abschlussprojekt 14.08 gegen 16.00Uhr">
+      <created>1692021520216</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1692021520216</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -362,7 +363,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Abschlussprojekt 09.08 gegen 16.02Uhr" />
     <MESSAGE value="Abschlussprojekt 09.08 gegen 18.29Uhr" />
     <MESSAGE value="Abschlussprojekt 09.08 gegen 21.49Uhr" />
     <MESSAGE value="Abschlussprojekt 10.08 gegen 08.33Uhr" />
@@ -387,6 +387,7 @@
     <MESSAGE value="Abschlussprojekt 14.08 gegen 14.22Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 14.41Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 15.05Uhr" />
-    <option name="LAST_COMMIT_MESSAGE" value="Abschlussprojekt 14.08 gegen 15.05Uhr" />
+    <MESSAGE value="Abschlussprojekt 14.08 gegen 16.00Uhr" />
+    <option name="LAST_COMMIT_MESSAGE" value="Abschlussprojekt 14.08 gegen 16.00Uhr" />
   </component>
 </project>

@@ -138,7 +138,7 @@ fun main() {
         // Die Schleife wird ausgeführt, solange goOn1 oder goOn2 wahr ist
     } while (goOn1 || goOn2)
 
-    // Ausgabe einer gestalteten Meldung, wenn das Spiel vorbei ist
+    // Ausgabe einer Meldung, wenn das Spiel vorbei ist
     println("${FontColors.RED.type}´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´")
     println("| Alle Spieler haben ihr Geld verspielt, das Spiel ist vorbei |")
     println("´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´${FontColors.COLOREND.type}")
