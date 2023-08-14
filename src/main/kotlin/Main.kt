@@ -27,12 +27,12 @@ fun main() {
     println("")
 
     var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 500000.00)                       //Vorbereitung für den zweiten Tisch
-    var sascha: CasinoHighrollerEmployees = CasinoHighrollerEmployees(2, "Sascha", "Croupier", 45)
-    var christian: CasinoHighrollerEmployees = CasinoHighrollerEmployees(2,"Christian", "Croupier", 57)
+    var sascha: CasinoHighrolerEmployees = CasinoHighrolerEmployees(2, "Sascha", "Croupier", 45)
+    var christian: CasinoHighrolerEmployees = CasinoHighrolerEmployees(2,"Christian", "Croupier", 57)
     rouletteAtTable2.printInfo()
 
     var rouletteGames: RouletteGames = RouletteGames(1)                         //Instanziierung der RouletteGames an Tisch 1
-    var rouletteGamesHighroller: RouletteHighroller = RouletteHighroller(2)     //Instanziierung der RouletteGames an Tisch 2
+    var rouletteGamesHighroler: RouletteHighroler = RouletteHighroler(2)     //Instanziierung der RouletteGames an Tisch 2
 
     var klaus: CasinoPlayer = CasinoPlayer(1, "Klaus", 500.00, true, 0.01,23)
     var tatjana: CasinoPlayer = CasinoPlayer(1, "Tatjana", 500.00, true, 0.01,59)
@@ -47,9 +47,9 @@ fun main() {
     val entrance : CasinoEntranceControl = CasinoEntranceControl()
     val playersWantEntrance: MutableList<CasinoPlayer> = mutableListOf(klaus, tatjana, mike, salva, claudia, enrico)
     val players: MutableList<CasinoPlayer> = mutableListOf()
-    val playersHighroller: MutableList<CasinoPlayer> = mutableListOf(gonzales, silvio)
-    val groupiers: MutableList<CasinoEmployees> = mutableListOf(rainer, ernst, dieter)
-    val highrollerGroupiers : MutableList<CasinoHighrollerEmployees> = mutableListOf(christian, sascha)
+    val playersHighroler: MutableList<CasinoPlayer> = mutableListOf(gonzales, silvio)
+    val croupiers: MutableList<CasinoEmployees> = mutableListOf(rainer, ernst, dieter)
+    val highrolerCroupiers : MutableList<CasinoHighrolerEmployees> = mutableListOf(christian, sascha)
 
     println("")
     println("Hier wird die Einlasskontrolle durchgeführt und das Alter geprüft")
@@ -65,7 +65,7 @@ fun main() {
 
     println("")
     println("Tisch Nummer ${rouletteAtTable2.tableNumber}")
-    for (player in playersHighroller) {
+    for (player in playersHighroler) {
         player.introduce()
     }
 
@@ -75,13 +75,13 @@ fun main() {
         rouletteAtTable1.goPlay(players, rouletteGames, rouletteAtTable1)
         rouletteAtTable1.removePlayerWithNoMoney(players)
 
-        rouletteAtTable2.goPlayHighroler(playersHighroller, rouletteGamesHighroller, rouletteAtTable2)
-        rouletteAtTable2.removePlayerHighrollerWithNoMoney(playersHighroller)
+        rouletteAtTable2.goPlayHighroler(playersHighroler, rouletteGamesHighroler, rouletteAtTable2)
+        rouletteAtTable2.removePlayerHighrolerWithNoMoney(playersHighroler)
 
         round++
-        dieter.changeGroupier(groupiers, rouletteAtTable1)
-        roundHighroller++
-        sascha.changeHighrollerGroupier(highrollerGroupiers, rouletteAtTable2)
+        dieter.changeCroupier(croupiers, rouletteAtTable1)
+        roundHighroler++
+        sascha.changeHighrolerCroupier(highrolerCroupiers, rouletteAtTable2)
 
     } while (goOn1 || goOn2)
 

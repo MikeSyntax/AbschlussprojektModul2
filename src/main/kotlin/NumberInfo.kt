@@ -39,6 +39,43 @@ val numberInfoMap = mapOf(
     35 to NumberInfo(false, false, false),
     36 to NumberInfo(true, true, false)
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 enum class NumberType {
     EVEN,

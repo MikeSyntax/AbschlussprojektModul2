@@ -1,12 +1,12 @@
 import kotlin.math.round
 
-class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmployees: Double, var bankTable: Double): Casino(tableNumber) {
+class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmployees: Double, var bankTable: Double): Casino(tableNumber) {
 
     /* init {
         println("Das Roulette wurde mit der Tisch Nr. $tableNumber instanziiert")
     }*/
 
-    constructor(tableNumber: Int, groupierName: String, tipForEmployees: Double) : this(tableNumber, groupierName, tipForEmployees, 100000.00) {
+    constructor(tableNumber: Int, croupierName: String, tipForEmployees: Double) : this(tableNumber, croupierName, tipForEmployees, 100000.00) {
 
         // println("Das Roulette für Tisch Nr. $tableNumber wurde mit dem sekundären Konstruktor instanziiert")
 
@@ -15,7 +15,7 @@ class RouletteTable(tableNumber: Int, var groupierName: String, var tipForEmploy
     //Methode zur Ausgabe aller Infos über den Roulettetisch
     fun printInfo() {
         print("Tischnummer: $tableNumber ")
-        print("Croupier Name: $groupierName ")
+        print("Croupier Name: $croupierName ")
         print("Trinkgeldkasse : $tipForEmployees€ ")
         println("Bank am Tisch : $bankTable€")
     }

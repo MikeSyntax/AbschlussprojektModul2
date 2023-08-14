@@ -13,7 +13,7 @@ val specialNumber: List<Int> = listOf(0)
 var goOn1 = true
 var goOn2 = true
 var round = 0
-var roundHighroller = 0
+var roundHighroler = 0
 var exit = false
 
 var listOfLastNumbers1: MutableList<String> = mutableListOf("23: impair, rouge", "15: impair, noir", "7: impair, rouge", "28: pair, noir", "25: impair, rouge", "2: pair, noir", "25: impair, rouge", "24: pair, noir", "24: pair, noir", "4: pair, noir")
