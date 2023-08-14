@@ -54,19 +54,19 @@ fun main() {
     val highRollerCroupiers : MutableList<CasinoHighRollerEmployees> = mutableListOf(christian, sascha)
 
     println("")
-    println("Hier wird die Einlasskontrolle durchgeführt und das Alter geprüft")
+    println("Hier wird die ${FontColors.RED.type}Einlasskontrolle${FontColors.COLOREND.type} durchgeführt und das Alter geprüft")
     for (player in playersWantEntrance) {
         entrance.entranceControl(player, players)
     }
 
     println("")
-    println("Tisch Nummer ${rouletteAtTable1.tableNumber}")
+    println("${FontColors.GREEN.type}Tisch Nummer ${rouletteAtTable1.tableNumber}${FontColors.COLOREND.type}")
     for (player in players) {
         player.introduce()
     }
 
     println("")
-    println("Tisch Nummer ${rouletteAtTable2.tableNumber}")
+    println("${FontColors.GREEN.type}Tisch Nummer ${rouletteAtTable2.tableNumber}${FontColors.COLOREND.type}")
     for (player in playersHighRoller) {
         player.introduce()
     }
@@ -87,8 +87,8 @@ fun main() {
 
     } while (goOn1 || goOn2)
 
-        println("´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´")
+        println("${FontColors.RED.type}´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´")
         println("| Alle Spieler haben ihr Geld verspielt, das Spiel ist vorbei |")
-        println("´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´")
+        println("´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´${FontColors.COLOREND.type}")
 
 }

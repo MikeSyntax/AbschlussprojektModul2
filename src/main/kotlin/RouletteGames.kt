@@ -8,9 +8,9 @@ open class RouletteGames(tableNumber: Int){
         player.yourNumber = number                                                          //Die Nummer wird in der Klasse des Spieler unter seinem Namen gespeichert
         player.yourAmount = amount
         rouletteTable.bankTable = rouletteTable.bankTable + amount
-        print("Spieler ${player.name} hat $amount€ auf die $number gesetzt,")
+        print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die ${FontColors.RED.type}$number${FontColors.COLOREND.type} gesetzt,")
         player.cash = player.cash - amount
-        println(" somit verbleiben noch ${ round(player.cash*100) /100}€ zum spielen")
+        println(" somit verbleiben noch ${FontColors.RED.type}${ round(player.cash*100) /100}€${FontColors.COLOREND.type} zum spielen")
     }
 
     open fun playerRedOrBlack(player: CasinoPlayer, rouletteTable: RouletteTable) {              //Diese Funktion lässt den Spieler random auf rot oder schwarz setzen
@@ -20,13 +20,13 @@ open class RouletteGames(tableNumber: Int){
         player.yourAmount = amount
         rouletteTable.bankTable = rouletteTable.bankTable + amount
         if (numbersRedOrBlack == 1) {
-            print("Spieler ${player.name} hat $amount€ auf rot gesetzt")
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf rot gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${ round(player.cash*100) /100}€ zum spielen")
+            println(" somit verbleiben noch ${FontColors.RED.type}${ round(player.cash*100) /100}€${FontColors.COLOREND.type} zum spielen")
         } else if (numbersRedOrBlack == 2) {
-            print("Spieler ${player.name} hat $amount€ auf schwarz gesetzt")
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf schwarz gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${ round(player.cash*100) /100}€ zum spielen")
+            println(" somit verbleiben noch ${FontColors.RED.type}${ round(player.cash*100) /100}€${FontColors.COLOREND.type} zum spielen")
         } else {
             println("Falsche Eingabe")                                                      //schon mal vorbereitet, wenn die Eingabe nicht random, sondern per readline erfolgt
         }
@@ -39,13 +39,13 @@ open class RouletteGames(tableNumber: Int){
         player.yourAmount = amount
         rouletteTable.bankTable = rouletteTable.bankTable + amount
         if (numbersEvenOrNotEven == 1) {
-            print("Spieler ${player.name} hat $amount€ auf gerade gesetzt")
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf gerade gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${ round(player.cash*100) /100}€ zum spielen")
+            println(" somit verbleiben noch ${FontColors.RED.type}${ round(player.cash*100) /100}€${FontColors.COLOREND.type} zum spielen")
         } else if (numbersEvenOrNotEven == 2) {
-            print("Spieler ${player.name} hat $amount€ auf ungerade gesetzt")
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf ungerade gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${ round(player.cash*100) /100}€ zum spielen")
+            println(" somit verbleiben noch ${FontColors.RED.type}${ round(player.cash*100) /100}€${FontColors.COLOREND.type} zum spielen")
         } else {
             println("Falsche Eingabe")                                                      //schon mal vorbereitet, wenn die Eingabe nicht random, sondern per readline erfolgt
         }
@@ -58,17 +58,17 @@ open class RouletteGames(tableNumber: Int){
         player.yourAmount = amount
         rouletteTable.bankTable = rouletteTable.bankTable + amount
         if (numbersThird == 1) {
-            print("Spieler ${player.name} hat $amount€ auf das 1.Drittel gesetzt")
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 1.Drittel gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${ round(player.cash*100) /100}€ zum spielen")
+            println(" somit verbleiben noch ${FontColors.RED.type}${ round(player.cash*100) /100}€${FontColors.COLOREND.type} zum spielen")
         } else if (numbersThird == 2) {
-            print("Spieler ${player.name} hat $amount€ auf das 2.Drittel gesetzt")
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 2.Drittel gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${ round(player.cash*100) /100}€ zum spielen")
+            println(" somit verbleiben noch ${FontColors.RED.type}${ round(player.cash*100) /100}€${FontColors.COLOREND.type} zum spielen")
         } else if  (numbersThird == 3) {
-            print("Spieler ${player.name} hat $amount€ auf das 3.Drittel gesetzt")
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 3.Drittel gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${ round(player.cash*100) /100}€ zum spielen")
+            println(" somit verbleiben noch ${FontColors.RED.type}${ round(player.cash*100) /100}€${FontColors.COLOREND.type} zum spielen")
         } else {
             println("Falsche Eingabe")                                                      //schon mal vorbereitet, wenn die Eingabe nicht random, sondern per readline erfolgt
         }
@@ -81,27 +81,27 @@ open class RouletteGames(tableNumber: Int){
         player.yourAmount = amount
         rouletteTable.bankTable = rouletteTable.bankTable + amount
         if (numbersFirstOrSecondHalf == 1) {
-            print("Spieler ${player.name} hat $amount€ auf die 1.Hälfte gesetzt")
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die 1.Hälfte gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${ round(player.cash*100) /100}€ zum spielen")
+            println(" somit verbleiben noch ${FontColors.RED.type}${ round(player.cash*100) /100}€${FontColors.COLOREND.type} zum spielen")
         } else if (numbersFirstOrSecondHalf == 2) {
-            print("Spieler ${player.name} hat $amount€ auf die 2. Hälfte gesetzt")
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die 2. Hälfte gesetzt")
             player.cash = player.cash - amount
-            println(" somit verbleiben noch ${ round(player.cash*100) /100}€ zum spielen")
+            println(" somit verbleiben noch ${FontColors.RED.type}${ round(player.cash*100) /100}€${FontColors.COLOREND.type} zum spielen")
         } else {
             println("Falsche Eingabe")                                                      //schon mal vorbereitet, wenn die Eingabe nicht random, sondern per readline erfolgt
         }
     }
 
     open fun playerSkipRound(player: CasinoPlayer, rouletteTable: RouletteTable){
-        println("Spieler ${player.name} setzt eine Runde aus.")
+        println("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} setzt eine Runde aus.")
         player.skipRound = true
     }
 
     open fun games(player: CasinoPlayer, rouletteTable: RouletteTable){
             println("\nWillkommen ${player.name} am Roulette Tisch 1, du kannst zwischen folgenden Spielen wählen, triff deine Auswahl")
-            println("[1] = Auf Zahl setzen\n[2] = auf Rot oder Schwarz setzen\n[3] = auf Gerade/Ungerade setzen" +
-                    "\n[4] = auf 1.,2. oder 3.Drittel setzen\n[5] = auf 1. oder 2. Hälfte setzen\n[6] = Aussetzen |")
+            println("[${FontColors.YELLOW.type}1${FontColors.COLOREND.type}] = Auf Zahl setzen\n[${FontColors.YELLOW.type}2${FontColors.COLOREND.type}] = auf Rot oder Schwarz setzen\n[${FontColors.YELLOW.type}3${FontColors.COLOREND.type}] = auf Gerade/Ungerade setzen" +
+                    "\n[${FontColors.YELLOW.type}4${FontColors.COLOREND.type}] = auf 1.,2. oder 3.Drittel setzen\n[${FontColors.YELLOW.type}5${FontColors.COLOREND.type}] = auf 1. oder 2. Hälfte setzen\n[${FontColors.YELLOW.type}6${FontColors.COLOREND.type}] = Aussetzen |")
         try {
             var choice = readln().toInt()
             when (choice) {
@@ -129,12 +129,12 @@ open class RouletteGames(tableNumber: Int){
                     playerSkipRound(player, rouletteTable)                          //Eine Runde aussetzen
                 }
                 else -> {
-                    println("ungültige Eingabe, bitte gib eine Zahl von [1] - [6] ein") //Falls ungültige Eingabe, neue Eingabe starten
+                    println("ungültige Eingabe, bitte gib eine Zahl von [${FontColors.RED.type}1${FontColors.COLOREND.type}] - [${FontColors.RED.type}6${FontColors.COLOREND.type}] ein") //Falls ungültige Eingabe, neue Eingabe starten
                     games(player, rouletteTable)
                 }
             }
         } catch (ausnahme: Exception) {
-            println("Diese Eingabe war falsch, es wird automatisch per Default auf Zahl gesetzt")
+            println("Diese Eingabe war falsch, es wird automatisch per ${FontColors.RED.type}Default auf Zahl${FontColors.COLOREND.type} gesetzt")
             playerNumber(player, rouletteTable)
         }
     }

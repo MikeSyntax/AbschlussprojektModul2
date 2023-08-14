@@ -14,12 +14,12 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
 
     //Methode zur Ausgabe aller Infos über den Roulettetisch
     fun printInfo() {
-        print("Tischnummer: $tableNumber ")
-        print("Croupier Name: $croupierName ")
-        print("Trinkgeldkasse : $tipForEmployees€ ")
-        print("Bank am Tisch : $bankTable€ ")
-        print("Mindesteinsatz: $mindestEinsatz€ ")
-        println("Maximaleinsatz: $maximalerEinsatz€")
+        print("Tischnummer: ${FontColors.YELLOW.type}$tableNumber${FontColors.COLOREND.type} ")
+        print("Croupier Name: ${FontColors.YELLOW.type}$croupierName${FontColors.COLOREND.type} ")
+        print("Trinkgeldkasse : ${FontColors.YELLOW.type}$tipForEmployees€${FontColors.COLOREND.type} ")
+        print("Bank am Tisch : ${FontColors.YELLOW.type}$bankTable€${FontColors.COLOREND.type} ")
+        print("Mindesteinsatz: ${FontColors.YELLOW.type}$mindestEinsatz€${FontColors.COLOREND.type} ")
+        println("Maximaleinsatz: ${FontColors.YELLOW.type}$maximalerEinsatz€${FontColors.COLOREND.type}")
         Thread.sleep(1000)
     }
 
@@ -119,17 +119,17 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         var removePlayer = playersHighRoller.filter { player -> player.cash <= 0 }
 
         for (player in removePlayer) {
-            println("===============================================================")
+            println("${FontColors.YELLOW.type}===============================================================")
             println("${player.name} hat kein Geld mehr und muss den Tisch verlassen")
-            println("===============================================================\n")
+            println("===============================================================${FontColors.COLOREND.type}\n")
             playersHighRoller.remove(player)
             printListInfoAfterRemoving(playersHighRoller)
         }
         if (playersHighRoller.isEmpty()) {
             goOn1 = false
-            println("|––––––––––––––––––––––––––--–––––––––––––-––––-|")
+            println("${FontColors.RED.type}|––––––––––––––––––––––––––--–––––––––––––-––––-|")
             println("| Alle Spieler an Tisch 1 haben kein Geld mehr! |")
-            println("|––––––––––––––––––––––––––--–––––––––––––-––––-|")
+            println("|––––––––––––––––––––––––––--–––––––––––––-––––-|${FontColors.COLOREND.type}")
         }
     }
 
@@ -229,17 +229,17 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         var removePlayer = playersHighRoller.filter { player -> player.cash <= 0 }
 
         for (player in removePlayer) {
-            println("===============================================================")
+            println("${FontColors.YELLOW.type}===============================================================")
             println("${player.name} hat kein Geld mehr und muss den Tisch verlassen")
-            println("===============================================================\n")
+            println("===============================================================${FontColors.COLOREND.type}\n")
             playersHighRoller.remove(player)
             printListInfoAfterRemovingHighRoller(playersHighRoller)
         }
         if (playersHighRoller.isEmpty()) {
             goOn2 = false
-            println("|––––––––––––––––––––––––––--–––––––––––––-––––-|")
+            println("${FontColors.RED.type}|––––––––––––––––––––––––––--–––––––––––––-––––-|")
             println("| Alle Spieler an Tisch 2 haben kein Geld mehr! |")
-            println("|––––––––––––––––––––––––––--–––––––––––––-––––-|")
+            println("|––––––––––––––––––––––––––--–––––––––––––-––––-|${FontColors.COLOREND.type}")
 
         }
     }

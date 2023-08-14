@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Abschlussprojekt 14.08 gegen 10.33Uhr">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/FontColors.kt" afterDir="false" />
+    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Abschlussprojekt 14.08 gegen 12.12Uhr">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/CasinoEmployees.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CasinoEmployees.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/CasinoHighRollerEmployees.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CasinoHighRollerEmployees.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/GlobaleVariablen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/GlobaleVariablen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/CasinoEntranceControl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CasinoEntranceControl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteGames.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteGames.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteHighRoller.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteHighRoller.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteTable.kt" afterDir="false" />
@@ -302,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692002010628</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Abschlussprojekt 14.08 gegen 12.12Uhr">
+      <created>1692007984846</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1692007984846</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -317,7 +320,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Abschlussprojekt 08.08 gegen 15.44" />
     <MESSAGE value="Abschlussprojekt 08.08 gegen 18.44" />
     <MESSAGE value="Abschlussprojekt 08.08 gegen 18.57" />
     <MESSAGE value="Abschlussprojekt 09.08 gegen 11.12" />
@@ -342,6 +344,7 @@
     <MESSAGE value="Abschlussprojekt 13.08 gegen 11.50Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 10.11Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 10.33Uhr" />
-    <option name="LAST_COMMIT_MESSAGE" value="Abschlussprojekt 14.08 gegen 10.33Uhr" />
+    <MESSAGE value="Abschlussprojekt 14.08 gegen 12.12Uhr" />
+    <option name="LAST_COMMIT_MESSAGE" value="Abschlussprojekt 14.08 gegen 12.12Uhr" />
   </component>
 </project>
