@@ -1,5 +1,3 @@
-import java.awt.Font
-
 fun main() {
     println("")
     println("${FontColors.GREEN.type}          d8888b   d8888b  d88888b          d8888b     d8b    d8b   db  db   dD        \n" +

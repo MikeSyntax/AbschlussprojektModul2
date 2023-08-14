@@ -1,13 +1,27 @@
-open class CasinoEmployees(tableNumber: Int, var name: String, var job: String, var age: Int): RouletteGames(tableNumber){
+// Definition der offenen Klasse CasinoEmployees, die von RouletteGames erbt, mit den Parametern tableNumber, name, job und age
+open class CasinoEmployees(tableNumber: Int, var name: String, var job: String, var age: Int): RouletteGames(tableNumber) {
 
-    /* init {
+    /* Dies ist der Konstruktor der Klasse CasinoEmployees.
+       Er erhält die Parameter tableNumber, name, job und age beim Erstellen von CasinoEmployees-Objekten. */
+
+    // Hier beginnt der Konstruktor-Initialisierungsblock (init-Block).
+    /*init {
+        // Dieser Block wird ausgeführt, wenn ein CasinoEmployees-Objekt erstellt wird.
         println("Mein Name ist $name und ich bin heute Ihr $job an Tisch Nummer $tableNumber")
+        // Hier wird eine Ausgabe in der Konsole gemacht, die Informationen über den Angestellten enthält.
     }*/
+    // Ende des init-Blocks.
 
+    // Definition der Methode changeCroupier mit den Parametern croupiers und rouletteTable
     fun changeCroupier(croupiers: MutableList<CasinoEmployees>, rouletteTable: RouletteTable) {
+        // Beginn der Bedingung, ob round gleich 5 ist
         if (round == 5) {
+            // Definition einer neuen Variable newCroupier, die das erste Element aus der croupiers-Liste enthält
             var newCroupier = croupiers.first()
+            // Entfernen des neuen Croupiers aus der croupiers-Liste
             croupiers.remove(newCroupier)
+
+            // Ausgabe von formatierten Zeichenketten in verschiedenen Farben
             println("${FontColors.RED.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|ACHTUNG es findet ein Croupier Wechsel statt, bitte keine Einsätze im Moment                     |${FontColors.COLOREND.type}")
@@ -17,7 +31,11 @@ open class CasinoEmployees(tableNumber: Int, var name: String, var job: String, 
             println("${FontColors.GREEN.type}|Vielen Dank für die Trinkgelder, wir werden diese unter den Kollegen verteilen                   |${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.RED.type}|=================================================================================================|${FontColors.COLOREND.type}")
+
+            // Hinzufügen des neuen Croupiers zurück zur croupiers-Liste
             croupiers.add(newCroupier)
+
+            // Zurücksetzen der round-Variable auf 0
             round = 0
         }
     }

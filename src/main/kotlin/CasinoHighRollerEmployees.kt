@@ -1,13 +1,23 @@
+// Definition der Klasse CasinoHighRollerEmployees mit den Parametern tableNumber, name, job und age,
+// die von der Klasse CasinoEmployees erbt
 class CasinoHighRollerEmployees(tableNumber: Int, name: String, job: String, age: Int): CasinoEmployees(tableNumber, name, job, age) {
 
     /* init {
-            println("Mein Name ist $name und ich bin heute Ihr $job an Tisch Nummer $tableNumber")
-        }*/
+        // Ausgabe einer formatierten Zeichenkette in der Konsole, die den Namen, den Job und die Tischnummer des Mitarbeiters zeigt
+        println("Mein Name ist $name und ich bin heute Ihr $job an Tisch Nummer $tableNumber")
+    }*/
 
-     fun changeHighRollerCroupier(highRollerCroupiers: MutableList<CasinoHighRollerEmployees>, rouletteTable: RouletteTable) {
+    // Definition der Methode changeHighRollerCroupier mit den Parametern highRollerCroupiers und rouletteTable
+    fun changeHighRollerCroupier(highRollerCroupiers: MutableList<CasinoHighRollerEmployees>, rouletteTable: RouletteTable) {
+        // Beginn der Bedingung, ob die Anzahl der Runden roundHighRoller gleich 7 ist
         if (roundHighRoller == 7) {
+            // Zuweisen des ersten Elements aus der highRollerCroupiers-Liste an die Variable newCroupier
             var newCroupier = highRollerCroupiers.first()
+
+            // Entfernen des newCroupier-Elements aus der highRollerCroupiers-Liste
             highRollerCroupiers.remove(newCroupier)
+
+            // Ausgabe von dekorativen Zeichenketten in roter und grüner Farbe
             println("${FontColors.RED.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|ACHTUNG es findet ein Croupier Wechsel statt, bitte keine Einsätze im Moment                     |${FontColors.COLOREND.type}")
@@ -17,8 +27,13 @@ class CasinoHighRollerEmployees(tableNumber: Int, name: String, job: String, age
             println("${FontColors.GREEN.type}|Vielen Dank für die Trinkgelder, wir werden diese unter den Kollegen verteilen                   |${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.RED.type}|=================================================================================================|${FontColors.COLOREND.type}")
+
+            // Hinzufügen des newCroupier-Elements zurück zur highRollerCroupiers-Liste
             highRollerCroupiers.add(newCroupier)
+
+            // Zurücksetzen der Rundenzählervariable auf 0
             roundHighRoller = 0
         }
     }
 }
+
