@@ -1,20 +1,20 @@
 fun main() {
     println("")
-    println("          d8888b   d8888b  d88888b          d8888b     d8b    d8b   db  db   dD \n" +
-            "          88   8D    88    88               88   8D  d8   8b  888o  88  88  8P  \n" +
-            "          88   88    88    88ooooo          88oooY   88ooo88  88V8o 88  88 8P   \n" +
-            "          88   88    88    88               88   b   88   88  88 V8o88  88 8b   \n" +
-            "          88   8D    88    88               88   8D  88   88  88  V888  88  88  \n" +
-            "          Y8888Y   Y8888Y  Y88888Y          Y8888P   YP   YP  VP   V8P  YP   YD \n" +
-            "                                                                         \n" +
-            "                                                                         \n" +
-            "           d888b   d88888b  db   d8b   db  d8888b  d8b   db  d8b   db  d888888b \n" +
-            "          88  88b  88       88   I8I   88    88    888o  88  888o  88     88    \n" +
-            "          88       8888888  88   I8I   88    88    88V8o 88  88V8o 88     88    \n" +
-            "          88  888  88       Y8   I8I   88    88    88 V8o88  88 V8o88     88    \n" +
-            "          88   8   88        8b d8 8b d8     88    88  V888  88  V888     88    \n" +
-            "           Y888P   Y88888P    8b8   8d8    Y8888P  VP   V8P  VP   V8P     YP    \n" +
-            "                                                                                  ")
+    println("          d8888b   d8888b  d88888b          d8888b     d8b    d8b   db  db   dD        \n" +
+            "          88   8D    88    88               88   8D  d8   8b  888o  88  88  8P         \n" +
+            "          88   88    88    88888            88oooY   88ooo88  88V8o 88  88 8P          \n" +
+            "          88   88    88    88               88   b   88   88  88 V8o88  88 8b          \n" +
+            "          88   8D    88    88               88   8D  88   88  88  V888  88  88         \n" +
+            "          Y8888Y   Y8888Y  Y88888Y          Y8888P   YP   YP  VP   V8P  YP   YD        \n" +
+            "                                                                                       \n" +
+            "                                                                                       \n" +
+            "           d888b   d88888b  db   d8b   db  d8888b  d8b   db  d8b   db  d888888b        \n" +
+            "          88  88b  88       88   I8I   88    88    888o  88  888o  88     88           \n" +
+            "          88       8888888  88   I8I   88    88    88V8o 88  88V8o 88     88           \n" +
+            "          88  888  88       Y8   I8I   88    88    88 V8o88  88 V8o88     88           \n" +
+            "          88   8   88        8b d8 8b d8     88    88  V888  88  V888     88           \n" +
+            "           Y888P   Y88888P    8b8   8d8    Y8888P  VP   V8P  VP   V8P     YP           \n" +
+            "                                                                                         ")
 
 
 
@@ -27,12 +27,12 @@ fun main() {
     println("")
 
     var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 500000.00)                       //Vorbereitung für den zweiten Tisch
-    var sascha: CasinoHighrolerEmployees = CasinoHighrolerEmployees(2, "Sascha", "Croupier", 45)
-    var christian: CasinoHighrolerEmployees = CasinoHighrolerEmployees(2,"Christian", "Croupier", 57)
+    var sascha: CasinoHighRollerEmployees = CasinoHighRollerEmployees(2, "Sascha", "Croupier", 45)
+    var christian: CasinoHighRollerEmployees = CasinoHighRollerEmployees(2,"Christian", "Croupier", 57)
     rouletteAtTable2.printInfo()
 
     var rouletteGames: RouletteGames = RouletteGames(1)                         //Instanziierung der RouletteGames an Tisch 1
-    var rouletteGamesHighroler: RouletteHighroler = RouletteHighroler(2)     //Instanziierung der RouletteGames an Tisch 2
+    var rouletteGamesHighRoller: RouletteHighRoller = RouletteHighRoller(2)     //Instanziierung der RouletteGames an Tisch 2
 
     var klaus: CasinoPlayer = CasinoPlayer(1, "Klaus", 500.00, true, 0.01,23)
     var tatjana: CasinoPlayer = CasinoPlayer(1, "Tatjana", 500.00, true, 0.01,59)
@@ -47,9 +47,9 @@ fun main() {
     val entrance : CasinoEntranceControl = CasinoEntranceControl()
     val playersWantEntrance: MutableList<CasinoPlayer> = mutableListOf(klaus, tatjana, mike, salva, claudia, enrico)
     val players: MutableList<CasinoPlayer> = mutableListOf()
-    val playersHighroler: MutableList<CasinoPlayer> = mutableListOf(gonzales, silvio)
+    val playersHighRoller: MutableList<CasinoPlayer> = mutableListOf(gonzales, silvio)
     val croupiers: MutableList<CasinoEmployees> = mutableListOf(rainer, ernst, dieter)
-    val highrolerCroupiers : MutableList<CasinoHighrolerEmployees> = mutableListOf(christian, sascha)
+    val highRollerCroupiers : MutableList<CasinoHighRollerEmployees> = mutableListOf(christian, sascha)
 
     println("")
     println("Hier wird die Einlasskontrolle durchgeführt und das Alter geprüft")
@@ -65,7 +65,7 @@ fun main() {
 
     println("")
     println("Tisch Nummer ${rouletteAtTable2.tableNumber}")
-    for (player in playersHighroler) {
+    for (player in playersHighRoller) {
         player.introduce()
     }
 
@@ -75,13 +75,13 @@ fun main() {
         rouletteAtTable1.goPlay(players, rouletteGames, rouletteAtTable1)
         rouletteAtTable1.removePlayerWithNoMoney(players)
 
-        rouletteAtTable2.goPlayHighroler(playersHighroler, rouletteGamesHighroler, rouletteAtTable2)
-        rouletteAtTable2.removePlayerHighrolerWithNoMoney(playersHighroler)
+        rouletteAtTable2.goPlayHighRoller(playersHighRoller, rouletteGamesHighRoller, rouletteAtTable2)
+        rouletteAtTable2.removePlayerHighRollerWithNoMoney(playersHighRoller)
 
         round++
         dieter.changeCroupier(croupiers, rouletteAtTable1)
-        roundHighroler++
-        sascha.changeHighrolerCroupier(highrolerCroupiers, rouletteAtTable2)
+        roundHighRoller++
+        sascha.changeHighRollerCroupier(highRollerCroupiers, rouletteAtTable2)
 
     } while (goOn1 || goOn2)
 

@@ -1,6 +1,6 @@
 import kotlin.math.round
 
-class RouletteHighroller(tableNumber: Int): RouletteGames(tableNumber) {
+class RouletteHighRoller(tableNumber: Int): RouletteGames(tableNumber) {
 
     override fun playerNumber(player: CasinoPlayer, rouletteTable: RouletteTable) {                   //Diese Funktion lässt den Spieler auf eine random Zahl einen random Betrag zwischen 10 und 50 euro setzen
         var number = (0..36).random()
@@ -98,50 +98,50 @@ class RouletteHighroller(tableNumber: Int): RouletteGames(tableNumber) {
         }
     }
 
-    override fun playerSkipRound(player: CasinoPlayer, rouletteTable: RouletteTable){
-        println("Spieler ${player.name} setzt eine Runde aus.")
-        player.skipRound = true
+    override fun playerSkipRound(playerHighRoller: CasinoPlayer, rouletteTable: RouletteTable){
+        println("Spieler ${playerHighRoller.name} setzt eine Runde aus.")
+        playerHighRoller.skipRound = true
     }
 
-    override fun games(playerHighroller: CasinoPlayer, rouletteTable: RouletteTable) {
-        println("\nWillkommen ${playerHighroller.name} am Roulette Tisch 2, du kannst zwischen folgenden Spielen wählen, triff deine Auswahl")
+    override fun games(playerHighRoller: CasinoPlayer, rouletteTable: RouletteTable) {
+        println("\nWillkommen ${playerHighRoller.name} am Roulette Tisch 2, du kannst zwischen folgenden Spielen wählen, triff deine Auswahl")
         println("[1] = Auf Zahl setzen\n[2] = auf Gerade/Ungerade setzen\n[3] = auf Rot oder Schwarz setzen" +
                 "\n[4] = auf 1.,2. oder 3.Drittel setzen\n[5] = auf 1. oder 2. Hälfte setzen\n[6] = Aussetzen |")
         try {
             var choice = readln().toInt()
             when (choice) {
                 1 -> {
-                    playerNumber(playerHighroller, rouletteTable)                             //Auf Zahlen setzen
+                    playerNumber(playerHighRoller, rouletteTable)                             //Auf Zahlen setzen
                 }
 
                 2 -> {
-                    playerRedOrBlack(playerHighroller, rouletteTable)                         //Auf Rot oder Schwarz setzen
+                    playerRedOrBlack(playerHighRoller, rouletteTable)                         //Auf Rot oder Schwarz setzen
                 }
 
                 3 -> {
-                    playerEvenOrNotEven(playerHighroller, rouletteTable)                      //Auf Gerade oder Ungerade setzten
+                    playerEvenOrNotEven(playerHighRoller, rouletteTable)                      //Auf Gerade oder Ungerade setzten
                 }
 
                 4 -> {
-                    playerThird(playerHighroller, rouletteTable)                              //Auf 1.2.oder 3.Drittel setzen
+                    playerThird(playerHighRoller, rouletteTable)                              //Auf 1.2.oder 3.Drittel setzen
                 }
 
                 5 -> {
-                    playerFirstOrSecondHalf(playerHighroller, rouletteTable)                  //Auf 1. oder 2. Hälfte setzen
+                    playerFirstOrSecondHalf(playerHighRoller, rouletteTable)                  //Auf 1. oder 2. Hälfte setzen
                 }
 
                 6 -> {
-                    playerSkipRound(playerHighroller, rouletteTable)                          //Eine Runde aussetzen
+                    playerSkipRound(playerHighRoller, rouletteTable)                          //Eine Runde aussetzen
                 }
 
                 else -> {
                     println("ungültige Eingabe, bitte gib eine Zahl von [1] - [6] ein") //Falls ungültige Eingabe, neue Eingabe starten
-                    games(playerHighroller, rouletteTable)
+                    games(playerHighRoller, rouletteTable)
                 }
             }
         } catch (ausnahme: Exception) {
             println("Diese Eingabe war falsch, es wird automatisch per Default auf Zahl gesetzt")
-            playerNumber(playerHighroller, rouletteTable)
+            playerNumber(playerHighRoller, rouletteTable)
         }
     }
 }

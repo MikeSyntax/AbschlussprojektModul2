@@ -73,10 +73,10 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
 
     }
 
-    //Hauptmethode zum Spielen des Highroller Tisches mit Eingabe des Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der der Variablen mit den gespeicherten Spielerwahlen
-    fun goPlayHighroler(playersHighroller: MutableList<CasinoPlayer>, rouletteGamesHighroller: RouletteGames, rouletteTable: RouletteTable) {
+    //Hauptmethode zum Spielen des HighRoller Tisches mit Eingabe des Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der der Variablen mit den gespeicherten Spielerwahlen
+    fun goPlayHighRoller(playersHighRoller: MutableList<CasinoPlayer>, rouletteGamesHighRoller: RouletteGames, rouletteTable: RouletteTable) {
 
-        for (player in playersHighroller) { rouletteGamesHighroller.games(player, rouletteTable)                           //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
+        for (player in playersHighRoller) { rouletteGamesHighRoller.games(player, rouletteTable)                           //Willkommen alle Spieler am Roulettetisch 1 und bitte eine Auswahl treffen
             println("")
         }
 
@@ -93,7 +93,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         printNumbers(listOfLastNumbers2)                                         //Anzeigen der bearbeiteten Liste untereinander
         println("")
 
-        for (player in playersHighroller) {
+        for (player in playersHighRoller) {
             println("${player.name} hat ${player.getWin(rouletteNumber, rouletteTable)}")      //Gewinne jedes einzelnen Spielers prüfen
         }
 
@@ -103,7 +103,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         println("")
         println("Machen Sie Ihre Einsätze, neues Spiel, neues Glück")
 
-        for (player in playersHighroller) {
+        for (player in playersHighRoller) {
             player.reset()                                                      //zurücksezten der Variablen in CasinoPlayer für das neue Spiel
         }
 
@@ -112,17 +112,17 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
 
 
 
-    fun removePlayerWithNoMoney(players: MutableList<CasinoPlayer>) {                                           //Schleife falls ein Spieler kein Geld mehr hat
-        var removePlayer = players.filter { player -> player.cash <= 0 }
+    fun removePlayerWithNoMoney(playersHighRoller: MutableList<CasinoPlayer>) {                                           //Schleife falls ein Spieler kein Geld mehr hat
+        var removePlayer = playersHighRoller.filter { player -> player.cash <= 0 }
 
         for (player in removePlayer) {
             println("===============================================================")
             println("${player.name} hat kein Geld mehr und muss den Tisch verlassen")
             println("===============================================================\n")
-            players.remove(player)
-            printListInfoAfterRemoving(players)
+            playersHighRoller.remove(player)
+            printListInfoAfterRemoving(playersHighRoller)
         }
-        if (players.isEmpty()) {
+        if (playersHighRoller.isEmpty()) {
             goOn1 = false
             println("|––––––––––––––––––––––––––--–––––––––––––-––––-|")
             println("| Alle Spieler an Tisch 1 haben kein Geld mehr! |")
@@ -130,10 +130,10 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         }
     }
 
-    fun printListInfoAfterRemoving(players: List<CasinoPlayer>) {
+    fun printListInfoAfterRemoving(playersHighRoller: List<CasinoPlayer>) {
         println("Folgende Spieler verbleiben")
         println("---------------------------")
-        for (player in players) {
+        for (player in playersHighRoller) {
             println(player.name)
         }
     }
@@ -170,7 +170,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         return listOfLastNumbers1
     }
 
-    //HighrollerListe mit den gefallenen Kugeln plus die neue und die erste wird entfernt
+    //HighRollerListe mit den gefallenen Kugeln plus die neue und die erste wird entfernt
     fun rouletteNumbers2(getInfo: String): MutableList<String> {
         listOfLastNumbers2.add(getInfo)
         listOfLastNumbers2.removeFirst()                                  //Änderung mit if > 10 ersten Eintrag entfernen
@@ -222,17 +222,17 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         }
     }
 
-    fun removePlayerHighrollerWithNoMoney(playersHighroller: MutableList<CasinoPlayer>) {                                           //Schleife falls ein Spieler kein Geld mehr hat
-        var removePlayer = playersHighroller.filter { player -> player.cash <= 0 }
+    fun removePlayerHighRollerWithNoMoney(playersHighRoller: MutableList<CasinoPlayer>) {                                           //Schleife falls ein Spieler kein Geld mehr hat
+        var removePlayer = playersHighRoller.filter { player -> player.cash <= 0 }
 
         for (player in removePlayer) {
             println("===============================================================")
             println("${player.name} hat kein Geld mehr und muss den Tisch verlassen")
             println("===============================================================\n")
-            playersHighroller.remove(player)
-            printListInfoAfterRemovingHighroller(playersHighroller)
+            playersHighRoller.remove(player)
+            printListInfoAfterRemovingHighRoller(playersHighRoller)
         }
-        if (playersHighroller.isEmpty()) {
+        if (playersHighRoller.isEmpty()) {
             goOn2 = false
             println("|––––––––––––––––––––––––––--–––––––––––––-––––-|")
             println("| Alle Spieler an Tisch 2 haben kein Geld mehr! |")
@@ -241,10 +241,10 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         }
     }
 
-    fun printListInfoAfterRemovingHighroller(playersHighroller: List<CasinoPlayer>) {
+    fun printListInfoAfterRemovingHighRoller(playersHighRoller: List<CasinoPlayer>) {
         println("Folgende Spieler verbleiben")
         println("---------------------------")
-        for (player in playersHighroller) {
+        for (player in playersHighRoller) {
             println(player.name)
         }
     }
