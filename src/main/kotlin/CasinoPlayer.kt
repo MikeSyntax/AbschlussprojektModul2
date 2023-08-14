@@ -1,7 +1,7 @@
 // Importieren der benötigten Bibliotheken
 import kotlin.math.round
 // Definition der Klasse CasinoPlayer, die von der Klasse Casino erbt
-class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var drink: Boolean, var tip: Double, var age: Int): Casino(tableNumber){
+class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var drink: Boolean, var tip: Double, var age: Int): Casino(tableNumber) {
 
 
     // Deklaration von Eigenschaften, um Spielerinformationen zu speichern
@@ -12,13 +12,21 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
     var thirdThird: Int = -1    // Wahl von Erstes Drittel (0), Zweites Drittel (1) oder Drittes Drittel (2)
     var half: Int = -1          // Wahl von Erste Hälfte (0) oder Zweite Hälfte (1)
     var skipRound = false       // true/false, um eine Runde zu überspringen
-    var numberFreeChoice: Int = -1 // Wahl einer vom  Nutzer gewählten beliebigen Zahl
+    var numberFreeChoice: Int = -1 // Wahl einer vom Nutzer gewählten beliebigen Zahl
     /*init {
         println("Der Spieler $name wurde initialisiert. $name hat $cash € und er hat ein Getränk $drink")
     }*/
 
     // Sekundärer Konstruktor, der den primären Konstruktor aufruft und einen zusätzlichen Parameter hat
-    constructor(tableNumber: Int, name: String, cash: Double, drink: Boolean, tip: Double, age: Int, highRoller: Boolean) : this(tableNumber, name, cash, drink, tip, age) {
+    constructor(
+        tableNumber: Int,
+        name: String,
+        cash: Double,
+        drink: Boolean,
+        tip: Double,
+        age: Int,
+        highRoller: Boolean
+    ) : this(tableNumber, name, cash, drink, tip, age) {
         //println("Spieler $name wurde mit dem sekundären Konstruktor initialisiert und ist ein HighRoller $highRoller")
     }
 
@@ -37,7 +45,11 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
-                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount*100)/100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash*100)/100}€${FontColors.COLOREND.type}"
+                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${
+                    round(
+                        tipAmount * 100
+                    ) / 100
+                }€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
             }
             // Wenn die gewählte Zahl rot ist und der Spieler "Schwarz" gewählt hat
             (redNumbers.contains(number) && redBlack == 1) -> {
@@ -51,7 +63,11 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
-                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount*100)/100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash*100)/100}€${FontColors.COLOREND.type}"
+                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${
+                    round(
+                        tipAmount * 100
+                    ) / 100
+                }€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
             }
 
             // Wenn die gewählte Zahl schwarz ist und der Spieler "Schwarz" gewählt hat
@@ -66,7 +82,11 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
-                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount*100)/100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash*100)/100}€${FontColors.COLOREND.type}"
+                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${
+                    round(
+                        tipAmount * 100
+                    ) / 100
+                }€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
             }
 
             // Wenn die gewählte Zahl gerade ist und der Spieler "Gerade" gewählt hat
@@ -81,7 +101,11 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
-                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount*100)/100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash*100)/100}€${FontColors.COLOREND.type}"
+                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${
+                    round(
+                        tipAmount * 100
+                    ) / 100
+                }€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
             }
 
             // Wenn die gewählte Zahl ungerade ist und der Spieler "Ungerade" gewählt hat
@@ -96,7 +120,11 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
-                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount*100)/100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash*100)/100}€${FontColors.COLOREND.type}"
+                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${
+                    round(
+                        tipAmount * 100
+                    ) / 100
+                }€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
             }
 
             // Wenn die gewählte Zahl in der ersten Hälfte liegt und der Spieler "1. Drittel" gewählt hat
@@ -111,7 +139,11 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
-                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount*100)/100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash*100)/100}€${FontColors.COLOREND.type}"
+                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${
+                    round(
+                        tipAmount * 100
+                    ) / 100
+                }€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
             }
 
             // Wenn die gewählte Zahl in der zweiten Hälfte liegt und der Spieler "2. Drittel" gewählt hat
@@ -126,7 +158,11 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
-                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount*100)/100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash*100)/100}€${FontColors.COLOREND.type}"
+                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${
+                    round(
+                        tipAmount * 100
+                    ) / 100
+                }€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
             }
 
             // Wenn die gewählte Zahl in der dritten Hälfte liegt und der Spieler "3. Drittel" gewählt hat
@@ -141,7 +177,11 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
-                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount*100)/100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash*100)/100}€${FontColors.COLOREND.type}"
+                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${
+                    round(
+                        tipAmount * 100
+                    ) / 100
+                }€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
             }
 
             // Wenn die gewählte Zahl in der ersten Hälfte liegt und der Spieler "1. Hälfte" gewählt hat
@@ -156,7 +196,11 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
-                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount*100)/100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash*100)/100}€${FontColors.COLOREND.type}"
+                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${
+                    round(
+                        tipAmount * 100
+                    ) / 100
+                }€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
             }
 
             // Wenn die gewählte Zahl in der zweiten Hälfte liegt und der Spieler "2. Hälfte" gewählt hat
@@ -171,17 +215,21 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
-                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount*100)/100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash*100)/100}€${FontColors.COLOREND.type}"
+                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${
+                    round(
+                        tipAmount * 100
+                    ) / 100
+                }€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
             }
 
             // Wenn die skipRound true gesetzt ist
             (skipRound) -> {
                 Thread.sleep(1000)
-                return  "für diese Runde ausgesetzt"
+                return "für diese Runde ausgesetzt"
             }
 
             // Wenn die gewählte Zahl mit der vom Spieler gewählten Zahl übereinstimmt
-            (yourNumber == numberFreeChoice) -> {
+            (numberFreeChoice == number) -> {
                 // Erhöhe den Kontostand des Spielers um das Gewinnbetrag * 36
                 cash += (yourAmount * 36)
                 var winAmount = yourAmount * 36
@@ -192,8 +240,10 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 rouletteTable.bankTable = rouletteTable.bankTable - winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
-                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount*100)/100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash*100)/100}€${FontColors.COLOREND.type}"
+                return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${
+                    round(tipAmount * 100) / 100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
             }
+
             // Andernfalls (wenn keine der vorherigen Bedingungen erfüllt ist)
             else -> {
                 Thread.sleep(1000)
@@ -201,22 +251,22 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
             }
         }
     }
-    // Setzt die Spieler-Variablen auf ihre Standardwerte zurück
-    fun reset(){
-        yourNumber = -1
-        yourAmount= -1
-        redBlack= -1
-        evenOrNot = -1
-        thirdThird = -1
-        half = -1
-        skipRound = false
-        numberFreeChoice = -1
-    }
+        // Setzt die Spieler-Variablen auf ihre Standardwerte zurück
+        fun reset() {
+            yourNumber = -1
+            yourAmount = -1
+            redBlack = -1
+            evenOrNot = -1
+            thirdThird = -1
+            half = -1
+            skipRound = false
+            numberFreeChoice = -1
+        }
 
-    // Gibt eine Einführungsnachricht für den Spieler aus
-    fun introduce() {
-        println("Hallo, ich bin $name und spiele an Tisch $tableNumber")
-        Thread.sleep(1000)
-    }
+        // Gibt eine Einführungsnachricht für den Spieler aus
+        fun introduce() {
+            println("Hallo, ich bin $name und spiele an Tisch $tableNumber")
+            Thread.sleep(1000)
+        }
 
-}
+    }

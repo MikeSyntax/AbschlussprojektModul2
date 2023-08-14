@@ -130,12 +130,14 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
             println("${FontColors.RED.type}|––––––––––––––––––––––––––--–––––––––––––-––––-|")
             println("| Alle Spieler an Tisch 1 haben kein Geld mehr! |")
             println("|––––––––––––––––––––––––––--–––––––––––––-––––-|${FontColors.COLOREND.type}")
+            println("")
         }
     }
 
     fun printListInfoAfterRemoving(playersHighRoller: List<CasinoPlayer>) {
         println("Folgende Spieler verbleiben")
         println("---------------------------")
+        println("")
         for (player in playersHighRoller) {
             println(player.name)
         }
@@ -183,44 +185,46 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     fun infoOfNumbers(rouletteNumbers: Int) {
         when {
             (rouletteNumbers in first) -> {
-                print("Die Zahl liegt im ersten Drittel zwischen 1-12")
+                print("Die Zahl liegt ${FontColors.YELLOW.type}im ersten Drittel${FontColors.COLOREND.type} zwischen 1-12")
             }
 
             (rouletteNumbers in second) -> {
-                print("Die Zahl liegt im zweiten Drittel zwischen 13-24")
+                print("Die Zahl liegt ${FontColors.YELLOW.type}im zweiten Drittel${FontColors.COLOREND.type} zwischen 13-24")
             }
 
             (rouletteNumbers in third) -> {
-                print("Die Zahl liegt im dritten Drittel zwischen 25-36")
+                print("Die Zahl liegt ${FontColors.YELLOW.type}im dritten Drittel${FontColors.COLOREND.type} zwischen 25-36")
             }
         }
         when {
             (rouletteNumbers in firstHalf) -> {
-                print(" und in der ersten Hälfte zwischen 1-18")
+                print(" und in der ${FontColors.YELLOW.type}ersten Hälfte${FontColors.COLOREND.type} zwischen 1-18")
             }
 
-            (rouletteNumbers in secondHalf) -> print(" und in der zweiten Hälfte zwischen 19-36")
+            (rouletteNumbers in secondHalf) -> {
+                print(" und in der ${FontColors.YELLOW.type}zweiten Hälfte${FontColors.COLOREND.type} zwischen 19-36")
+            }
         }
         when {
             (rouletteNumbers in blackNumbers) -> {
-                print(" sie ist schwarz")
+                print(" sie ist ${FontColors.YELLOW.type}schwarz${FontColors.COLOREND.type}")
             }
 
             (rouletteNumbers in redNumbers) -> {
-                print(" sie ist rot")
+                print(" sie ist ${FontColors.YELLOW.type}rot${FontColors.COLOREND.type}")
             }
         }
         when {
             (rouletteNumbers in numberIsEven) -> {
-                print(" und gerade")
+                print(" und ${FontColors.YELLOW.type}gerade${FontColors.COLOREND.type}")
             }
 
             (rouletteNumbers in numberIsNotEven) -> {
-                print(" und ungerade")
+                print(" und ${FontColors.YELLOW.type}ungerade${FontColors.COLOREND.type}")
             }
 
             (rouletteNumbers in specialNumber) -> {
-                print("Die Zahl ist Zero")
+                print("Die Zahl ist ${FontColors.YELLOW.type}Zero${FontColors.COLOREND.type}")
             }
         }
     }
@@ -240,6 +244,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
             println("${FontColors.RED.type}|––––––––––––––––––––––––––--–––––––––––––-––––-|")
             println("| Alle Spieler an Tisch 2 haben kein Geld mehr! |")
             println("|––––––––––––––––––––––––––--–––––––––––––-––––-|${FontColors.COLOREND.type}")
+            println("")
 
         }
     }
@@ -247,6 +252,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     fun printListInfoAfterRemovingHighRoller(playersHighRoller: List<CasinoPlayer>) {
         println("Folgende Spieler verbleiben")
         println("---------------------------")
+        println("")
         for (player in playersHighRoller) {
             println(player.name)
         }
