@@ -185,24 +185,24 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     fun infoOfNumbers(rouletteNumbers: Int) {
         when {
             (rouletteNumbers in first) -> {
-                print("Die Zahl liegt ${FontColors.YELLOW.type}im ersten Drittel${FontColors.COLOREND.type} zwischen 1-12")
+                print("Die Zahl liegt ${FontColors.YELLOW.type}im 1. Drittel${FontColors.COLOREND.type} zwischen 1-12")
             }
 
             (rouletteNumbers in second) -> {
-                print("Die Zahl liegt ${FontColors.YELLOW.type}im zweiten Drittel${FontColors.COLOREND.type} zwischen 13-24")
+                print("Die Zahl liegt ${FontColors.YELLOW.type}im 2. Drittel${FontColors.COLOREND.type} zwischen 13-24")
             }
 
             (rouletteNumbers in third) -> {
-                print("Die Zahl liegt ${FontColors.YELLOW.type}im dritten Drittel${FontColors.COLOREND.type} zwischen 25-36")
+                print("Die Zahl liegt ${FontColors.YELLOW.type}im 3. Drittel${FontColors.COLOREND.type} zwischen 25-36")
             }
         }
         when {
             (rouletteNumbers in firstHalf) -> {
-                print(" und in der ${FontColors.YELLOW.type}ersten Hälfte${FontColors.COLOREND.type} zwischen 1-18")
+                print(" und in der ${FontColors.YELLOW.type}1. Hälfte${FontColors.COLOREND.type} zwischen 1-18")
             }
 
             (rouletteNumbers in secondHalf) -> {
-                print(" und in der ${FontColors.YELLOW.type}zweiten Hälfte${FontColors.COLOREND.type} zwischen 19-36")
+                print(" und in der ${FontColors.YELLOW.type}2. Hälfte${FontColors.COLOREND.type} zwischen 19-36")
             }
         }
         when {

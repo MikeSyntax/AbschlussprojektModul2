@@ -14,9 +14,8 @@ fun main() {
                 "          88       8888888  88   I8I   88    88    88V8o 88  88V8o 88     88           \n" +
                 "          88  888  88       Y8   I8I   88    88    88 V8o88  88 V8o88     88           \n" +
                 "          88   8   88        8b d8 8b d8     88    88  V888  88  V888     88           \n" +
-                "           Y888P   Y88888P    8b8   8d8    Y8888P  VP   V8P  VP   V8P     YP           \n" +
-                "                                                                                         ${FontColors.COLOREND.type}"
-    )
+                "           Y888P   Y88888P    8b8   8d8    Y8888P  VP   V8P  VP   V8P     YP (immer!)${FontColors.COLOREND.type}\n" +
+                "                                                                                         ")
 
     // Wartepause von 1 Sekunde
     Thread.sleep(1000)
@@ -41,6 +40,7 @@ fun main() {
     // Erstellung von CasinoHighRollerEmployees-Objekten für Croupiers Sascha und Christian
     var sascha: CasinoHighRollerEmployees = CasinoHighRollerEmployees(2, "Sascha", "Croupier", 45)
     var christian: CasinoHighRollerEmployees = CasinoHighRollerEmployees(2, "Christian", "Croupier", 57)
+    var siegfried: CasinoHighRollerEmployees = CasinoHighRollerEmployees(2, "Siegfried", "Croupier", 44)
 
     // Ausgabe von Informationen über den Roulette-Tisch 2
     rouletteAtTable2.printInfo()
@@ -60,8 +60,9 @@ fun main() {
     var enrico: CasinoPlayer = CasinoPlayer(1, "Enrico", 50.00, false, 0.00, 19)
 
     // Erstellung von CasinoPlayer-Objekten für High Roller Spieler
-    var gonzales: CasinoPlayer = CasinoPlayer(2, "Gonzales", 10000.00, true, 0.1, 26, true)
-    var silvio: CasinoPlayer = CasinoPlayer(2, "Silvio", 10000.00, true, 0.08, 65, true)
+    var gonzales: CasinoPlayer = CasinoPlayer(2, "Gonzales", 20000.00, true, 0.1, 26, true)
+    var silvio: CasinoPlayer = CasinoPlayer(2, "Silvio", 20000.00, true, 0.08, 65, true)
+    var daniel: CasinoPlayer = CasinoPlayer(2, "Daniel", 25000.00, true, 0.02, 34,true)
 
     // Erstellung eines CasinoEntranceControl-Objekts für die Einlasskontrolle
     val entrance: CasinoEntranceControl = CasinoEntranceControl()
@@ -73,13 +74,13 @@ fun main() {
     val players: MutableList<CasinoPlayer> = mutableListOf()
 
     // Liste von High Roller CasinoPlayer-Objekten für den Einlass
-    val playersHighRoller: MutableList<CasinoPlayer> = mutableListOf(gonzales, silvio)
+    val playersHighRoller: MutableList<CasinoPlayer> = mutableListOf(gonzales, silvio, daniel)
 
     // Liste von CasinoEmployees-Objekten, die Croupiers am Tisch
     val croupiers: MutableList<CasinoEmployees> = mutableListOf(rainer, ernst, dieter)
 
     // Liste von High Roller CasinoHighRollerEmployees-Objekten für die High Roller Tische
-    val highRollerCroupiers: MutableList<CasinoHighRollerEmployees> = mutableListOf(christian, sascha)
+    val highRollerCroupiers: MutableList<CasinoHighRollerEmployees> = mutableListOf(christian, siegfried, sascha)
 
     // Ausgabe einer Leerzeile
     println("")
