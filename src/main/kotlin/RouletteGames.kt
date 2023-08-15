@@ -139,17 +139,19 @@ open class RouletteGames(tableNumber: Int) {
         if (numbersFirstOrSecondHalf == 1) {
             // Setzen auf die 1. Hälfte
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die 1. Hälfte gesetzt")
-            player.cash = player.cash - amount
-            println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
-        } else if (numbersFirstOrSecondHalf == 2) {
+             } else if (numbersFirstOrSecondHalf == 2) {
             // Setzen auf die 2. Hälfte
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die 2. Hälfte gesetzt")
-            player.cash = player.cash - amount
-            println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
-        } else {
+             } else {
             // Ausgabe bei ungültiger Eingabe (zur Vorbereitung auf manuelle Eingaben)
             println("Falsche Eingabe")
         }
+
+        // Abzug des Einsatzbetrags vom Spieler-Guthaben
+        player.cash = player.cash - amount
+
+        // Ausgabe des verbleibenden Guthabens
+        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
     }
 
     // Offene Methode playerSkipRound, um den Spieler eine Runde aussetzen zu lassen
