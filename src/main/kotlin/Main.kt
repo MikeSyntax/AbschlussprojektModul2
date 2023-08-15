@@ -42,7 +42,7 @@ fun main() {
     println("")
 
     // Erstellung eines RouletteTable-Objekts für Tisch 2 mit Croupier Sascha und vorbereiteten Geld- und Trinkgeldbeträgen
-    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 11000.00, 1000.00, 10000.00)
+    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 500000.00, 1000.00, 10000.00)
     // Erstellung eines Objekts zur Erkennung, falls die Bank pleite ist
     var breakingTheBank2: BreakingTheBank = BreakingTheBank(2)
 
@@ -96,6 +96,7 @@ fun main() {
 
     // Ausgabe einer Meldung über die Einlasskontrolle und Altersprüfung
     println("Hier wird die ${FontColors.RED.type}Einlasskontrolle${FontColors.COLOREND.type} durchgeführt und das Alter geprüft")
+    println("${FontColors.BLUE.type}-----------------------------------------------------------------${FontColors.COLOREND.type}")
 
     // Schleife durch die Liste von Spielern, die Einlass wollen, und Aufruf der Einlasskontrolle
     for (player in playersWantEntrance) {
@@ -106,7 +107,8 @@ fun main() {
     println("")
 
     // Schleife durch die Liste von Spielern am Tisch 1 und Aufruf der introduce()-Methode
-    println("${FontColors.YELLOW.type}Roulette Tisch ${FontColors.COLOREND.type}${FontColors.BLUE.type}${rouletteAtTable1.tableNumber}${FontColors.COLOREND.type}")
+    println("Roulette Tisch ${FontColors.BLUE.type}${rouletteAtTable1.tableNumber}${FontColors.COLOREND.type}")
+    println("${FontColors.BLUE.type}----------------${FontColors.COLOREND.type}")
     for (player in players) {
         player.introduce()
     }
@@ -115,7 +117,8 @@ fun main() {
     println("")
 
     // Schleife durch die Liste von High Roller Spielern am Tisch 2 und Aufruf der introduce()-Methode
-    println("${FontColors.YELLOW.type}Roulette Tisch ${FontColors.COLOREND.type}${FontColors.BLUE.type}${rouletteAtTable2.tableNumber}${FontColors.COLOREND.type}${FontColors.YELLOW.type} (Für High Roller ohne Eingangskontrolle) ${FontColors.COLOREND.type}")
+    println("Roulette Tisch ${FontColors.BLUE.type}${rouletteAtTable2.tableNumber}${FontColors.COLOREND.type}${FontColors.YELLOW.type} (Für High Roller ohne Eingangskontrolle) ${FontColors.COLOREND.type}")
+    println("${FontColors.BLUE.type}--------------------------------------------------------${FontColors.COLOREND.type}")
     for (player in playersHighRoller) {
         player.introduce()
     }
@@ -156,15 +159,15 @@ fun main() {
         if (!goOn1 && !goOn2) {
             println("")
             // Ausgabe einer Meldung, wenn das Spiel vorbei ist, weil kein Spieler noch Geld hat
-            println("${FontColors.RED.type}´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´")
+            println("${FontColors.RED.type}==============================================================")
             println("|        Spiel ist vorbei, kein Spieler hat noch Geld         |")
-            println("´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´${FontColors.COLOREND.type}")
+            println("==============================================================${FontColors.COLOREND.type}")
         }
         if (!bankHasMoney1 && !bankHasMoney2) {
             println("")
             // Ausgabe einer Meldung, wenn das Spiel vorbei ist bei gesprengter Bank
-            println("${FontColors.RED.type}´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´")
+            println("${FontColors.RED.type}===============================================================")
             println("|  Spiel ist vorbei die Bank an beiden Tischen wurde gesprengt|")
-            println("´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´${FontColors.COLOREND.type}")
+            println("===============================================================${FontColors.COLOREND.type}")
         }
 }
