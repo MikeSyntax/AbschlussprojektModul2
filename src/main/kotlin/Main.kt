@@ -19,8 +19,7 @@ fun main() {
                 "           Y888P   Y88888P    8b8   8d8    Y8888P  VP   V8P  VP   V8P     YP (... nicht immer!)${FontColors.COLOREND.type}\n" +
                 "                                                                                         ")
     println("${FontColors.BLUE.type}===============================================================================================${FontColors.COLOREND.type}")
-
-
+    println("")
 
     // Wartepause von 1 Sekunde
     Thread.sleep(1000)
@@ -59,15 +58,15 @@ fun main() {
     // Erstellung von CasinoPlayer-Objekten für verschiedene Spieler
     var klaus: CasinoPlayer = CasinoPlayer(1, "Klaus", 500.00, true, 0.01, 23)
     var tatjana: CasinoPlayer = CasinoPlayer(1, "Tatjana", 500.00, true, 0.01, 59)
+    var enrico: CasinoPlayer = CasinoPlayer(1, "Enrico", 50.00, false, 0.00, 19)
     var mike: CasinoPlayer = CasinoPlayer(1, "Mike", 500.00, true, 0.02, 45)
     var salva: CasinoPlayer = CasinoPlayer(1, "Salva", 500.00, false, 0.04, 71)
     var claudia: CasinoPlayer = CasinoPlayer(1, "Claudia", 500.00, false, 0.03, 26)
-    var enrico: CasinoPlayer = CasinoPlayer(1, "Enrico", 50.00, false, 0.00, 19)
 
     // Erstellung von CasinoPlayer-Objekten für High Roller Spieler
-    var gonzales: CasinoPlayer = CasinoPlayer(2, "Gonzales", 20000.00, true, 0.1, 26, true)
-    var silvio: CasinoPlayer = CasinoPlayer(2, "Silvio", 20000.00, true, 0.08, 65, true)
-    var daniel: CasinoPlayer = CasinoPlayer(2, "Daniel", 25000.00, true, 0.02, 34,true)
+    var gonzales: CasinoPlayer = CasinoPlayer(2, "Gonzales", 15000.00, true, 0.1, 26, true)
+    var silvio: CasinoPlayer = CasinoPlayer(2, "Silvio", 13000.00, true, 0.08, 65, true)
+    var daniel: CasinoPlayer = CasinoPlayer(2, "Daniel", 17000.00, true, 0.02, 34,true)
 
     // Erstellung eines CasinoEntranceControl-Objekts für die Einlasskontrolle
     val entrance: CasinoEntranceControl = CasinoEntranceControl()
