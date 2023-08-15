@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Abschlussprojekt 14.08 gegen 19.27Uhr">
+    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Abschlussprojekt 14.08 gegen 19.50Uhr">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteHighRoller.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteHighRoller.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteTable.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -373,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692034047270</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Abschlussprojekt 14.08 gegen 19.50Uhr">
+      <created>1692035467922</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1692035467922</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -388,7 +396,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Abschlussprojekt 10.08 gegen 10.46Uhr" />
     <MESSAGE value="Abschlussprojekt 11.08 gegen 13.00Uhr" />
     <MESSAGE value="Abschlussprojekt 11.08 gegen 18.40Uhr" />
     <MESSAGE value="Abschlussprojekt 11.08 gegen 19.14Uhr" />
@@ -413,14 +420,15 @@
     <MESSAGE value="Abschlussprojekt 14.08 gegen 16.30Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 17.38Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 19.27Uhr" />
-    <option name="LAST_COMMIT_MESSAGE" value="Abschlussprojekt 14.08 gegen 19.27Uhr" />
+    <MESSAGE value="Abschlussprojekt 14.08 gegen 19.50Uhr" />
+    <option name="LAST_COMMIT_MESSAGE" value="Abschlussprojekt 14.08 gegen 19.50Uhr" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/Main.kt</url>
-          <line>118</line>
+          <line>117</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

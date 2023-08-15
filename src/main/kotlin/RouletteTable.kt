@@ -18,7 +18,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         println("Croupier Name: ${FontColors.YELLOW.type}$croupierName${FontColors.COLOREND.type}")
         println("Trinkgeldkasse : ${FontColors.YELLOW.type}$tipForEmployees€${FontColors.COLOREND.type}")
         println("Bank am Tisch : ${FontColors.YELLOW.type}$bankTable€${FontColors.COLOREND.type}")
-        println("Mindesteinsatz: ${FontColors.YELLOW.type}$minEinsatz€${FontColors.COLOREND.type}")
+        print("Mindesteinsatz: ${FontColors.YELLOW.type}$minEinsatz€${FontColors.COLOREND.type} und ")
         println("Maximaleinsatz: ${FontColors.YELLOW.type}$maximalerEinsatz€${FontColors.COLOREND.type}")
         Thread.sleep(1000)
     }

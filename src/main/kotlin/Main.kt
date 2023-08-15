@@ -14,7 +14,7 @@ fun main() {
                 "          88       8888888  88   I8I   88    88    88V8o 88  88V8o 88     88           \n" +
                 "          88  888  88       Y8   I8I   88    88    88 V8o88  88 V8o88     88           \n" +
                 "          88   8   88        8b d8 8b d8     88    88  V888  88  V888     88           \n" +
-                "           Y888P   Y88888P    8b8   8d8    Y8888P  VP   V8P  VP   V8P     YP (immer!)${FontColors.COLOREND.type}\n" +
+                "           Y888P   Y88888P    8b8   8d8    Y8888P  VP   V8P  VP   V8P     YP (... nicht immer!)${FontColors.COLOREND.type}\n" +
                 "                                                                                         ")
 
     // Wartepause von 1 Sekunde
@@ -106,7 +106,7 @@ fun main() {
     println("")
 
     // Schleife durch die Liste von High Roller Spielern am Tisch 2 und Aufruf der introduce()-Methode
-    println("${FontColors.YELLOW.type}Tisch Nummer ${rouletteAtTable2.tableNumber}${FontColors.COLOREND.type}")
+    println("${FontColors.YELLOW.type}Tisch Nummer ${rouletteAtTable2.tableNumber} (High Roller ohne Eingangskontrolle)${FontColors.COLOREND.type}")
     for (player in playersHighRoller) {
         player.introduce()
     }

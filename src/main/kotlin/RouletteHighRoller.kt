@@ -103,7 +103,7 @@ class RouletteHighRoller(tableNumber: Int): RouletteGames(tableNumber) {
         if (numberFreeChoice != null && numberFreeChoice in 0..36){
             println("Bitte gib jetzt den Einsatz ein, den du setzen möchtest")
             var amount = readln().toIntOrNull()
-            if (amount != null && amount > 0 && amount <= player.cash) {
+            if (amount != null && amount in 1000..10000 && amount <= player.cash) {
                 player.yourNumber = numberFreeChoice
                 player.yourAmount = amount
                 rouletteTable.bankTable = rouletteTable.bankTable + amount
@@ -111,7 +111,11 @@ class RouletteHighRoller(tableNumber: Int): RouletteGames(tableNumber) {
                 player.cash = player.cash - amount
                 println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
             } else {
-                println("Die Eingabe war leider falsch oder dein Cashbestand ${player.cash} ist zu niedrig für den Einsatz, bitte versuche es noch einmal")
+                println("")
+                println("Die Eingabe war leider falsch (Einsatz von ${FontColors.RED.type}${rouletteTable.minEinsatz}€${FontColors.COLOREND.type} bis ${FontColors.RED.type}${rouletteTable.maximalerEinsatz}€${FontColors.COLOREND.type})\n" +
+                        "oder dein Cashbestand ${FontColors.RED.type}${player.cash}€${FontColors.COLOREND.type} ist zu niedrig für den Einsatz.\n" +
+                        "-------------- Bitte versuche es noch einmal ------------------")
+                println("")
                 playerFreeChoiceNumber(player, rouletteTable)
             }
         } else {
