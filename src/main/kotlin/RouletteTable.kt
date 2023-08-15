@@ -30,7 +30,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     // Methode zur Ausgabe aller Informationen über den Roulettetisch
     fun printInfo() {
         // Ausgabe der Tischnummer mit gelber Schriftfarbe
-        println("Tischnummer: ${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type}")
+        println("Roulette Tisch: ${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type}")
         Thread.sleep(500)
         // Ausgabe des Croupier-Namens mit gelber Schriftfarbe
         println("Croupier Name: ${FontColors.YELLOW.type}$croupierName${FontColors.COLOREND.type}")
@@ -53,7 +53,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     // Methode zum Anzeigen des Standes der Bank am Roulettetisch
     fun countBank() {
         // Ausgabe des Bankstands am Roulettetisch mit roter Schriftfarbe
-        println("In der Bank am Roulettetisch ${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type} befinden sich insgesamt ${FontColors.RED.type}$bankTable€${FontColors.COLOREND.type}")
+        println("In der Bank am Roulette Tisch ${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type} befinden sich insgesamt ${FontColors.RED.type}$bankTable€${FontColors.COLOREND.type}")
     }
 
     // Methode zum Anzeigen der Trinkgeldkasse
@@ -61,7 +61,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         // Berechnung des Trinkgeldbetrags auf zwei Dezimalstellen gerundet
         val roundedTip = round(tipForEmployees * 100) / 100
         // Ausgabe des Trinkgeldstands am Roulettetisch mit roter Schriftfarbe
-        println("In der Trinkgeldkasse am Roulettetisch ${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type} befinden sich insgesamt ${FontColors.RED.type}$roundedTip€${FontColors.COLOREND.type}")
+        println("In der Trinkgeldkasse am Roulette Tisch ${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type} befinden sich insgesamt ${FontColors.RED.type}$roundedTip€${FontColors.COLOREND.type}")
     }
 
     // Methode zum Roulette Rad, die Kugel soll rollen und random eine Zahl auswählen
@@ -92,7 +92,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
 
         // Hinzufügen der gezogenen Zahl zur Liste der letzten 10 Zahlen und Anzeigen der Liste
         rouletteNumbers1(getInfo(rouletteNumber))
-        println("${FontColors.YELLOW.type}Anzeige der letzten 10 Zahlen an Tisch $tableNumber${FontColors.COLOREND.type}")
+        println("${FontColors.YELLOW.type}Anzeige der letzten 10 Zahlen an Roulette Tisch${FontColors.COLOREND.type} ${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type}")
         printNumbers(listOfLastNumbers1)
         println("")
 
@@ -143,7 +143,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
 
         // Hinzufügen der gezogenen Zahl zur Liste der letzten 10 Zahlen und Anzeigen der Liste
         rouletteNumbers2(getInfo(rouletteNumber))
-        println("${FontColors.YELLOW.type}Anzeige der letzten 10 Zahlen an Tisch $tableNumber${FontColors.COLOREND.type}")
+        println("${FontColors.YELLOW.type}Anzeige der letzten 10 Zahlen an Roulette Tisch${FontColors.COLOREND.type} ${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type}")
         printNumbers(listOfLastNumbers2)
         println("")
 
@@ -173,9 +173,9 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
 
         // Schleife, um Spieler ohne Geld zu entfernen
         for (player in removePlayer) {
-            println("${FontColors.YELLOW.type}===============================================================")
-            println("${player.name} hat kein Geld mehr und muss den Tisch verlassen")
-            println("===============================================================${FontColors.COLOREND.type}\n")
+            println("${FontColors.YELLOW.type}====================================================================")
+            println("${FontColors.COLOREND.type}${FontColors.BLUE.type}${player.name}${FontColors.COLOREND.type}${FontColors.YELLOW.type} hat kein Geld mehr und muss den Roulette Tisch ${FontColors.COLOREND.type}${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type}${FontColors.YELLOW.type} verlassen")
+            println("====================================================================${FontColors.COLOREND.type}\n")
             playersHighRoller.remove(player)
             // Ausgabe der Liste der verbleibenden Spieler nach Entfernen
             printListInfoAfterRemoving(playersHighRoller)
@@ -184,9 +184,9 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         // Überprüfung, ob keine Spieler mehr übrig sind
         if (playersHighRoller.isEmpty()) {
             goOn1 = false
-            println("${FontColors.RED.type}|––––––––––––––––––––––––––--–––––––––––––-––––-|")
-            println("| Alle Spieler an Tisch 1 haben kein Geld mehr! |")
-            println("|––––––––––––––––––––––––––--–––––––––––––-––––-|${FontColors.COLOREND.type}")
+            println("${FontColors.RED.type}|––––––––––––––––––––––––––--–––––––––––--------––--––––-|")
+            println("| Alle Spieler an Roulette Tisch ${FontColors.COLOREND.type}${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type}${FontColors.RED.type} haben kein Geld mehr! |")
+            println("|––––––––––––––––––––––––––--–––––––––––––-––---------––-|${FontColors.COLOREND.type}")
             println("")
         }
     }
@@ -300,7 +300,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
             // Überprüfen, ob die Zahl eine rote Zahl ist
             (rouletteNumbers in redNumbers) -> {
                 // Ausgabe, wenn die Zahl rot ist
-                print(" sie ist ${FontColors.YELLOW.type}rot${FontColors.COLOREND.type}")
+                print(" sie ist ${FontColors.RED.type}rot${FontColors.COLOREND.type}")
             }
         }
 
@@ -318,7 +318,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
             // Überprüfen, ob die Zahl die spezielle Zahl Zero ist
             (rouletteNumbers in specialNumber) -> {
                 // Ausgabe, wenn die Zahl Zero ist
-                print("Die Zahl ist ${FontColors.YELLOW.type}Zero${FontColors.COLOREND.type}")
+                print("Die Zahl ist ${FontColors.GREEN.type}Zero${FontColors.COLOREND.type}")
             }
         }
     }
@@ -331,9 +331,10 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         // Schleife zum Durchgehen der zu entfernenden Spieler
         for (player in removePlayer) {
             // Ausgabe einer Trennlinie und Meldung für den Spieler, der den Tisch verlassen muss
-            println("${FontColors.YELLOW.type}===============================================================")
-            println("${player.name} hat kein Geld mehr und muss den Tisch verlassen")
-            println("===============================================================${FontColors.COLOREND.type}\n")
+            println("${FontColors.YELLOW.type}====================================================================")
+            println("${FontColors.COLOREND.type}${FontColors.BLUE.type}${player.name}${FontColors.COLOREND.type}${FontColors.YELLOW.type} hat kein Geld mehr und muss den Roulette Tisch ${FontColors.COLOREND.type}${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type}${FontColors.YELLOW.type} verlassen")
+            println("====================================================================${FontColors.COLOREND.type}\n")
+
             // Entfernen des Spielers aus der Liste
             playersHighRoller.remove(player)
             // Ausgabe der verbleibenden HighRoller-Spieler nach Entfernen
@@ -345,9 +346,9 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
             // Setzen der Variable goOn2 auf false, um das Spiel zu beenden
             goOn2 = false
             // Ausgabe einer Meldung, dass alle Spieler kein Geld mehr haben
-            println("${FontColors.RED.type}|––––––––––––––––––––––––––--–––––––––––––-––––-|")
-            println("| Alle Spieler an Tisch 2 haben kein Geld mehr! |")
-            println("|––––––––––––––––––––––––––--–––––––––––––-––––-|${FontColors.COLOREND.type}")
+            println("${FontColors.RED.type}|––––––––––––––––––––––––––--–––––––––––-–--------–-––––-|")
+            println("| Alle Spieler an Roulette Tisch ${FontColors.COLOREND.type}${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type}${FontColors.RED.type} haben kein Geld mehr! |")
+            println("|––––––––––––––––––––––––––--–––––––––––––-––---------––-|${FontColors.COLOREND.type}")
             println("")
         }
     }

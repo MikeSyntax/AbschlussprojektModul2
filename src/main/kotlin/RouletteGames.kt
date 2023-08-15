@@ -167,12 +167,12 @@ open class RouletteGames(tableNumber: Int) {
     open fun games(player: CasinoPlayer, rouletteTable: RouletteTable) {
         // Ausgabe der Spieloptionen für den Spieler
         println(
-            "\nWeiter geht es mit ${FontColors.BLUE.type}${player.name}${FontColors.COLOREND.type} am ${FontColors.BLUE.type}Roulette Tisch 1${FontColors.COLOREND.type}, du kannst zwischen\n" +
+            "\nWeiter geht es mit ${FontColors.BLUE.type}${player.name}${FontColors.COLOREND.type} am Roulette Tisch ${FontColors.BLUE.type}${rouletteTable.tableNumber}${FontColors.COLOREND.type}, du kannst zwischen\n" +
                     "folgenden Spielen wählen, triff jetzt deine Auswahl:"
         )
         println("[${FontColors.YELLOW.type}1${FontColors.COLOREND.type}] = Auf Zahl setzen")
         println("[${FontColors.YELLOW.type}2${FontColors.COLOREND.type}] = auf Rot oder Schwarz setzen")
-        println("[${FontColors.YELLOW.type}3${FontColors.COLOREND.type}] = auf Gerade/Ungerade setzen")
+        println("[${FontColors.YELLOW.type}3${FontColors.COLOREND.type}] = auf Gerade oder Ungerade setzen")
         println("[${FontColors.YELLOW.type}4${FontColors.COLOREND.type}] = auf 1., 2. oder 3. Drittel setzen")
         println("[${FontColors.YELLOW.type}5${FontColors.COLOREND.type}] = auf 1. oder 2. Hälfte setzen")
         println("[${FontColors.YELLOW.type}6${FontColors.COLOREND.type}] = Aussetzen")

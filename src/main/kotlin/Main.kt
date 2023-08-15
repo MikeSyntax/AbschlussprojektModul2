@@ -101,7 +101,7 @@ fun main() {
     println("")
 
     // Schleife durch die Liste von Spielern am Tisch 1 und Aufruf der introduce()-Methode
-    println("${FontColors.YELLOW.type}Tisch Nummer ${rouletteAtTable1.tableNumber}${FontColors.COLOREND.type}")
+    println("${FontColors.YELLOW.type}Roulette Tisch ${FontColors.COLOREND.type}${FontColors.BLUE.type}${rouletteAtTable1.tableNumber}${FontColors.COLOREND.type}")
     for (player in players) {
         player.introduce()
     }
@@ -110,7 +110,7 @@ fun main() {
     println("")
 
     // Schleife durch die Liste von High Roller Spielern am Tisch 2 und Aufruf der introduce()-Methode
-    println("${FontColors.YELLOW.type}Tisch Nummer ${rouletteAtTable2.tableNumber} (High Roller ohne Eingangskontrolle)${FontColors.COLOREND.type}")
+    println("${FontColors.YELLOW.type}Roulette Tisch ${FontColors.COLOREND.type}${FontColors.BLUE.type}${rouletteAtTable1.tableNumber}${FontColors.COLOREND.type}")
     for (player in playersHighRoller) {
         player.introduce()
     }

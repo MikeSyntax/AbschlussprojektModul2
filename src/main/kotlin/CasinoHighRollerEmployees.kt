@@ -27,7 +27,7 @@ class CasinoHighRollerEmployees(tableNumber: Int, name: String, job: String, age
             println("${FontColors.BLUE.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|ACHTUNG es findet ein Croupier Wechsel statt, bitte keine Einsätze im Moment                     |${FontColors.COLOREND.type}")
-            println("|Willkommen am TISCH ${rouletteTable.tableNumber} mein Name ist ${newCroupier.name} und ich bin für die nächsten Runden Ihr $job")
+            println("|Willkommen am Roulette Tisch ${FontColors.BLUE.type}${rouletteTable.tableNumber}${FontColors.COLOREND.type} mein Name ist ${FontColors.BLUE.type}${newCroupier.name}${FontColors.COLOREND.type} und ich bin für die nächsten Runden Ihr $job")
             rouletteTable.countBank()
             rouletteTable.countTip()
             println("${FontColors.GREEN.type}|Vielen Dank für die Trinkgelder, wir werden diese unter den Kollegen verteilen                   |${FontColors.COLOREND.type}")

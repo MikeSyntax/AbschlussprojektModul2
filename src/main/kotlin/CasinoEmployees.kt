@@ -25,19 +25,19 @@ open class CasinoEmployees(tableNumber: Int, var name: String, var job: String, 
             //Ändern des Croupiers auch am Roulettetisch
             rouletteTable.croupierName = newCroupier.name
 
-            //Ausdrucken nur zur Kontrolle, ob sich der Croupier auch am Tisch geändert hat
+            //Ausdrucken nur zur Kontrolle, ob sich der Croupier auch am Tisch geändert hat =======
             //println(rouletteTable.croupierName)
 
             // Ausgabe von Informationen des Croupiers Wechsel in verschiedenen Farben
-            println("${FontColors.BLUE.type}|=================================================================================================|${FontColors.COLOREND.type}")
-            println("${FontColors.GREEN.type}|=================================================================================================|${FontColors.COLOREND.type}")
-            println("${FontColors.GREEN.type}|ACHTUNG es findet ein Croupier Wechsel statt, bitte keine Einsätze im Moment                     |${FontColors.COLOREND.type}")
-            println("|Willkommen am TISCH ${rouletteTable.tableNumber} mein Name ist ${newCroupier.name} und ich bin für die nächsten Runden Ihr $job")
+            println("${FontColors.BLUE.type}|===============================================================================================================|${FontColors.COLOREND.type}")
+            println("${FontColors.GREEN.type}|===============================================================================================================|${FontColors.COLOREND.type}")
+            println("${FontColors.GREEN.type}|ACHTUNG es findet ein Croupier Wechsel statt, bitte keine Einsätze im Moment                                   |${FontColors.COLOREND.type}")
+            println("|Willkommen am Roulette Tisch ${FontColors.BLUE.type}${rouletteTable.tableNumber}${FontColors.COLOREND.type} mein Name ist ${FontColors.BLUE.type}${newCroupier.name}${FontColors.COLOREND.type} und ich bin für die nächsten Runden Ihr $job")
             rouletteTable.countBank()
             rouletteTable.countTip()
-            println("${FontColors.GREEN.type}|Vielen Dank für die Trinkgelder, wir werden diese unter den Kollegen verteilen                   |${FontColors.COLOREND.type}")
-            println("${FontColors.GREEN.type}|=================================================================================================|${FontColors.COLOREND.type}")
-            println("${FontColors.BLUE.type}|=================================================================================================|${FontColors.COLOREND.type}")
+            println("${FontColors.GREEN.type}|Vielen Dank für die Trinkgelder, wir werden diese unter den Kollegen verteilen                                 |${FontColors.COLOREND.type}")
+            println("${FontColors.GREEN.type}|===============================================================================================================|${FontColors.COLOREND.type}")
+            println("${FontColors.BLUE.type}|===============================================================================================================|${FontColors.COLOREND.type}")
 
             // Hinzufügen des neuen Croupiers zurück zur croupiers-Liste allerdings diesmal ans Ende der Liste
             croupiers.add(newCroupier)
