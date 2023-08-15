@@ -9,7 +9,6 @@ enum class FontColors(val type: String) {
 /*
    Die folgenden Zeilen sind nur zur Veranschaulichung des Farbschemas
    und wurden auskommentiert, um den Code nicht zu beeinflussen.
-   Sie können den Code einkommentieren, um die Farben zu verwenden.
 
    Verwendung der Farbcodes:
    ${FontColors.RED.type}   - Roter Text
