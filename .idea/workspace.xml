@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Abschlussprojekt 15.08 gegen 08.50Uhr">
+    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Abschlussprojekt 15.08 gegen 10.05Uhr RouletteHighRoller auskommentiert">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/FontColors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/FontColors.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteTable.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -387,7 +387,28 @@
       <option name="project" value="LOCAL" />
       <updated>1692082202723</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Abschlussprojekt 15.08 gegen 09.35Uhr RouletteTable auskommentiert">
+      <created>1692084938196</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1692084938196</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Abschlussprojekt 15.08 gegen 09.49Uhr RouletteGames auskommentiert">
+      <created>1692085805059</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1692085805059</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Abschlussprojekt 15.08 gegen 10.05Uhr RouletteHighRoller auskommentiert">
+      <created>1692086508096</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1692086508096</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -402,9 +423,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Abschlussprojekt 11.08 gegen 18.40Uhr" />
-    <MESSAGE value="Abschlussprojekt 11.08 gegen 19.14Uhr" />
-    <MESSAGE value="Abschlussprojekt 11.08 gegen 20.23Uhr" />
     <MESSAGE value="Abschlussprojekt 11.08 gegen 20.29Uhr" />
     <MESSAGE value="Abschlussprojekt 12.08 gegen 22.00Uhr" />
     <MESSAGE value="Abschlussprojekt 13.08 gegen 08.41Uhr" />
@@ -427,17 +445,9 @@
     <MESSAGE value="Abschlussprojekt 14.08 gegen 19.27Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 19.50Uhr" />
     <MESSAGE value="Abschlussprojekt 15.08 gegen 08.50Uhr" />
-    <option name="LAST_COMMIT_MESSAGE" value="Abschlussprojekt 15.08 gegen 08.50Uhr" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/Main.kt</url>
-          <line>117</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Abschlussprojekt 15.08 gegen 09.35Uhr RouletteTable auskommentiert" />
+    <MESSAGE value="Abschlussprojekt 15.08 gegen 09.49Uhr RouletteGames auskommentiert" />
+    <MESSAGE value="Abschlussprojekt 15.08 gegen 10.05Uhr RouletteHighRoller auskommentiert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Abschlussprojekt 15.08 gegen 10.05Uhr RouletteHighRoller auskommentiert" />
   </component>
 </project>

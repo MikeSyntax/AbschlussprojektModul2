@@ -31,14 +31,19 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     fun printInfo() {
         // Ausgabe der Tischnummer mit gelber Schriftfarbe
         println("Tischnummer: ${FontColors.YELLOW.type}$tableNumber${FontColors.COLOREND.type}")
+        Thread.sleep(500)
         // Ausgabe des Croupier-Namens mit gelber Schriftfarbe
         println("Croupier Name: ${FontColors.YELLOW.type}$croupierName${FontColors.COLOREND.type}")
+        Thread.sleep(500)
         // Ausgabe des Trinkgeldbetrags für Mitarbeiter mit gelber Schriftfarbe
         println("Trinkgeldkasse : ${FontColors.YELLOW.type}$tipForEmployees€${FontColors.COLOREND.type}")
+        Thread.sleep(500)
         // Ausgabe des Bankbetrags am Tisch mit gelber Schriftfarbe
         println("Bank am Tisch : ${FontColors.YELLOW.type}$bankTable€${FontColors.COLOREND.type}")
+        Thread.sleep(500)
         // Ausgabe des Mindesteinsatzes mit gelber Schriftfarbe und Pause
         print("Mindesteinsatz: ${FontColors.YELLOW.type}$minEinsatz€${FontColors.COLOREND.type} und ")
+        Thread.sleep(500)
         // Ausgabe des Maximaleinsatzes mit gelber Schriftfarbe
         println("Maximaleinsatz: ${FontColors.YELLOW.type}$maximalerEinsatz€${FontColors.COLOREND.type}")
         // Verzögerung der Ausführung für 1000 Millisekunden (1 Sekunde)
@@ -187,17 +192,19 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     }
 
     // Methode zur Ausgabe der verbleibenden Spieler nach Entfernen von Spielern ohne Geld
-    fun printListInfoAfterRemoving(playersHighRoller: List<CasinoPlayer>) {
+    fun printListInfoAfterRemoving(players: MutableList<CasinoPlayer>) {
         println("Folgende Spieler verbleiben")
         println("---------------------------")
         println("")
-        for (player in playersHighRoller) {
+        for (player in players) {
             println(player.name)
+            Thread.sleep(500)
+            println("")
         }
     }
 
     // Methode zur Ausgabe einer Liste von Elementen untereinander
-    fun printNumbers(list: List<String>) {
+    fun printNumbers(list: MutableList<String>) {
         for (number in list) {
             println(number)
         }
@@ -214,9 +221,9 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         val numberInfo = getNumberInfo(rouletteNumber)
         if (numberInfo != null) {
             // Bestimmen, ob die Zahl gerade oder ungerade ist
-            val evenOrNot = if (numberInfo.isEven) "gerade" else "ungerade"
+            val evenOrNot = if (numberInfo.isEven) "pair" else "impair"
             // Bestimmen, ob die Zahl rot oder schwarz ist
-            val redOrBlack = if (numberInfo.isRed) "${FontColors.RED.type}rot${FontColors.COLOREND.type}" else "schwarz"
+            val redOrBlack = if (numberInfo.isRed) "${FontColors.RED.type}rouge${FontColors.COLOREND.type}" else "noir"
             // Rückgabe der formatierten Information
             return ("$rouletteNumber: $evenOrNot, $redOrBlack")
         } else {
@@ -346,7 +353,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     }
 
     // Methode zur Ausgabe der verbleibenden HighRoller-Spieler nach Entfernen von Spielern ohne Geld
-    fun printListInfoAfterRemovingHighRoller(playersHighRoller: List<CasinoPlayer>) {
+    fun printListInfoAfterRemovingHighRoller(playersHighRoller: MutableList<CasinoPlayer>) {
         // Ausgabe einer Überschrift und Trennlinie
         println("Folgende Spieler verbleiben")
         println("---------------------------")
@@ -355,6 +362,9 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         // Schleife zum Durchgehen der verbleibenden HighRoller-Spieler und Ausgabe ihrer Namen
         for (player in playersHighRoller) {
             println(player.name)
+            Thread.sleep(500)
+            println("")
+
         }
     }
 }

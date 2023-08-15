@@ -121,15 +121,15 @@ fun main() {
         // Entfernen von Spielern ohne Geld am Tisch 1
         rouletteAtTable1.removePlayerWithNoMoney(players)
 
-        // Spielen am High Roller Tisch 2
-        rouletteAtTable2.goPlayHighRoller(playersHighRoller, rouletteGamesHighRoller, rouletteAtTable2)
-        // Entfernen von High Roller Spielern ohne Geld am Tisch 2
-        rouletteAtTable2.removePlayerHighRollerWithNoMoney(playersHighRoller)
-
         // Erhöhen der Runde am Tisch 1
         round++
         // Ändern des Croupiers am Tisch 1
         dieter.changeCroupier(croupiers, rouletteAtTable1)
+
+        // Spielen am High Roller Tisch 2
+        rouletteAtTable2.goPlayHighRoller(playersHighRoller, rouletteGamesHighRoller, rouletteAtTable2)
+        // Entfernen von High Roller Spielern ohne Geld am Tisch 2
+        rouletteAtTable2.removePlayerHighRollerWithNoMoney(playersHighRoller)
 
         // Erhöhen der Runde am High Roller Tisch 2
         roundHighRoller++
