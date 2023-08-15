@@ -17,7 +17,8 @@ fun main() {
                 "          88  888  88       Y8   I8I   88    88    88 V8o88  88 V8o88     88           \n" +
                 "          88   8   88        8b d8 8b d8     88    88  V888  88  V888     88           \n" +
                 "           Y888P   Y88888P    8b8   8d8    Y8888P  VP   V8P  VP   V8P     YP (... nicht immer!)${FontColors.COLOREND.type}\n" +
-                "                                                                                         ")
+                "                                                                                         "
+    )
     println("${FontColors.BLUE.type}===============================================================================================${FontColors.COLOREND.type}")
     println("")
 
@@ -26,6 +27,8 @@ fun main() {
 
     // Erstellung eines RouletteTable-Objekts für Tisch 1 mit Croupier Dieter
     var rouletteAtTable1: RouletteTable = RouletteTable(1, "Dieter", 0.00)
+    // Erstellung eines Objekts zur Erkennung, falls die Bank pleite ist
+    var breakingTheBank1: BreakingTheBank = BreakingTheBank(1)
 
     // Erstellung von CasinoEmployees-Objekten für Croupiers Dieter, Rainer und Ernst
     var dieter: CasinoEmployees = CasinoEmployees(1, "Dieter", "Croupier", 36)
@@ -39,7 +42,9 @@ fun main() {
     println("")
 
     // Erstellung eines RouletteTable-Objekts für Tisch 2 mit Croupier Sascha und vorbereiteten Geld- und Trinkgeldbeträgen
-    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 500000.00, 1000.00, 10000.00)
+    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 11000.00, 1000.00, 10000.00)
+    // Erstellung eines Objekts zur Erkennung, falls die Bank pleite ist
+    var breakingTheBank2: BreakingTheBank = BreakingTheBank(2)
 
     // Erstellung von CasinoHighRollerEmployees-Objekten für Croupiers Sascha und Christian
     var sascha: CasinoHighRollerEmployees = CasinoHighRollerEmployees(2, "Sascha", "Croupier", 45)
@@ -66,7 +71,7 @@ fun main() {
     // Erstellung von CasinoPlayer-Objekten für High Roller Spieler
     var gonzales: CasinoPlayer = CasinoPlayer(2, "Gonzales", 15000.00, true, 0.1, 26, true)
     var silvio: CasinoPlayer = CasinoPlayer(2, "Silvio", 13000.00, true, 0.08, 65, true)
-    var daniel: CasinoPlayer = CasinoPlayer(2, "Daniel", 17000.00, true, 0.02, 34,true)
+    var daniel: CasinoPlayer = CasinoPlayer(2, "Daniel", 17000.00, true, 0.02, 34, true)
 
     // Erstellung eines CasinoEntranceControl-Objekts für die Einlasskontrolle
     val entrance: CasinoEntranceControl = CasinoEntranceControl()
@@ -110,7 +115,7 @@ fun main() {
     println("")
 
     // Schleife durch die Liste von High Roller Spielern am Tisch 2 und Aufruf der introduce()-Methode
-    println("${FontColors.YELLOW.type}Roulette Tisch ${FontColors.COLOREND.type}${FontColors.BLUE.type}${rouletteAtTable1.tableNumber}${FontColors.COLOREND.type}")
+    println("${FontColors.YELLOW.type}Roulette Tisch ${FontColors.COLOREND.type}${FontColors.BLUE.type}${rouletteAtTable2.tableNumber}${FontColors.COLOREND.type}${FontColors.YELLOW.type} (Für High Roller ohne Eingangskontrolle) ${FontColors.COLOREND.type}")
     for (player in playersHighRoller) {
         player.introduce()
     }
@@ -118,34 +123,48 @@ fun main() {
     // Ausgabe einer Leerzeile
     println("")
 
+
     // Schleife, die das Spiel abwickelt, solange goOn1 oder goOn2 wahr ist
     do {
         // Spielen am Tisch 1
         rouletteAtTable1.goPlay(players, rouletteGames, rouletteAtTable1)
         // Entfernen von Spielern ohne Geld am Tisch 1
         rouletteAtTable1.removePlayerWithNoMoney(players)
-
+        // Prüfen, ob die Bank an Tisch1 pleite ist und falls ja, dann wird bankbroken auf true gesetzt und die Schleife beendet
+        breakingTheBank1.breakingBank1(rouletteAtTable1, players)
         // Erhöhen der Runde am Tisch 1
         round++
         // Ändern des Croupiers am Tisch 1
         dieter.changeCroupier(croupiers, rouletteAtTable1)
 
+
         // Spielen am High Roller Tisch 2
         rouletteAtTable2.goPlayHighRoller(playersHighRoller, rouletteGamesHighRoller, rouletteAtTable2)
         // Entfernen von High Roller Spielern ohne Geld am Tisch 2
         rouletteAtTable2.removePlayerHighRollerWithNoMoney(playersHighRoller)
-
+        // Prüfen, ob die Bank an Tisch2 pleite ist und falls ja, dann wird bankbroken auf true gesetzt und die Schleife beendet
+        breakingTheBank2.breakingBank2(rouletteAtTable2, playersHighRoller)
         // Erhöhen der Runde am High Roller Tisch 2
         roundHighRoller++
         // Ändern des High Roller Croupiers am Tisch 2
         sascha.changeHighRollerCroupier(highRollerCroupiers, rouletteAtTable2)
 
-        // Die Schleife wird ausgeführt, solange goOn1 oder goOn2 wahr ist
-    } while (goOn1 || goOn2)
 
-    println("")
-    // Ausgabe einer Meldung, wenn das Spiel vorbei ist
-    println("${FontColors.RED.type}´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´")
-    println("| Alle Spieler haben ihr Geld verspielt, das Spiel ist vorbei |")
-    println("´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´${FontColors.COLOREND.type}")
+        // Die Schleife wird ausgeführt, solange goOn1 (Tisch 1) oder goOn2 (Tisch 2) wahr ist, also Spieler noch Geld haben und die Bank bei beiden Tischen noch Geld hat
+    } while ((bankHasMoney1 && goOn1) || (bankHasMoney2 && goOn2))
+
+        if (!goOn1 && !goOn2) {
+            println("")
+            // Ausgabe einer Meldung, wenn das Spiel vorbei ist, weil kein Spieler noch Geld hat
+            println("${FontColors.RED.type}´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´")
+            println("|        Spiel ist vorbei, kein Spieler hat noch Geld         |")
+            println("´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´${FontColors.COLOREND.type}")
+        }
+        if (!bankHasMoney1 && !bankHasMoney2) {
+            println("")
+            // Ausgabe einer Meldung, wenn das Spiel vorbei ist bei gesprengter Bank
+            println("${FontColors.RED.type}´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´")
+            println("|  Spiel ist vorbei die Bank an beiden Tischen wurde gesprengt|")
+            println("´`´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´`´`´`´``´`´`´`´`´`´`´`´${FontColors.COLOREND.type}")
+        }
 }

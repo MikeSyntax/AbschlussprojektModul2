@@ -12,8 +12,10 @@ var numberIsNotEven: List<Int> = listOf(1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,
 val specialNumber: List<Int> = listOf(0)   // Besondere Zahl (0)
 var goOn1 = true   // Kontrollvariable 1
 var goOn2 = true   // Kontrollvariable 2
+var bankHasMoney1 = true
+var bankHasMoney2 = true
 var round = 0   // Runden-Zähler
-var roundHighRoller = 0   // Zähler für Highroller-Runden
+var roundHighRoller = 0   // Zähler für HighRoller-Runden
 
 // Liste der letzten 10 gespielten Zahlen für verschiedene Runden
 var listOfLastNumbers1: MutableList<String> = mutableListOf("23: impair, ${FontColors.RED.type}rouge${FontColors.COLOREND.type}", "15: impair, noir", "7: impair, ${FontColors.RED.type}rouge${FontColors.COLOREND.type}", "28: pair, noir", "25: impair, ${FontColors.RED.type}rouge${FontColors.COLOREND.type}", "2: pair, noir", "25: impair, ${FontColors.RED.type}rouge${FontColors.COLOREND.type}", "24: pair, noir", "24: pair, noir", "4: pair, noir")

@@ -13,14 +13,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     }*/
 
     // Sekundärer Konstruktor, der den primären Konstruktor aufruft und fehlende Parameter mit Standardwerten füllt
-    constructor(tableNumber: Int, croupierName: String, tipForEmployees: Double) : this(
-        tableNumber,
-        croupierName,
-        tipForEmployees,
-        100000.00,
-        10.00,
-        1000.00
-    ) {
+    constructor(tableNumber: Int, croupierName: String, tipForEmployees: Double) : this(tableNumber, croupierName, tipForEmployees, 1200.00, 10.00, 1000.00) {
 
         // Kommentierte Zeile innerhalb des sekundären Konstruktors
         // println("Das Roulette für Tisch Nr. $tableNumber wurde mit dem sekundären Konstruktor instanziiert")
@@ -167,22 +160,22 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     }
 
     // Methode zum Entfernen von Spielern ohne Geld aus der Liste der HighRoller-Spieler
-    fun removePlayerWithNoMoney(playersHighRoller: MutableList<CasinoPlayer>) {
+    fun removePlayerWithNoMoney(players: MutableList<CasinoPlayer>) {
         // Filtern der Spieler, die kein Geld mehr haben
-        var removePlayer = playersHighRoller.filter { player -> player.cash <= 0 }
+        var removePlayer = players.filter { player -> player.cash <= 0 }
 
         // Schleife, um Spieler ohne Geld zu entfernen
         for (player in removePlayer) {
             println("${FontColors.YELLOW.type}====================================================================")
             println("${FontColors.COLOREND.type}${FontColors.BLUE.type}${player.name}${FontColors.COLOREND.type}${FontColors.YELLOW.type} hat kein Geld mehr und muss den Roulette Tisch ${FontColors.COLOREND.type}${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type}${FontColors.YELLOW.type} verlassen")
             println("====================================================================${FontColors.COLOREND.type}\n")
-            playersHighRoller.remove(player)
+            players.remove(player)
             // Ausgabe der Liste der verbleibenden Spieler nach Entfernen
-            printListInfoAfterRemoving(playersHighRoller)
+            printListInfoAfterRemoving(players)
         }
 
-        // Überprüfung, ob keine Spieler mehr übrig sind
-        if (playersHighRoller.isEmpty()) {
+        // Überprüfung, ob keine Spieler mehr übrig sind, aber die Ausgabe nur wenn die Bank nicht pleite war
+        if (players.isEmpty() && bankHasMoney1) {
             goOn1 = false
             println("${FontColors.RED.type}|––––––––––––––––––––––––––--–––––––––––--------––--––––-|")
             println("| Alle Spieler an Roulette Tisch ${FontColors.COLOREND.type}${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type}${FontColors.RED.type} haben kein Geld mehr! |")
@@ -341,8 +334,8 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
             printListInfoAfterRemovingHighRoller(playersHighRoller)
         }
 
-        // Überprüfen, ob keine HighRoller-Spieler mehr übrig sind
-        if (playersHighRoller.isEmpty()) {
+        // Überprüfen, ob keine HighRoller-Spieler mehr übrig sind, aber die Ausgabe nur, wenn die Bank nicht pleite war
+        if (playersHighRoller.isEmpty() && bankHasMoney2) {
             // Setzen der Variable goOn2 auf false, um das Spiel zu beenden
             goOn2 = false
             // Ausgabe einer Meldung, dass alle Spieler kein Geld mehr haben
