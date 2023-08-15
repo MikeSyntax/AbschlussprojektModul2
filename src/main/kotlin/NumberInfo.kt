@@ -1,3 +1,4 @@
+
 // Eine Datenklasse NumberInfo, die Informationen über Gerade/Ungerade und Rot/Schwarz speichert
 data class NumberInfo(val isEven: Boolean, val isRed: Boolean)
 
@@ -39,4 +40,4 @@ val numberInfoMap = mapOf(
         34 to NumberInfo(true, true),
         35 to NumberInfo(false, false),
         36 to NumberInfo(true, true)
-    )
+)

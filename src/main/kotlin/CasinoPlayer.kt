@@ -265,7 +265,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
 
         // Gibt eine Einführungsnachricht für den Spieler aus
         fun introduce() {
-            println("Hallo, ich bin $name und spiele an Tisch $tableNumber")
+            println("Hallo, ich bin ${FontColors.BLUE.type}$name${FontColors.COLOREND.type} und spiele an Tisch ${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type}")
             Thread.sleep(1000)
         }
 

@@ -29,7 +29,7 @@ open class CasinoEmployees(tableNumber: Int, var name: String, var job: String, 
             //println(rouletteTable.croupierName)
 
             // Ausgabe von Informationen des Croupiers Wechsel in verschiedenen Farben
-            println("${FontColors.RED.type}|=================================================================================================|${FontColors.COLOREND.type}")
+            println("${FontColors.BLUE.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|ACHTUNG es findet ein Croupier Wechsel statt, bitte keine Einsätze im Moment                     |${FontColors.COLOREND.type}")
             println("|Willkommen am TISCH ${rouletteTable.tableNumber} mein Name ist ${newCroupier.name} und ich bin für die nächsten Runden Ihr $job")
@@ -37,7 +37,7 @@ open class CasinoEmployees(tableNumber: Int, var name: String, var job: String, 
             rouletteTable.countTip()
             println("${FontColors.GREEN.type}|Vielen Dank für die Trinkgelder, wir werden diese unter den Kollegen verteilen                   |${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|=================================================================================================|${FontColors.COLOREND.type}")
-            println("${FontColors.RED.type}|=================================================================================================|${FontColors.COLOREND.type}")
+            println("${FontColors.BLUE.type}|=================================================================================================|${FontColors.COLOREND.type}")
 
             // Hinzufügen des neuen Croupiers zurück zur croupiers-Liste allerdings diesmal ans Ende der Liste
             croupiers.add(newCroupier)

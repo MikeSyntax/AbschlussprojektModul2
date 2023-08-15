@@ -24,7 +24,7 @@ class CasinoHighRollerEmployees(tableNumber: Int, name: String, job: String, age
             //println(rouletteTable.croupierName)
 
             // Ausgabe Informationen bezüglich des Croupiers Wechsel in roter und grüner Farbe
-            println("${FontColors.RED.type}|=================================================================================================|${FontColors.COLOREND.type}")
+            println("${FontColors.BLUE.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|=================================================================================================|${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|ACHTUNG es findet ein Croupier Wechsel statt, bitte keine Einsätze im Moment                     |${FontColors.COLOREND.type}")
             println("|Willkommen am TISCH ${rouletteTable.tableNumber} mein Name ist ${newCroupier.name} und ich bin für die nächsten Runden Ihr $job")
@@ -32,7 +32,7 @@ class CasinoHighRollerEmployees(tableNumber: Int, name: String, job: String, age
             rouletteTable.countTip()
             println("${FontColors.GREEN.type}|Vielen Dank für die Trinkgelder, wir werden diese unter den Kollegen verteilen                   |${FontColors.COLOREND.type}")
             println("${FontColors.GREEN.type}|=================================================================================================|${FontColors.COLOREND.type}")
-            println("${FontColors.RED.type}|=================================================================================================|${FontColors.COLOREND.type}")
+            println("${FontColors.BLUE.type}|=================================================================================================|${FontColors.COLOREND.type}")
 
             // Hinzufügen des newCroupier wieder zurück zur highRollerCroupiers-Liste allerdings diesmal ans Ende der Liste
             highRollerCroupiers.add(newCroupier)

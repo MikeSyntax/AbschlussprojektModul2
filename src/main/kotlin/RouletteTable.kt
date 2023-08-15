@@ -30,7 +30,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     // Methode zur Ausgabe aller Informationen über den Roulettetisch
     fun printInfo() {
         // Ausgabe der Tischnummer mit gelber Schriftfarbe
-        println("Tischnummer: ${FontColors.YELLOW.type}$tableNumber${FontColors.COLOREND.type}")
+        println("Tischnummer: ${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type}")
         Thread.sleep(500)
         // Ausgabe des Croupier-Namens mit gelber Schriftfarbe
         println("Croupier Name: ${FontColors.YELLOW.type}$croupierName${FontColors.COLOREND.type}")
@@ -53,7 +53,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     // Methode zum Anzeigen des Standes der Bank am Roulettetisch
     fun countBank() {
         // Ausgabe des Bankstands am Roulettetisch mit roter Schriftfarbe
-        println("In der Bank am Roulettetisch $tableNumber befinden sich insgesamt ${FontColors.RED.type}$bankTable€${FontColors.COLOREND.type}")
+        println("In der Bank am Roulettetisch ${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type} befinden sich insgesamt ${FontColors.RED.type}$bankTable€${FontColors.COLOREND.type}")
     }
 
     // Methode zum Anzeigen der Trinkgeldkasse
@@ -61,7 +61,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         // Berechnung des Trinkgeldbetrags auf zwei Dezimalstellen gerundet
         val roundedTip = round(tipForEmployees * 100) / 100
         // Ausgabe des Trinkgeldstands am Roulettetisch mit roter Schriftfarbe
-        println("In der Trinkgeldkasse am Roulettetisch $tableNumber befinden sich insgesamt ${FontColors.RED.type}$roundedTip€${FontColors.COLOREND.type}")
+        println("In der Trinkgeldkasse am Roulettetisch ${FontColors.BLUE.type}$tableNumber${FontColors.COLOREND.type} befinden sich insgesamt ${FontColors.RED.type}$roundedTip€${FontColors.COLOREND.type}")
     }
 
     // Methode zum Roulette Rad, die Kugel soll rollen und random eine Zahl auswählen

@@ -1,5 +1,7 @@
 fun main() {
     println("")
+    println("${FontColors.BLUE.type}===============================================================================================${FontColors.COLOREND.type}")
+    println("")
     println(
         "${FontColors.GREEN.type}          d8888b   d8888b  d88888b          d8888b     d8b    d8b   db  db   dD        \n" +
                 "          88   8D    88    88               88   8D  d8   8b  888o  88  88  8P         \n" +
@@ -16,6 +18,9 @@ fun main() {
                 "          88   8   88        8b d8 8b d8     88    88  V888  88  V888     88           \n" +
                 "           Y888P   Y88888P    8b8   8d8    Y8888P  VP   V8P  VP   V8P     YP (... nicht immer!)${FontColors.COLOREND.type}\n" +
                 "                                                                                         ")
+    println("${FontColors.BLUE.type}===============================================================================================${FontColors.COLOREND.type}")
+
+
 
     // Wartepause von 1 Sekunde
     Thread.sleep(1000)

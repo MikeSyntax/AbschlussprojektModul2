@@ -3,7 +3,8 @@ enum class FontColors(val type: String) {
     RED("\u001B[31m"),      // Roter Text
     GREEN("\u001B[32m"),    // Grüner Text
     YELLOW("\u001B[33m"),   // Gelber Text
-    COLOREND("\u001B[0m")   // Beenden der Farbeinstellungen
+    BLUE("\u001B[94m"),     // Blauer Text
+    COLOREND("\u001B[0m"),  // Beenden der Farbeinstellungen
 }
 
 /*
@@ -14,5 +15,6 @@ enum class FontColors(val type: String) {
    ${FontColors.RED.type}   - Roter Text
    ${FontColors.GREEN.type} - Grüner Text
    ${FontColors.YELLOW.type}- Gelber Text
+   ${FontColors.BLUE.type}- Blauer Text
    ${FontColors.COLOREND.type} - Beenden der Farbeinstellungen
 */

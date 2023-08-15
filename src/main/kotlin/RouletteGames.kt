@@ -167,7 +167,7 @@ open class RouletteGames(tableNumber: Int) {
     open fun games(player: CasinoPlayer, rouletteTable: RouletteTable) {
         // Ausgabe der Spieloptionen für den Spieler
         println(
-            "\nWeiter geht es mit ${player.name} am Roulette Tisch 1, du kannst zwischen\n" +
+            "\nWeiter geht es mit ${FontColors.BLUE.type}${player.name}${FontColors.COLOREND.type} am ${FontColors.BLUE.type}Roulette Tisch 1${FontColors.COLOREND.type}, du kannst zwischen\n" +
                     "folgenden Spielen wählen, triff jetzt deine Auswahl:"
         )
         println("[${FontColors.YELLOW.type}1${FontColors.COLOREND.type}] = Auf Zahl setzen")
