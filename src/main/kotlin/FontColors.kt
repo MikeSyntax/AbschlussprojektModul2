@@ -8,13 +8,18 @@ enum class FontColors(val type: String) {
 }
 
 /*
+
+
    Die folgenden Zeilen sind nur zur Veranschaulichung des Farbschemas
    und wurden auskommentiert, um den Code nicht zu beeinflussen.
 
    Verwendung der Farbcodes:
+   Zugriff auf die enum class - dann auf RED - und den genauen Farbwunsch
    ${FontColors.RED.type}   - Roter Text
    ${FontColors.GREEN.type} - Grüner Text
    ${FontColors.YELLOW.type}- Gelber Text
    ${FontColors.BLUE.type}- Blauer Text
    ${FontColors.COLOREND.type} - Beenden der Farbeinstellungen
+
+
 */

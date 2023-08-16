@@ -1,4 +1,3 @@
-
 // Eine Datenklasse NumberInfo, die Informationen über Gerade/Ungerade und Rot/Schwarz speichert
 data class NumberInfo(val isEven: Boolean, val isRed: Boolean)
 

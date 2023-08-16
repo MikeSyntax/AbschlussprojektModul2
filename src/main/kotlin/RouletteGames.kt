@@ -15,13 +15,13 @@ open class RouletteGames(tableNumber: Int) {
         player.yourAmount = amount
 
         // Aktualisieren des Bankbetrags am Roulette-Tisch
-        rouletteTable.bankTable = rouletteTable.bankTable + amount
+        rouletteTable.bankTable = rouletteTable.bankTable + amount          // kann man auch kürzer schreiben mit -= bzw. +=
 
         // Ausgabe der "Setz"-Informationen für den Spieler
         print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die ${FontColors.RED.type}$number${FontColors.COLOREND.type} gesetzt,")
 
         // Abziehen des gesetzten Betrags vom Spieler-Kontostand
-        player.cash = player.cash - amount
+        player.cash = player.cash - amount         // kann man auch kürzer schreiben mit -= bzw. +=
 
         // Ausgabe des verbleibenden Kontostands des Spielers
         println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
@@ -38,7 +38,7 @@ open class RouletteGames(tableNumber: Int) {
         player.yourAmount = amount
 
         // Aktualisieren des Bankbetrags am Roulette-Tisch
-        rouletteTable.bankTable = rouletteTable.bankTable + amount
+        rouletteTable.bankTable = rouletteTable.bankTable + amount         // kann man auch kürzer schreiben mit -= bzw. +=
 
         // Überprüfen der gewählten Farbe und Ausgabe der Setzinformationen
         if (numbersRedOrBlack == 1) {

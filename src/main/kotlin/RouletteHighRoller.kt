@@ -54,7 +54,7 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
             player.cash = player.cash - amount
             println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
         } else {
-            println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1 oder 2 ist (sollte normalerweise nicht passieren)
+            println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1 oder 2 ist (sollte normalerweise nicht passieren) und falls es auf readln() umgestellt wird
         }
     }
 
@@ -85,7 +85,7 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
             player.cash = player.cash - amount
             println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
         } else {
-            println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1 oder 2 ist (sollte normalerweise nicht passieren)
+            println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1 oder 2 ist (sollte normalerweise nicht passieren) und falls es auf readln() umgestellt wird
         }
     }
 
@@ -114,7 +114,7 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         } else if (numbersThird == 3) {
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 3. Drittel gesetzt")
         } else {
-            println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1, 2 oder 3 ist (sollte normalerweise nicht passieren)
+            println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1, 2 oder 3 ist (sollte normalerweise nicht passieren) und falls es auf readln() umgestellt wird
         }
 
         // Abzug des Einsatzbetrags vom Spieler-Guthaben
@@ -147,7 +147,7 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         } else if (numbersFirstOrSecondHalf == 2) {
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die 2. Hälfte gesetzt")
         } else {
-            println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1 oder 2 ist (sollte normalerweise nicht passieren)
+            println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1 oder 2 ist (sollte normalerweise nicht passieren) und falls es auf readln() umgestellt wird
         }
 
         // Abzug des Einsatzbetrags vom Spieler-Guthaben

@@ -122,7 +122,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         println("")
         println("${FontColors.GREEN.type}Machen Sie Ihre Einsätze, neues Spiel, neues Glück${FontColors.COLOREND.type}")
 
-        // Zurücksetzen der Spielerdaten für das nächste Spiel
+        // Zurücksetzen der Spieler Daten für das nächste Spiel
         for (player in players) {
             player.reset()
         }
@@ -130,18 +130,11 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     }
 
     // Hauptmethode zum Spielen des HighRoller Tisches mit Eingabe des Spielers welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der Variablen mit den gespeicherten Spielerwahlen
-    fun goPlayHighRoller(
-        playersHighRoller: MutableList<CasinoPlayer>,
-        rouletteGamesHighRoller: RouletteGames,
-        rouletteTable: RouletteTable
-    ) {
+    fun goPlayHighRoller(playersHighRoller: MutableList<CasinoPlayer>, rouletteGamesHighRoller: RouletteGames, rouletteTable: RouletteTable) {
 
         // Schleife, um die HighRoller-Spieler durch das Spiel zu führen
         for (player in playersHighRoller) {
-            rouletteGamesHighRoller.games(
-                player,
-                rouletteTable
-            )  // Aufruf der Methode, um das Spiel für jeden HighRoller-Spieler zu starten
+            rouletteGamesHighRoller.games(player, rouletteTable)  // Aufruf der Methode, um das Spiel für jeden HighRoller-Spieler zu starten
             println("")
         }
 
@@ -204,7 +197,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     // Methode zum Entfernen von Spielern ohne Geld aus der Liste der HighRoller-Spieler
     fun removePlayerWithNoMoney(players: MutableList<CasinoPlayer>) {
         // Filtern der Spieler, die kein Geld mehr haben
-        var removePlayer = players.filter { player -> player.cash <= 0 }
+        var removePlayer = players.filter { player -> player.cash <= 0 } // Man könnte auch einfach "it" schreiben und so die Lambda noch mal verkürzen, aber zur besseren Lesbarkeit so geschrieben
 
         // Schleife, um Spieler ohne Geld zu entfernen
         for (player in removePlayer) {
@@ -270,6 +263,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     }
 
     // Funktion zum Aktualisieren der Liste mit gefallenen Kugeln, wobei die erste entfernt wird, wenn mehr als 10 Elemente vorhanden sind
+    //übergeben werden die Strings aus der getInfo Methode und als Rückgabewert erhält man eine Liste mit Strings
     fun rouletteNumbers1(getInfo: String): MutableList<String> {
         // Hinzufügen der neuen Information zur Liste
         listOfLastNumbers1.add(getInfo)
@@ -282,6 +276,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     }
 
     // Funktion zum Aktualisieren der HighRoller-Liste mit gefallenen Kugeln, wobei die erste entfernt wird, wenn mehr als 10 Elemente vorhanden sind
+    //übergeben werden die Strings aus der getInfo Methode und als Rückgabewert erhält man eine Liste mit Strings
     fun rouletteNumbers2(getInfo: String): MutableList<String> {
         // Hinzufügen der neuen Information zur HighRoller-Liste
         listOfLastNumbers2.add(getInfo)
@@ -361,7 +356,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     // Methode zum Entfernen von HighRoller-Spielern ohne Geld aus der Liste
     fun removePlayerHighRollerWithNoMoney(playersHighRoller: MutableList<CasinoPlayer>) {
         // Filtern der Spieler, die kein Geld mehr haben
-        var removePlayer = playersHighRoller.filter { player -> player.cash <= 0 }
+        var removePlayer = playersHighRoller.filter { player -> player.cash <= 0 } // Man könnte auch einfach "it" schreiben und so die Lambda noch mal verkürzen, aber zur besseren Lesbarkeit so geschrieben
 
         // Schleife zum Durchgehen der zu entfernenden Spieler
         for (player in removePlayer) {

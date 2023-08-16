@@ -46,7 +46,7 @@ fun main() {
     // Erstellung eines Objekts zur Erkennung, falls die Bank pleite ist
     var breakingTheBank2: BreakingTheBank = BreakingTheBank(2)
 
-    // Erstellung von CasinoHighRollerEmployees-Objekten für Croupiers Sascha und Christian
+    // Erstellung von CasinoHighRollerEmployees-Objekten für Croupiers Sascha und Christian und Siegfried
     var sascha: CasinoHighRollerEmployees = CasinoHighRollerEmployees(2, "Sascha", "Croupier", 45)
     var christian: CasinoHighRollerEmployees = CasinoHighRollerEmployees(2, "Christian", "Croupier", 57)
     var siegfried: CasinoHighRollerEmployees = CasinoHighRollerEmployees(2, "Siegfried", "Croupier", 44)
