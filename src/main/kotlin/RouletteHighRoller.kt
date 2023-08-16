@@ -17,13 +17,13 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         player.yourAmount = amount
 
         // Hinzufügen des Einsatzbetrags zum Banktisch
-        rouletteTable.bankTable = rouletteTable.bankTable + amount
+        rouletteTable.bankTable += amount
 
         // Ausgabe der Spielinformationen
         print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die ${FontColors.RED.type}$number${FontColors.COLOREND.type} gesetzt,")
 
         // Aktualisieren des Spieler-Guthabens nach dem Einsatz
-        player.cash = player.cash - amount
+        player.cash -= amount
         println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
     }
 
@@ -42,20 +42,19 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         player.yourAmount = amount
 
         // Hinzufügen des Einsatzbetrags zum Banktisch
-        rouletteTable.bankTable = rouletteTable.bankTable + amount
+        rouletteTable.bankTable += amount
 
         // Ausgabe der Spielinformationen basierend auf der gewählten Option
         if (numbersRedOrBlack == 1) {
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf rot gesetzt")
-            player.cash = player.cash - amount
-            println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
-        } else if (numbersRedOrBlack == 2) {
+             } else if (numbersRedOrBlack == 2) {
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf schwarz gesetzt")
-            player.cash = player.cash - amount
-            println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
-        } else {
+            } else {
             println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1 oder 2 ist (sollte normalerweise nicht passieren) und falls es auf readln() umgestellt wird
         }
+        // Aktualisieren des Spieler-Guthabens nach dem Einsatz
+        player.cash -= amount
+        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
     }
 
     // Überschriebene Methode playerEvenOrNotEven, um Spielern mit höherem Einsatz auf gerade oder ungerade setzen zu lassen
@@ -73,20 +72,19 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         player.yourAmount = amount
 
         // Hinzufügen des Einsatzbetrags zum Banktisch
-        rouletteTable.bankTable = rouletteTable.bankTable + amount
+        rouletteTable.bankTable += amount
 
         // Ausgabe der Spielinformationen basierend auf der gewählten Option
         if (numbersEvenOrNotEven == 1) {
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf gerade gesetzt")
-            player.cash = player.cash - amount
-            println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
-        } else if (numbersEvenOrNotEven == 2) {
+             } else if (numbersEvenOrNotEven == 2) {
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf ungerade gesetzt")
-            player.cash = player.cash - amount
-            println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
-        } else {
+            } else {
             println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1 oder 2 ist (sollte normalerweise nicht passieren) und falls es auf readln() umgestellt wird
         }
+        // Aktualisieren des Spieler-Guthabens nach dem Einsatz
+        player.cash -= amount
+        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
     }
 
     // Überschriebene Methode playerThird, um Spielern mit höherem Einsatz auf das 1., 2. oder 3. Drittel setzen zu lassen
@@ -104,7 +102,7 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         player.yourAmount = amount
 
         // Hinzufügen des Einsatzbetrags zum Banktisch
-        rouletteTable.bankTable = rouletteTable.bankTable + amount
+        rouletteTable.bankTable += amount
 
         // Ausgabe der Spielinformationen basierend auf dem gewählten Drittel
         if (numbersThird == 1) {
@@ -116,12 +114,9 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         } else {
             println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1, 2 oder 3 ist (sollte normalerweise nicht passieren) und falls es auf readln() umgestellt wird
         }
-
-        // Abzug des Einsatzbetrags vom Spieler-Guthaben
-        player.cash = player.cash - amount
-
-        // Ausgabe des verbleibenden Guthabens
-        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
+        // Aktualisieren des Spieler-Guthabens nach dem Einsatz
+        player.cash -= amount
+        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
     }
 
     // Überschriebene Methode playerFirstOrSecondHalf, um Spielern mit höherem Einsatz auf die 1. oder 2. Hälfte setzen zu lassen
@@ -139,7 +134,7 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         player.yourAmount = amount
 
         // Hinzufügen des Einsatzbetrags zum Banktisch
-        rouletteTable.bankTable = rouletteTable.bankTable + amount
+        rouletteTable.bankTable += amount
 
         // Ausgabe der Spielinformationen basierend auf der gewählten Hälfte
         if (numbersFirstOrSecondHalf == 1) {
@@ -149,12 +144,9 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         } else {
             println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1 oder 2 ist (sollte normalerweise nicht passieren) und falls es auf readln() umgestellt wird
         }
-
-        // Abzug des Einsatzbetrags vom Spieler-Guthaben
-        player.cash = player.cash - amount
-
-        // Ausgabe des verbleibenden Guthabens
-        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
+        // Aktualisieren des Spieler-Guthabens nach dem Einsatz
+        player.cash -= amount
+        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
     }
 
     // Methode playerFreeChoiceNumber ermöglicht dem Spieler, eine beliebige Zahl zwischen 0 und 36 zu wählen
@@ -181,16 +173,15 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
                 player.yourAmount = amount
 
                 // Hinzufügen des Einsatzbetrags zum Banktisch
-                rouletteTable.bankTable = rouletteTable.bankTable + amount
+                rouletteTable.bankTable += amount
 
                 // Ausgabe der Spielinformationen
                 print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die ${FontColors.RED.type}$numberFreeChoice${FontColors.COLOREND.type} gesetzt,")
 
-                // Abzug des Einsatzbetrags vom Spieler-Guthaben
-                player.cash = player.cash - amount
+                // Aktualisieren des Spieler-Guthabens nach dem Einsatz
+                player.cash -= amount
+                println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
 
-                // Ausgabe des verbleibenden Guthabens
-                println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
             } else {
                 // Ausgabe bei ungültiger Einsatzhöhe oder zu niedrigem Guthaben
                 println("")

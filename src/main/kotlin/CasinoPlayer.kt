@@ -36,8 +36,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 var tipAmount = (winAmount - yourAmount) * tip
                 cash -= tipAmount
                 // Trinkgeld für die Angestellten erhöhen und den Bankbetrag der Tabelle reduzieren
-                rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
-                rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                rouletteTable.tipForEmployees += tipAmount
+                rouletteTable.bankTable -= winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
                 return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount * 100) / 100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
@@ -50,8 +50,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 var tipAmount = (winAmount - yourAmount) * tip
                 cash -= tipAmount
                 // Trinkgeld für die Angestellten erhöhen und den Bankbetrag der Tabelle reduzieren
-                rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
-                rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                rouletteTable.tipForEmployees += tipAmount
+                rouletteTable.bankTable -= winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
                 return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount * 100) / 100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
@@ -65,8 +65,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 var tipAmount = (winAmount - yourAmount) * tip
                 cash -= tipAmount
                 // Trinkgeld für die Angestellten erhöhen und den Bankbetrag der Tabelle reduzieren
-                rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
-                rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                rouletteTable.tipForEmployees += tipAmount
+                rouletteTable.bankTable -= winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
                 return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount * 100) / 100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
@@ -80,8 +80,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 var tipAmount = (winAmount - yourAmount) * tip
                 cash -= tipAmount
                 // Trinkgeld für die Angestellten erhöhen und den Bankbetrag der Tabelle reduzieren
-                rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
-                rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                rouletteTable.tipForEmployees += tipAmount
+                rouletteTable.bankTable -= winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
                 return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount * 100) / 100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
@@ -95,8 +95,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 var tipAmount = (winAmount - yourAmount) * tip
                 cash -= tipAmount
                 // Trinkgeld für die Angestellten erhöhen und den Bankbetrag der Tabelle reduzieren
-                rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
-                rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                rouletteTable.tipForEmployees += tipAmount
+                rouletteTable.bankTable -= winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
                 return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount * 100) / 100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
@@ -110,8 +110,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 var tipAmount = (winAmount - yourAmount) * tip
                 cash -= tipAmount
                 // Trinkgeld für die Angestellten erhöhen und den Bankbetrag der Tabelle reduzieren
-                rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
-                rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                rouletteTable.tipForEmployees += tipAmount
+                rouletteTable.bankTable -= winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
                 return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount * 100) / 100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
@@ -125,8 +125,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 var tipAmount = (winAmount - yourAmount) * tip
                 cash -= tipAmount
                 // Trinkgeld für die Angestellten erhöhen und den Bankbetrag der Tabelle reduzieren
-                rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
-                rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                rouletteTable.tipForEmployees += tipAmount
+                rouletteTable.bankTable -= winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
                 return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount * 100) / 100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
@@ -140,8 +140,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 var tipAmount = (winAmount - yourAmount) * tip
                 cash -= tipAmount
                 // Trinkgeld für die Angestellten erhöhen und den Bankbetrag der Tabelle reduzieren
-                rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
-                rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                rouletteTable.tipForEmployees += tipAmount
+                rouletteTable.bankTable -= winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
                 return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount * 100) / 100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
@@ -155,8 +155,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 var tipAmount = (winAmount - yourAmount) * tip
                 cash -= tipAmount
                 // Trinkgeld für die Angestellten erhöhen und den Bankbetrag der Tabelle reduzieren
-                rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
-                rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                rouletteTable.tipForEmployees += tipAmount
+                rouletteTable.bankTable -= winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
                 return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount * 100) / 100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
@@ -170,8 +170,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 var tipAmount = (winAmount - yourAmount) * tip
                 cash -= tipAmount
                 // Trinkgeld für die Angestellten erhöhen und den Bankbetrag der Tabelle reduzieren
-                rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
-                rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                rouletteTable.tipForEmployees += tipAmount
+                rouletteTable.bankTable -= winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
                 return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount * 100) / 100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
@@ -191,8 +191,8 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 var tipAmount = (winAmount - yourAmount) * tip
                 cash -= tipAmount
                 // Trinkgeld für die Angestellten erhöhen und den Bankbetrag der Tabelle reduzieren
-                rouletteTable.tipForEmployees = rouletteTable.tipForEmployees + tipAmount
-                rouletteTable.bankTable = rouletteTable.bankTable - winAmount
+                rouletteTable.tipForEmployees += tipAmount
+                rouletteTable.bankTable -= winAmount
                 Thread.sleep(1000)
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
                 return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${

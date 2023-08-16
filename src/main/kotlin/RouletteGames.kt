@@ -15,13 +15,13 @@ open class RouletteGames(tableNumber: Int) {
         player.yourAmount = amount
 
         // Aktualisieren des Bankbetrags am Roulette-Tisch
-        rouletteTable.bankTable = rouletteTable.bankTable + amount          // kann man auch kürzer schreiben mit -= bzw. +=
+        rouletteTable.bankTable += amount
 
         // Ausgabe der "Setz"-Informationen für den Spieler
         print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die ${FontColors.RED.type}$number${FontColors.COLOREND.type} gesetzt,")
 
         // Abziehen des gesetzten Betrags vom Spieler-Kontostand
-        player.cash = player.cash - amount         // kann man auch kürzer schreiben mit -= bzw. +=
+        player.cash -= amount
 
         // Ausgabe des verbleibenden Kontostands des Spielers
         println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
@@ -38,23 +38,24 @@ open class RouletteGames(tableNumber: Int) {
         player.yourAmount = amount
 
         // Aktualisieren des Bankbetrags am Roulette-Tisch
-        rouletteTable.bankTable = rouletteTable.bankTable + amount         // kann man auch kürzer schreiben mit -= bzw. +=
+        rouletteTable.bankTable += amount
 
         // Überprüfen der gewählten Farbe und Ausgabe der Setzinformationen
         if (numbersRedOrBlack == 1) {
             // Setzen auf Rot
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf rot gesetzt")
-            player.cash = player.cash - amount
-            println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
-        } else if (numbersRedOrBlack == 2) {
+            } else if (numbersRedOrBlack == 2) {
             // Setzen auf Schwarz
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf schwarz gesetzt")
-            player.cash = player.cash - amount
-            println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
-        } else {
+            } else {
             // Ausgabe bei ungültiger Eingabe (zur Vorbereitung auf manuelle Eingaben)
             println("Falsche Eingabe")
         }
+        // Abzug des Einsatzbetrags vom Spieler-Guthaben
+        player.cash = player.cash - amount
+
+        // Ausgabe des verbleibenden Guthabens
+        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
     }
 
     // Offene Methode playerEvenOrNotEven zum Zufälligen Setzen des Spielers auf Gerade oder Ungerade
@@ -68,23 +69,24 @@ open class RouletteGames(tableNumber: Int) {
         player.yourAmount = amount
 
         // Aktualisieren des Bankbetrags am Roulette-Tisch
-        rouletteTable.bankTable = rouletteTable.bankTable + amount
+        rouletteTable.bankTable += amount
 
         // Überprüfen der gewählten Option und Ausgabe der Setzinformationen
         if (numbersEvenOrNotEven == 1) {
             // Setzen auf Gerade
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf gerade gesetzt")
-            player.cash = player.cash - amount
-            println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
-        } else if (numbersEvenOrNotEven == 2) {
+            } else if (numbersEvenOrNotEven == 2) {
             // Setzen auf Ungerade
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf ungerade gesetzt")
-            player.cash = player.cash - amount
-            println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
-        } else {
+           } else {
             // Ausgabe bei ungültiger Eingabe (zur Vorbereitung auf manuelle Eingaben)
             println("Falsche Eingabe")
         }
+        // Abzug des Einsatzbetrags vom Spieler-Guthaben
+        player.cash = player.cash - amount
+
+        // Ausgabe des verbleibenden Guthabens
+        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
     }
 
     // Offene Methode playerThird zum zufälligen Setzen des Spielers auf das 1., 2. oder 3. Drittel
@@ -98,28 +100,27 @@ open class RouletteGames(tableNumber: Int) {
         player.yourAmount = amount
 
         // Aktualisieren des Bankbetrags am Roulette-Tisch
-        rouletteTable.bankTable = rouletteTable.bankTable + amount
+        rouletteTable.bankTable += amount
 
         // Überprüfen des gewählten Drittels und Ausgabe der Setzinformationen
         if (numbersThird == 1) {
             // Setzen auf das 1. Drittel
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 1. Drittel gesetzt")
-            player.cash = player.cash - amount
-            println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
-        } else if (numbersThird == 2) {
+            } else if (numbersThird == 2) {
             // Setzen auf das 2. Drittel
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 2. Drittel gesetzt")
-            player.cash = player.cash - amount
-            println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
-        } else if (numbersThird == 3) {
+            } else if (numbersThird == 3) {
             // Setzen auf das 3. Drittel
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 3. Drittel gesetzt")
-            player.cash = player.cash - amount
-            println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
-        } else {
+            } else {
             // Ausgabe bei ungültiger Eingabe (zur Vorbereitung auf manuelle Eingaben)
             println("Falsche Eingabe")
         }
+        // Abzug des Einsatzbetrags vom Spieler-Guthaben
+        player.cash = player.cash - amount
+
+        // Ausgabe des verbleibenden Guthabens
+        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
     }
 
     // Offene Methode playerFirstOrSecondHalf zum Zufälligen Setzen des Spielers auf die 1. oder 2. Hälfte
@@ -133,7 +134,7 @@ open class RouletteGames(tableNumber: Int) {
         player.yourAmount = amount
 
         // Aktualisieren des Bankbetrags am Roulette-Tisch
-        rouletteTable.bankTable = rouletteTable.bankTable + amount
+        rouletteTable.bankTable += amount
 
         // Überprüfen der gewählten Hälfte und Ausgabe der Setzinformationen
         if (numbersFirstOrSecondHalf == 1) {
