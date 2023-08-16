@@ -133,7 +133,7 @@ fun main() {
         rouletteAtTable1.goPlay(players, rouletteGames, rouletteAtTable1)
         // Entfernen von Spielern ohne Geld am Tisch 1
         rouletteAtTable1.removePlayerWithNoMoney(players)
-        // Prüfen, ob die Bank an Tisch1 pleite ist und falls ja, dann wird bankbroken auf true gesetzt und die Schleife beendet
+        // Prüfen, ob die Bank an Tisch1 pleite ist und falls ja, dann wird bankHasMoney auf true gesetzt und die Schleife beendet
         breakingTheBank1.breakingBank1(rouletteAtTable1, players)
         // Erhöhen der Runde am Tisch 1
         round++
@@ -145,7 +145,7 @@ fun main() {
         rouletteAtTable2.goPlayHighRoller(playersHighRoller, rouletteGamesHighRoller, rouletteAtTable2)
         // Entfernen von High Roller Spielern ohne Geld am Tisch 2
         rouletteAtTable2.removePlayerHighRollerWithNoMoney(playersHighRoller)
-        // Prüfen, ob die Bank an Tisch2 pleite ist und falls ja, dann wird bankbroken auf true gesetzt und die Schleife beendet
+        // Prüfen, ob die Bank an Tisch2 pleite ist und falls ja, dann wird bankHasMoney auf true gesetzt und die Schleife beendet
         breakingTheBank2.breakingBank2(rouletteAtTable2, playersHighRoller)
         // Erhöhen der Runde am High Roller Tisch 2
         roundHighRoller++

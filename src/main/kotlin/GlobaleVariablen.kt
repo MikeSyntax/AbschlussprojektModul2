@@ -12,8 +12,8 @@ var numberIsNotEven: List<Int> = listOf(1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,
 val specialNumber: List<Int> = listOf(0)   // Besondere Zahl (0)
 var goOn1 = true   // Kontrollvariable 1
 var goOn2 = true   // Kontrollvariable 2
-var bankHasMoney1 = true
-var bankHasMoney2 = true
+var bankHasMoney1 = true    // Kontrollvariable 3
+var bankHasMoney2 = true    // Kontrollvariable 4
 var round = 0   // Runden-Zähler
 var roundHighRoller = 0   // Zähler für HighRoller-Runden
 
