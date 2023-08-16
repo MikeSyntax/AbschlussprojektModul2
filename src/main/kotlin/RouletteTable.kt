@@ -73,12 +73,33 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
             println("")
         }
 
-        println("==================================")
+        println("===========================================")
         print("${FontColors.GREEN.type}Nichts geht mehr")
         // Das Roulette-Rad am Tisch dreht sich und gibt eine zufällige Zahl zurück
         var rouletteNumber = rouletteTable.rollingNumbers()
-        println(" und es ist die $rouletteNumber${FontColors.COLOREND.type}")
-        println("==================================")
+        print(" und es ist die ")
+
+            print(".")
+            Thread.sleep(500)
+            print(".")
+            Thread.sleep(500)
+            print(".")
+            Thread.sleep(500)
+            print(".")
+            Thread.sleep(500)
+            print(".")
+            Thread.sleep(500)
+            print(".")
+            Thread.sleep(500)
+            print(".")
+            Thread.sleep(500)
+            print(".")
+            Thread.sleep(500)
+            print(".")
+            Thread.sleep(500)
+
+        println("$rouletteNumber${FontColors.COLOREND.type}")
+        println("===========================================")
 
         // Aufruf einer Methode zur Anzeige von Informationen über die gezogene Zahl
         rouletteTable.infoOfNumbers(rouletteNumber)
@@ -124,13 +145,33 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
             println("")
         }
 
-        println("==================================")
+        println("===========================================")
         print("${FontColors.GREEN.type}Nichts geht mehr")
         // Das Roulette-Rad am Tisch dreht sich und gibt eine zufällige Zahl zurück
         var rouletteNumber = rouletteTable.rollingNumbers()
-        println(" und es ist die $rouletteNumber${FontColors.COLOREND.type}")
-        println("==================================")
+        print(" und es ist die ")
 
+        print(".")
+        Thread.sleep(500)
+        print(".")
+        Thread.sleep(500)
+        print(".")
+        Thread.sleep(500)
+        print(".")
+        Thread.sleep(500)
+        print(".")
+        Thread.sleep(500)
+        print(".")
+        Thread.sleep(500)
+        print(".")
+        Thread.sleep(500)
+        print(".")
+        Thread.sleep(500)
+        print(".")
+        Thread.sleep(500)
+
+        println("$rouletteNumber${FontColors.COLOREND.type}")
+        println("===========================================")
         // Aufruf einer Methode zur Anzeige von Informationen über die gezogene Zahl
         rouletteTable.infoOfNumbers(rouletteNumber)
         println("\n")

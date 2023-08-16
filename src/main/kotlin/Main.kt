@@ -69,8 +69,8 @@ fun main() {
     var claudia: CasinoPlayer = CasinoPlayer(1, "Claudia", 500.00, false, 0.03, 26)
 
     // Erstellung von CasinoPlayer-Objekten für High Roller Spieler
-    var gonzales: CasinoPlayer = CasinoPlayer(2, "Gonzales", 15000.00, true, 0.1, 26, true)
-    var silvio: CasinoPlayer = CasinoPlayer(2, "Silvio", 13000.00, true, 0.08, 65, true)
+    var gonzales: CasinoPlayer = CasinoPlayer(2, "Gonzales", 25000.00, true, 0.1, 26, true)
+    var silvio: CasinoPlayer = CasinoPlayer(2, "Silvio", 130000.00, true, 0.08, 65, true)
     var daniel: CasinoPlayer = CasinoPlayer(2, "Daniel", 17000.00, true, 0.02, 34, true)
 
     // Erstellung eines CasinoEntranceControl-Objekts für die Einlasskontrolle
