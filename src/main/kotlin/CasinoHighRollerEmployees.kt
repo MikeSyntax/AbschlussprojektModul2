@@ -37,7 +37,7 @@ class CasinoHighRollerEmployees(tableNumber: Int, name: String, job: String, age
             // Hinzufügen des newCroupier wieder zurück zur highRollerCroupiers-Liste allerdings diesmal ans Ende der Liste
             highRollerCroupiers.add(newCroupier)
 
-            // Zurücksetzen der Rundenzählervariable auf 0
+            // Zurücksetzen der Rundenzähler Variable auf 0
             roundHighRoller = 0
         }
     }

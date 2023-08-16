@@ -186,7 +186,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         println("")
         println("${FontColors.GREEN.type}Machen Sie Ihre Einsätze, neues Spiel, neues Glück${FontColors.COLOREND.type}")
 
-        // Zurücksetzen der Spielerdaten für das nächste Spiel
+        // Zurücksetzen der Spieler Daten für das nächste Spiel
         for (player in playersHighRoller) {
             player.reset()
         }
@@ -209,7 +209,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
             printListInfoAfterRemoving(players)
         }
 
-        // Überprüfung, ob keine Spieler mehr übrig sind, aber die Ausgabe nur wenn die Bank nicht pleite war
+        // Überprüfung, ob keine Spieler mehr übrig sind, aber die Ausgabe, nur wenn die Bank nicht pleite war
         if (players.isEmpty() && bankHasMoney1) {
             goOn1 = false
             println("${FontColors.RED.type}|––––––––––––––––––––––––––--–––––––––––--------––--––––-|")

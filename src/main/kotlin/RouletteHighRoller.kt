@@ -12,7 +12,7 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
         var amount = (1000..10000).random()
 
-        // Speichern der gewählten Zahl und des Einsatzbetrags im Spielerobjekt
+        // Speichern der gewählten Zahl und des Einsatzbetrags im Spieler Objekt
         player.yourNumber = number
         player.yourAmount = amount
 
@@ -35,10 +35,10 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
         var amount = (1000..10000).random()
 
-        // Speichern der gewählten Option (rot oder schwarz) im Spielerobjekt
+        // Speichern der gewählten Option (rot oder schwarz) im Spieler Objekt
         player.redBlack = numbersRedOrBlack
 
-        // Speichern des Einsatzbetrags im Spielerobjekt
+        // Speichern des Einsatzbetrags im Spieler Objekt
         player.yourAmount = amount
 
         // Hinzufügen des Einsatzbetrags zum Banktisch
@@ -65,10 +65,10 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
         var amount = (1000..10000).random()
 
-        // Speichern der gewählten Option (gerade oder ungerade) im Spielerobjekt
+        // Speichern der gewählten Option (gerade oder ungerade) im Spieler Objekt
         player.evenOrNot = numbersEvenOrNotEven
 
-        // Speichern des Einsatzbetrags im Spielerobjekt
+        // Speichern des Einsatzbetrags im Spieler Objekt
         player.yourAmount = amount
 
         // Hinzufügen des Einsatzbetrags zum Banktisch
@@ -95,10 +95,10 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
         var amount = (1000..10000).random()
 
-        // Speichern des gewählten Drittels im Spielerobjekt
+        // Speichern des gewählten Drittels im Spieler Objekt
         player.thirdThird = numbersThird
 
-        // Speichern des Einsatzbetrags im Spielerobjekt
+        // Speichern des Einsatzbetrags im Spieler Objekt
         player.yourAmount = amount
 
         // Hinzufügen des Einsatzbetrags zum Banktisch
@@ -127,10 +127,10 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
         var amount = (1000..10000).random()
 
-        // Speichern der gewählten Hälfte im Spielerobjekt
+        // Speichern der gewählten Hälfte im Spieler Objekt
         player.half = numbersFirstOrSecondHalf
 
-        // Speichern des Einsatzbetrags im Spielerobjekt
+        // Speichern des Einsatzbetrags im Spieler Objekt
         player.yourAmount = amount
 
         // Hinzufügen des Einsatzbetrags zum Banktisch
@@ -168,7 +168,7 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
             // Überprüfung, ob der eingegebene Einsatz gültig ist und innerhalb der erlaubten Bandbreite liegt
             // sowie ob der Spieler genügend Guthaben hat
             if (amount != null && amount in 1000..10000 && amount <= player.cash) {
-                // Speichern der gewählten Zahl und des Einsatzes im Spielerobjekt
+                // Speichern der gewählten Zahl und des Einsatzes im Spieler Objekt
                 player.yourNumber = numberFreeChoice
                 player.yourAmount = amount
 
@@ -244,7 +244,7 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
                 }
 
                 4 -> {
-                    playerThird(player, rouletteTable)  // Auf 1.2.oder 3.Drittel setzen
+                    playerThird(player, rouletteTable)  // Auf 1.2.oder 3. Drittel setzen
                 }
 
                 5 -> {

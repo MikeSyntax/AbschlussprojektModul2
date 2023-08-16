@@ -27,7 +27,7 @@ open class RouletteGames(tableNumber: Int) {
         println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
     }
 
-    // Offene Methode playerRedOrBlack zum Zufälligen Setzen des Spielers auf Rot oder Schwarz
+    // Offene Methode playerRedOrBlack zum zufälligen Setzen des Spielers auf Rot oder Schwarz
     open fun playerRedOrBlack(player: CasinoPlayer, rouletteTable: RouletteTable) {
         // Generieren einer zufälligen Zahl (1 oder 2) für Rot oder Schwarz
         var numbersRedOrBlack = (1..2).random()
@@ -40,7 +40,7 @@ open class RouletteGames(tableNumber: Int) {
         // Aktualisieren des Bankbetrags am Roulette-Tisch
         rouletteTable.bankTable += amount
 
-        // Überprüfen der gewählten Farbe und Ausgabe der Setzinformationen
+        // Überprüfen der gewählten Farbe und Ausgabe der Setz Informationen
         if (numbersRedOrBlack == 1) {
             // Setzen auf Rot
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf rot gesetzt")
@@ -58,7 +58,7 @@ open class RouletteGames(tableNumber: Int) {
         println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
     }
 
-    // Offene Methode playerEvenOrNotEven zum Zufälligen Setzen des Spielers auf Gerade oder Ungerade
+    // Offene Methode playerEvenOrNotEven zum zufälligen Setzen des Spielers auf Gerade oder Ungerade
     open fun playerEvenOrNotEven(player: CasinoPlayer, rouletteTable: RouletteTable) {
         // Generieren einer zufälligen Zahl (1 oder 2) für Gerade oder Ungerade
         var numbersEvenOrNotEven = (1..2).random()
@@ -71,7 +71,7 @@ open class RouletteGames(tableNumber: Int) {
         // Aktualisieren des Bankbetrags am Roulette-Tisch
         rouletteTable.bankTable += amount
 
-        // Überprüfen der gewählten Option und Ausgabe der Setzinformationen
+        // Überprüfen der gewählten Option und Ausgabe der Setz Informationen
         if (numbersEvenOrNotEven == 1) {
             // Setzen auf Gerade
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf gerade gesetzt")
@@ -102,7 +102,7 @@ open class RouletteGames(tableNumber: Int) {
         // Aktualisieren des Bankbetrags am Roulette-Tisch
         rouletteTable.bankTable += amount
 
-        // Überprüfen des gewählten Drittels und Ausgabe der Setzinformationen
+        // Überprüfen des gewählten Drittels und Ausgabe der Setz Informationen
         if (numbersThird == 1) {
             // Setzen auf das 1. Drittel
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 1. Drittel gesetzt")
@@ -123,7 +123,7 @@ open class RouletteGames(tableNumber: Int) {
         println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
     }
 
-    // Offene Methode playerFirstOrSecondHalf zum Zufälligen Setzen des Spielers auf die 1. oder 2. Hälfte
+    // Offene Methode playerFirstOrSecondHalf zum zufälligen Setzen des Spielers auf die 1. oder 2. Hälfte
     open fun playerFirstOrSecondHalf(player: CasinoPlayer, rouletteTable: RouletteTable) {
         // Generieren einer zufälligen Zahl (1 oder 2) für die Hälfte
         var numbersFirstOrSecondHalf = (1..2).random()
@@ -136,7 +136,7 @@ open class RouletteGames(tableNumber: Int) {
         // Aktualisieren des Bankbetrags am Roulette-Tisch
         rouletteTable.bankTable += amount
 
-        // Überprüfen der gewählten Hälfte und Ausgabe der Setzinformationen
+        // Überprüfen der gewählten Hälfte und Ausgabe der Setz Informationen
         if (numbersFirstOrSecondHalf == 1) {
             // Setzen auf die 1. Hälfte
             print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die 1. Hälfte gesetzt")
@@ -182,7 +182,7 @@ open class RouletteGames(tableNumber: Int) {
             // Einlesen der Spielerwahl
             var choice = readln().toInt()
 
-            // Verarbeitung der Spielerwahl mittels 'when' (Ähnlich einem Switch-Statement in anderen Programmiersprachen)
+            // Verarbeitung der Spielerauswahl mittels 'when' (Ähnlich einem Switch-Statement in anderen Programmiersprachen)
             when (choice) {
                 1 -> {
                     playerNumber(player, rouletteTable) // Auf Zahl setzen

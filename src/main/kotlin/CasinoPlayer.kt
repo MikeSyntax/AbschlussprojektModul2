@@ -4,14 +4,14 @@ import kotlin.math.round
 class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var drink: Boolean, var tip: Double, var age: Int): Casino(tableNumber) {
 
 
-    // Deklaration von Eigenschaften, um Spielerinformationen zu speichern
+    // Deklaration von Eigenschaften, um Spieler Informationen zu speichern
     var yourNumber: Int = -1    // Gewählte Zahl des Spielers
     var yourAmount: Int = -1    // Gewählter Betrag des Spielers
     var redBlack: Int = -1      // Wahl von Rot (0) oder Schwarz (1)
     var evenOrNot: Int = -1     // Wahl von Gerade (0) oder Ungerade (1)
-    var thirdThird: Int = -1    // Wahl von Erstes Drittel (0), Zweites Drittel (1) oder Drittes Drittel (2)
+    var thirdThird: Int = -1    // Wahl von Erste Drittel (0), Zweite Drittel (1) oder Drittes Drittel (2)
     var half: Int = -1          // Wahl von Erste Hälfte (0) oder Zweite Hälfte (1)
-    var skipRound = false       // true/false, um eine Runde zu überspringen
+    var skipRound: Boolean = false // true/false, um eine Runde zu überspringen
     var numberFreeChoice: Int = -1 // Wahl einer vom Nutzer gewählten beliebigen Zahl
 
 
