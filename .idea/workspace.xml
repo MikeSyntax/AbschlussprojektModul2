@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Abschlussprojekt 16.08 gegen 14.01Uhr&#10;Rechenoperationen gekürzt in -= und += nur falls Fehler auftreten">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteGames.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteGames.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteHighRoller.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteHighRoller.kt" afterDir="false" />
+    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Modulabschluß 16.08.2023 gegen 16.37Uhr">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteTable.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,13 +64,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1690522541706</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Abschlussprojekt 09.08 gegen 13.53Uhr">
-      <created>1691582027582</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1691582027582</updated>
     </task>
     <task id="LOCAL-00012" summary="Abschlussprojekt 09.08 gegen 15.07Uhr">
       <created>1691586486435</created>
@@ -407,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692187312791</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Modulabschluß 16.08.2023 gegen 16.37Uhr">
+      <created>1692196679352</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1692196679352</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -422,7 +423,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Abschlussprojekt 14.08 gegen 12.48Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 13.05Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 13.42Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 14.22Uhr" />
@@ -447,6 +447,7 @@
     <MESSAGE value="Abschlussprojekt 16.08 gegen 08.57Uhr" />
     <MESSAGE value="Abschlussprojekt 16.08 gegen 10.46Uhr" />
     <MESSAGE value="Abschlussprojekt 16.08 gegen 14.01Uhr&#10;Rechenoperationen gekürzt in -= und += nur falls Fehler auftreten" />
-    <option name="LAST_COMMIT_MESSAGE" value="Abschlussprojekt 16.08 gegen 14.01Uhr&#10;Rechenoperationen gekürzt in -= und += nur falls Fehler auftreten" />
+    <MESSAGE value="Modulabschluß 16.08.2023 gegen 16.37Uhr" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modulabschluß 16.08.2023 gegen 16.37Uhr" />
   </component>
 </project>
