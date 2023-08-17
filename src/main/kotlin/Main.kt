@@ -153,8 +153,10 @@ fun main() {
         sascha.changeHighRollerCroupier(highRollerCroupiers, rouletteAtTable2)
 
 
-        // Die Schleife wird ausgeführt, solange goOn1 (Tisch 1) oder goOn2 (Tisch 2) wahr ist, also Spieler noch Geld haben und die Bank bei beiden Tischen noch Geld hat
-    } while ((bankHasMoney1 && goOn1) || (bankHasMoney2 && goOn2))
+        // Die Schleife wird ausgeführt, solange goOn1 (Tisch 1) oder goOn2 (Tisch 2) wahr ist, also Spieler noch Geld haben und die Bank an den Tischen noch Geld hat
+    } while ((bankHasMoney1 && goOn1) || (bankHasMoney2 && goOn2))  // Wenn beide Bedingungen in den Klammern stimmen, läuft das Spiel weiter, wenn eine auf False
+                                                                    // springt ist automatisch die ganze Bedingung in der Klammer False und das Spiel wird beendet
+
         if (!goOn1 && !goOn2) {
             println("")
             // Ausgabe einer Meldung, wenn das Spiel vorbei ist, weil kein Spieler mehr Geld hat an beiden Tischen
@@ -162,6 +164,7 @@ fun main() {
             println("|        Spiel ist vorbei, kein Spieler hat noch Geld        |")
             println("==============================================================${FontColors.COLOREND.type}")
         }
+
         if (!bankHasMoney1 && !bankHasMoney2) {
             println("")
             // Ausgabe einer Meldung, wenn das Spiel vorbei ist bei gesprengter Bank an beiden Tischen
@@ -169,6 +172,7 @@ fun main() {
             println("| Spiel ist vorbei die Bank an beiden Tischen wurde gesprengt |")
             println("===============================================================${FontColors.COLOREND.type}")
         }
+
         if ((!goOn1 && !bankHasMoney2) || (!goOn2 && !bankHasMoney1)) {
             println("")
             // Ausgabe einer Meldung, wenn das Spiel vorbei ist bei gesprengter Bank an einem Tisch und alle Spieler ohne Geld an dem anderen Tisch
