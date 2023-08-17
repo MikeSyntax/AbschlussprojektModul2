@@ -4,11 +4,19 @@ import kotlin.math.round
 // Offene Klasse RouletteGames, die als Basis für verschiedene Roulette-Spiele dient
 open class RouletteGames(tableNumber: Int) {
 
+    //Initialisierung der Kontrollvariablen
+    var numbersRedOrBlack = -1
+    var number = -1
+    var numbersEvenOrNotEven = -1
+    var numbersThird = -1
+    var numbersFirstOrSecondHalf = -1
+    var amount = -1
+
     // Offene Methode playerNumber zum Setzen einer zufälligen Zahl und Betrags für einen Spieler
     open fun playerNumber(player: CasinoPlayer, rouletteTable: RouletteTable) {
         // Generieren einer zufälligen Zahl und eines zufälligen Betrags
-        var number = (0..36).random()
-        var amount = (10..350).random()
+        number = (0..36).random()
+        amount = (10..350).random()
 
         // Speichern der gewählten Nummer und des Betrags im Spieler-Objekt
         player.yourNumber = number
@@ -17,52 +25,31 @@ open class RouletteGames(tableNumber: Int) {
         // Aktualisieren des Bankbetrags am Roulette-Tisch
         rouletteTable.bankTable += amount
 
-        // Ausgabe der "Setz"-Informationen für den Spieler
-        print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die ${FontColors.RED.type}$number${FontColors.COLOREND.type} gesetzt,")
-
-        // Abziehen des gesetzten Betrags vom Spieler-Kontostand
-        player.cash -= amount
-
-        // Ausgabe des verbleibenden Kontostands des Spielers
-        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
-    }
+        // Überprüfen der gewählten Nummer und Ausgabe der Setz Informationen als Funktion geschrieben um diese auch in der HighRoller Class anzuwenden und CodeZeilen zu sparen
+        printNumber(player)
+        }
 
     // Offene Methode playerRedOrBlack zum zufälligen Setzen des Spielers auf Rot oder Schwarz
-    open fun playerRedOrBlack(player: CasinoPlayer, rouletteTable: RouletteTable) {
+    open fun playerRedOrBlack(player: CasinoPlayer, rouletteTable: RouletteTable){
         // Generieren einer zufälligen Zahl (1 oder 2) für Rot oder Schwarz
-        var numbersRedOrBlack = (1..2).random()
-        var amount = (10..350).random()
-
+        numbersRedOrBlack = (1..2).random()
+        amount = (10..350).random()
         // Speichern der gewählten Farbe (Rot oder Schwarz) und des Betrags im Spieler-Objekt
-        player.redBlack = numbersRedOrBlack
+        player.redBlack = numbersRedOrBlack // Das heißt redBlack wird mit dem Wert aus numbersRedOrBlack ersetzt und später mit der gefallenen Kugel abgeglichen
         player.yourAmount = amount
 
         // Aktualisieren des Bankbetrags am Roulette-Tisch
         rouletteTable.bankTable += amount
 
-        // Überprüfen der gewählten Farbe und Ausgabe der Setz Informationen
-        if (numbersRedOrBlack == 1) {
-            // Setzen auf Rot
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf rot gesetzt")
-            } else if (numbersRedOrBlack == 2) {
-            // Setzen auf Schwarz
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf schwarz gesetzt")
-            } else {
-            // Ausgabe bei ungültiger Eingabe (zur Vorbereitung auf manuelle Eingaben)
-            println("Falsche Eingabe")
-        }
-        // Abzug des Einsatzbetrags vom Spieler-Guthaben
-        player.cash = player.cash - amount
-
-        // Ausgabe des verbleibenden Guthabens
-        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
+        // Überprüfen der gewählten Farbe und Ausgabe der Setz Informationen als Funktion geschrieben um diese auch in der HighRoller Class anzuwenden und CodeZeilen zu sparen
+        printInfoRedOrBlack(player)
     }
 
     // Offene Methode playerEvenOrNotEven zum zufälligen Setzen des Spielers auf Gerade oder Ungerade
     open fun playerEvenOrNotEven(player: CasinoPlayer, rouletteTable: RouletteTable) {
         // Generieren einer zufälligen Zahl (1 oder 2) für Gerade oder Ungerade
-        var numbersEvenOrNotEven = (1..2).random()
-        var amount = (10..350).random()
+        numbersEvenOrNotEven = (1..2).random()
+        amount = (10..350).random()
 
         // Speichern der gewählten Option (Gerade oder Ungerade) und des Betrags im Spieler-Objekt
         player.evenOrNot = numbersEvenOrNotEven
@@ -71,29 +58,15 @@ open class RouletteGames(tableNumber: Int) {
         // Aktualisieren des Bankbetrags am Roulette-Tisch
         rouletteTable.bankTable += amount
 
-        // Überprüfen der gewählten Option und Ausgabe der Setz Informationen
-        if (numbersEvenOrNotEven == 1) {
-            // Setzen auf Gerade
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf gerade gesetzt")
-            } else if (numbersEvenOrNotEven == 2) {
-            // Setzen auf Ungerade
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf ungerade gesetzt")
-           } else {
-            // Ausgabe bei ungültiger Eingabe (zur Vorbereitung auf manuelle Eingaben)
-            println("Falsche Eingabe")
-        }
-        // Abzug des Einsatzbetrags vom Spieler-Guthaben
-        player.cash = player.cash - amount
-
-        // Ausgabe des verbleibenden Guthabens
-        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
+        // Überprüfen der gewählten Variante Gerade oder Ungerade und Ausgabe der Setz Informationen als Funktion geschrieben um diese auch in der HighRoller Class anzuwenden und CodeZeilen zu sparen
+        printEvenOrNotEven(player)
     }
 
     // Offene Methode playerThird zum zufälligen Setzen des Spielers auf das 1., 2. oder 3. Drittel
     open fun playerThird(player: CasinoPlayer, rouletteTable: RouletteTable) {
         // Generieren einer zufälligen Zahl (1 bis 3) für das Drittel
-        var numbersThird = (1..3).random()
-        var amount = (10..350).random()
+        numbersThird = (1..3).random()
+        amount = (10..350).random()
 
         // Speichern des gewählten Drittels und des Betrags im Spieler-Objekt
         player.thirdThird = numbersThird
@@ -102,32 +75,15 @@ open class RouletteGames(tableNumber: Int) {
         // Aktualisieren des Bankbetrags am Roulette-Tisch
         rouletteTable.bankTable += amount
 
-        // Überprüfen des gewählten Drittels und Ausgabe der Setz Informationen
-        if (numbersThird == 1) {
-            // Setzen auf das 1. Drittel
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 1. Drittel gesetzt")
-            } else if (numbersThird == 2) {
-            // Setzen auf das 2. Drittel
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 2. Drittel gesetzt")
-            } else if (numbersThird == 3) {
-            // Setzen auf das 3. Drittel
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 3. Drittel gesetzt")
-            } else {
-            // Ausgabe bei ungültiger Eingabe (zur Vorbereitung auf manuelle Eingaben)
-            println("Falsche Eingabe")
-        }
-        // Abzug des Einsatzbetrags vom Spieler-Guthaben
-        player.cash = player.cash - amount
-
-        // Ausgabe des verbleibenden Guthabens
-        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
+        // Überprüfen der gewählten Variante welches Drittel und Ausgabe der Setz Informationen als Funktion geschrieben um diese auch in der HighRoller Class anzuwenden und CodeZeilen zu sparen
+        printThird(player)
     }
 
     // Offene Methode playerFirstOrSecondHalf zum zufälligen Setzen des Spielers auf die 1. oder 2. Hälfte
     open fun playerFirstOrSecondHalf(player: CasinoPlayer, rouletteTable: RouletteTable) {
         // Generieren einer zufälligen Zahl (1 oder 2) für die Hälfte
-        var numbersFirstOrSecondHalf = (1..2).random()
-        var amount = (10..350).random()
+        numbersFirstOrSecondHalf = (1..2).random()
+        amount = (10..350).random()
 
         // Speichern der gewählten Hälfte und des Betrags im Spieler-Objekt
         player.half = numbersFirstOrSecondHalf
@@ -136,23 +92,8 @@ open class RouletteGames(tableNumber: Int) {
         // Aktualisieren des Bankbetrags am Roulette-Tisch
         rouletteTable.bankTable += amount
 
-        // Überprüfen der gewählten Hälfte und Ausgabe der Setz Informationen
-        if (numbersFirstOrSecondHalf == 1) {
-            // Setzen auf die 1. Hälfte
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die 1. Hälfte gesetzt")
-             } else if (numbersFirstOrSecondHalf == 2) {
-            // Setzen auf die 2. Hälfte
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die 2. Hälfte gesetzt")
-             } else {
-            // Ausgabe bei ungültiger Eingabe (zur Vorbereitung auf manuelle Eingaben)
-            println("Falsche Eingabe")
-        }
-
-        // Abzug des Einsatzbetrags vom Spieler-Guthaben
-        player.cash = player.cash - amount
-
-        // Ausgabe des verbleibenden Guthabens
-        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
+        // Überprüfen der gewählten Variante welche Hälfte der Zahlen und Ausgabe der Setz Informationen als Funktion geschrieben um diese auch in der HighRoller Class anzuwenden und CodeZeilen zu sparen
+        printFirstOrSecondHalf(player)
     }
 
     // Offene Methode playerSkipRound, um den Spieler eine Runde aussetzen zu lassen
@@ -219,5 +160,116 @@ open class RouletteGames(tableNumber: Int) {
             println("Diese Eingabe war falsch, es wird automatisch per ${FontColors.RED.type}Default auf Zahl${FontColors.COLOREND.type} gesetzt")
             playerNumber(player, rouletteTable)
         }
+    }
+
+    fun printNumber(player: CasinoPlayer) {
+
+        // Ausgabe der "Setz"-Informationen für den Spieler
+        print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die ${FontColors.RED.type}$number${FontColors.COLOREND.type} gesetzt,")
+
+        // Abziehen des gesetzten Betrags vom Spieler-Kontostand
+        player.cash -= amount
+
+        // Ausgabe des verbleibenden Kontostands des Spielers
+        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
+
+        //zurücksetzen der Variablen
+        number = -1
+        amount = -1
+    }
+
+    fun printInfoRedOrBlack(player: CasinoPlayer) {
+        if (numbersRedOrBlack == 1) {
+            // Setzen auf Rot
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf rot gesetzt")
+        } else if (numbersRedOrBlack == 2) {
+            // Setzen auf Schwarz
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf schwarz gesetzt")
+        } else {
+            // Ausgabe bei ungültiger Eingabe (zur Vorbereitung auf manuelle Eingaben)
+            println("Falsche Eingabe")
+        }
+        // Abzug des Einsatzbetrags vom Spieler-Guthaben
+        player.cash -= amount
+
+        // Ausgabe des verbleibenden Guthabens
+        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
+
+        //zurücksetzen der Variablen
+        numbersRedOrBlack = -1
+        amount = -1
+    }
+
+    fun printEvenOrNotEven(player: CasinoPlayer) {
+        // Überprüfen der gewählten Option und Ausgabe der Setz Informationen
+        if (numbersEvenOrNotEven == 1) {
+            // Setzen auf Gerade
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf gerade gesetzt")
+        } else if (numbersEvenOrNotEven == 2) {
+            // Setzen auf Ungerade
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf ungerade gesetzt")
+        } else {
+            // Ausgabe bei ungültiger Eingabe (zur Vorbereitung auf manuelle Eingaben)
+            println("Falsche Eingabe")
+        }
+        // Abzug des Einsatzbetrags vom Spieler-Guthaben
+        player.cash -= amount
+
+        // Ausgabe des verbleibenden Guthabens
+        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
+
+        //zurücksetzen der Variablen
+        numbersEvenOrNotEven = -1
+        amount = -1
+    }
+
+    fun printThird(player: CasinoPlayer) {
+        // Überprüfen des gewählten Drittels und Ausgabe der Setz Informationen
+        if (numbersThird == 1) {
+            // Setzen auf das 1. Drittel
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 1. Drittel gesetzt")
+        } else if (numbersThird == 2) {
+            // Setzen auf das 2. Drittel
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 2. Drittel gesetzt")
+        } else if (numbersThird == 3) {
+            // Setzen auf das 3. Drittel
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 3. Drittel gesetzt")
+        } else {
+            // Ausgabe bei ungültiger Eingabe (zur Vorbereitung auf manuelle Eingaben)
+            println("Falsche Eingabe")
+        }
+        // Abzug des Einsatzbetrags vom Spieler-Guthaben
+        player.cash -= amount
+
+        // Ausgabe des verbleibenden Guthabens
+        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
+
+        //zurücksetzen der Variablen
+        numbersThird = -1
+        amount = -1
+    }
+
+    fun printFirstOrSecondHalf(player: CasinoPlayer) {
+        // Überprüfen der gewählten Hälfte und Ausgabe der Setz Informationen
+        if (numbersFirstOrSecondHalf == 1) {
+            // Setzen auf die 1. Hälfte
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die 1. Hälfte gesetzt")
+        } else if (numbersFirstOrSecondHalf == 2) {
+            // Setzen auf die 2. Hälfte
+            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die 2. Hälfte gesetzt")
+        } else {
+            // Ausgabe bei ungültiger Eingabe (zur Vorbereitung auf manuelle Eingaben)
+            println("Falsche Eingabe")
+        }
+
+        // Abzug des Einsatzbetrags vom Spieler-Guthaben
+        player.cash -= amount
+
+        // Ausgabe des verbleibenden Guthabens
+        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum Spielen")
+
+        //zurücksetzen der Variablen
+        numbersThird = -1
+        amount = -1
     }
 }

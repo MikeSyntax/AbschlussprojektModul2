@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Modulabschluß 17.08.2023 gegen 09.22Uhr">
-      <change afterPath="$PROJECT_DIR$/src/main/Readme.md.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/CasinoPlayer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/CasinoPlayer.kt" afterDir="false" />
+    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Modulabschluß 17.08.2023 gegen 14.22Uhr mit README.md und Gewinn von 36 auf 35 angepasst">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteGames.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteGames.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteHighRoller.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteHighRoller.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +26,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2TBhmdAqcuOOmVCPKIHmOn8M7vc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -65,13 +69,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1690522541706</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Abschlussprojekt 09.08 gegen 16.02Uhr">
-      <created>1691589738880</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1691589738880</updated>
     </task>
     <task id="LOCAL-00015" summary="Abschlussprojekt 09.08 gegen 18.29Uhr">
       <created>1691598553551</created>
@@ -409,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692256950336</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Modulabschluß 17.08.2023 gegen 14.22Uhr mit README.md und Gewinn von 36 auf 35 angepasst">
+      <created>1692274965512</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1692274965512</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -424,7 +428,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Abschlussprojekt 14.08 gegen 14.22Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 14.41Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 15.05Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 16.00Uhr" />
@@ -449,6 +452,7 @@
     <MESSAGE value="Modulabschluß 16.08.2023 gegen 16.37Uhr" />
     <MESSAGE value="Modulabschluß 17.08.2023 gegen 07.49Uhr" />
     <MESSAGE value="Modulabschluß 17.08.2023 gegen 09.22Uhr" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modulabschluß 17.08.2023 gegen 09.22Uhr" />
+    <MESSAGE value="Modulabschluß 17.08.2023 gegen 14.22Uhr mit README.md und Gewinn von 36 auf 35 angepasst" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modulabschluß 17.08.2023 gegen 14.22Uhr mit README.md und Gewinn von 36 auf 35 angepasst" />
   </component>
 </project>

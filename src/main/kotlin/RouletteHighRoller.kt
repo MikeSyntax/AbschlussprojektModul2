@@ -7,10 +7,10 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
     // Überschriebene Methode playerNumber, um Spielern mit höherem Einsatz eine random Zahl setzen zu lassen
     override fun playerNumber(player: CasinoPlayer, rouletteTable: RouletteTable) {
         // Generierung einer zufälligen Zahl zwischen 0 und 36
-        var number = (0..36).random()
+        number = (0..36).random()
 
         // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
-        var amount = (1000..10000).random()
+        amount = (1000..10000).random()
 
         // Speichern der gewählten Zahl und des Einsatzbetrags im Spieler Objekt
         player.yourNumber = number
@@ -19,21 +19,17 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Hinzufügen des Einsatzbetrags zum Banktisch
         rouletteTable.bankTable += amount
 
-        // Ausgabe der Spielinformationen
-        print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die ${FontColors.RED.type}$number${FontColors.COLOREND.type} gesetzt,")
-
-        // Aktualisieren des Spieler-Guthabens nach dem Einsatz
-        player.cash -= amount
-        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
+        // Überprüfen der gewählten Nummer und Ausgabe der Setz Informationen als Funktion in der open class geschrieben um diese auch in der HighRoller Class anzuwenden und CodeZeilen zu sparen
+        printNumber(player)
     }
 
     // Überschriebene Methode playerRedOrBlack, um Spielern mit höherem Einsatz auf Rot oder Schwarz setzen zu lassen
     override fun playerRedOrBlack(player: CasinoPlayer, rouletteTable: RouletteTable) {
         // Generierung einer zufälligen Zahl zwischen 1 und 2, um rot oder schwarz zu wählen
-        var numbersRedOrBlack = (1..2).random()
+        numbersRedOrBlack = (1..2).random()
 
         // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
-        var amount = (1000..10000).random()
+        amount = (1000..10000).random()
 
         // Speichern der gewählten Option (rot oder schwarz) im Spieler Objekt
         player.redBlack = numbersRedOrBlack
@@ -44,26 +40,17 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Hinzufügen des Einsatzbetrags zum Banktisch
         rouletteTable.bankTable += amount
 
-        // Ausgabe der Spielinformationen basierend auf der gewählten Option
-        if (numbersRedOrBlack == 1) {
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf rot gesetzt")
-             } else if (numbersRedOrBlack == 2) {
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf schwarz gesetzt")
-            } else {
-            println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1 oder 2 ist (sollte normalerweise nicht passieren) und falls es auf readln() umgestellt wird
-        }
-        // Aktualisieren des Spieler-Guthabens nach dem Einsatz
-        player.cash -= amount
-        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
+        // Überprüfen der gewählten Farbe und Ausgabe der Setz Informationen als Funktion in der open class geschrieben um diese auch hier in der HighRoller Class anzuwenden und CodeZeilen zu sparen
+        printInfoRedOrBlack(player)
     }
 
     // Überschriebene Methode playerEvenOrNotEven, um Spielern mit höherem Einsatz auf gerade oder ungerade setzen zu lassen
     override fun playerEvenOrNotEven(player: CasinoPlayer, rouletteTable: RouletteTable) {
         // Generierung einer zufälligen Zahl zwischen 1 und 2, um gerade oder ungerade zu wählen
-        var numbersEvenOrNotEven = (1..2).random()
+        numbersEvenOrNotEven = (1..2).random()
 
         // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
-        var amount = (1000..10000).random()
+        amount = (1000..10000).random()
 
         // Speichern der gewählten Option (gerade oder ungerade) im Spieler Objekt
         player.evenOrNot = numbersEvenOrNotEven
@@ -74,26 +61,17 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Hinzufügen des Einsatzbetrags zum Banktisch
         rouletteTable.bankTable += amount
 
-        // Ausgabe der Spielinformationen basierend auf der gewählten Option
-        if (numbersEvenOrNotEven == 1) {
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf gerade gesetzt")
-             } else if (numbersEvenOrNotEven == 2) {
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf ungerade gesetzt")
-            } else {
-            println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1 oder 2 ist (sollte normalerweise nicht passieren) und falls es auf readln() umgestellt wird
-        }
-        // Aktualisieren des Spieler-Guthabens nach dem Einsatz
-        player.cash -= amount
-        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
+        // Überprüfen der gewählten Variante und Ausgabe der Setz Informationen als Funktion open class geschrieben um diese auch in der HighRoller Class anzuwenden und CodeZeilen zu sparen
+        printEvenOrNotEven(player)
     }
 
     // Überschriebene Methode playerThird, um Spielern mit höherem Einsatz auf das 1., 2. oder 3. Drittel setzen zu lassen
     override fun playerThird(player: CasinoPlayer, rouletteTable: RouletteTable) {
         // Generierung einer zufälligen Zahl zwischen 1 und 3, um das Drittel zu wählen
-        var numbersThird = (1..3).random()
+        numbersThird = (1..3).random()
 
         // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
-        var amount = (1000..10000).random()
+        amount = (1000..10000).random()
 
         // Speichern des gewählten Drittels im Spieler Objekt
         player.thirdThird = numbersThird
@@ -104,28 +82,17 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Hinzufügen des Einsatzbetrags zum Banktisch
         rouletteTable.bankTable += amount
 
-        // Ausgabe der Spielinformationen basierend auf dem gewählten Drittel
-        if (numbersThird == 1) {
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 1. Drittel gesetzt")
-        } else if (numbersThird == 2) {
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 2. Drittel gesetzt")
-        } else if (numbersThird == 3) {
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf das 3. Drittel gesetzt")
-        } else {
-            println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1, 2 oder 3 ist (sollte normalerweise nicht passieren) und falls es auf readln() umgestellt wird
-        }
-        // Aktualisieren des Spieler-Guthabens nach dem Einsatz
-        player.cash -= amount
-        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
+        // Überprüfen der gewählten Variante und Ausgabe der Setz Informationen als Funktion in der open class geschrieben um diese auch in der HighRoller Class anzuwenden und CodeZeilen zu sparen
+        printThird(player)
     }
 
     // Überschriebene Methode playerFirstOrSecondHalf, um Spielern mit höherem Einsatz auf die 1. oder 2. Hälfte setzen zu lassen
     override fun playerFirstOrSecondHalf(player: CasinoPlayer, rouletteTable: RouletteTable) {
         // Generierung einer zufälligen Zahl zwischen 1 und 2, um die Hälfte zu wählen
-        var numbersFirstOrSecondHalf = (1..2).random()
+        numbersFirstOrSecondHalf = (1..2).random()
 
         // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
-        var amount = (1000..10000).random()
+        amount = (1000..10000).random()
 
         // Speichern der gewählten Hälfte im Spieler Objekt
         player.half = numbersFirstOrSecondHalf
@@ -136,17 +103,8 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Hinzufügen des Einsatzbetrags zum Banktisch
         rouletteTable.bankTable += amount
 
-        // Ausgabe der Spielinformationen basierend auf der gewählten Hälfte
-        if (numbersFirstOrSecondHalf == 1) {
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die 1. Hälfte gesetzt")
-        } else if (numbersFirstOrSecondHalf == 2) {
-            print("Spieler ${FontColors.RED.type}${player.name}${FontColors.COLOREND.type} hat ${FontColors.RED.type}$amount€${FontColors.COLOREND.type} auf die 2. Hälfte gesetzt")
-        } else {
-            println("Falsche Eingabe") // Ausgabe für den Fall, dass die zufällige Auswahl nicht 1 oder 2 ist (sollte normalerweise nicht passieren) und falls es auf readln() umgestellt wird
-        }
-        // Aktualisieren des Spieler-Guthabens nach dem Einsatz
-        player.cash -= amount
-        println(" somit verbleiben noch ${FontColors.RED.type}${round(player.cash * 100) / 100}€${FontColors.COLOREND.type} zum spielen")
+        // Überprüfen der gewählten Variante und Ausgabe der Setz Informationen als Funktion in der open class geschrieben um diese auch in der HighRoller Class anzuwenden und CodeZeilen zu sparen
+        printFirstOrSecondHalf(player)
     }
 
     // Methode playerFreeChoiceNumber ermöglicht dem Spieler, eine beliebige Zahl zwischen 0 und 36 zu wählen
