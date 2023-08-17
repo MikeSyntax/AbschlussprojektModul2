@@ -95,7 +95,7 @@ fun main() {
     println("")
 
     // Ausgabe einer Meldung über die Einlasskontrolle und Altersprüfung
-    println("Hier wird die ${FontColors.RED.type}Einlasskontrolle${FontColors.COLOREND.type} durchgeführt und das Alter geprüft")
+    println("Hier wird die ${FontColors.RED.type}Einlasskontrolle${FontColors.COLOREND.type} durchgeführt und das Alter (21 Jahre oder älter) geprüft")
     println("${FontColors.BLUE.type}-----------------------------------------------------------------${FontColors.COLOREND.type}")
 
     // Schleife durch die Liste von Spielern, die Einlass wollen, und Aufruf der Einlasskontrolle

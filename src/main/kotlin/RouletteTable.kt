@@ -1,6 +1,10 @@
 // Import der round-Funktion aus dem Kotlin-Math-Modul
 import kotlin.math.round
 
+import javax.sound.sampled.AudioSystem
+import java.io.File
+
+
 // Definition der Klasse RouletteTable, die von der Klasse Casino erbt
 class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmployees: Double, var bankTable: Double, var minEinsatz: Double, var maximalerEinsatz: Double): Casino(tableNumber) {
 
@@ -61,7 +65,16 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     // Methode zum Roulette Rad, die Kugel soll rollen und random eine Zahl auswählen
     fun rollingNumbers(): Int {
         // Generiere eine zufällige Zahl zwischen 0 und 36 (einschließlich)
+        playSound()
         return (0..36).random()
+    }
+
+    fun playSound() {
+        val audioFile = File("/Users/mikereich/Downloads/Wheel.wav")
+            val audioInputStream = AudioSystem.getAudioInputStream(audioFile)
+            val clip = AudioSystem.getClip()
+            clip.open(audioInputStream)
+            clip.start()
     }
 
     // Hauptmethode zum Spielen mit Eingabe der Spieler welches Spiel, mit Ausdruck der Zahl und der Liste mit den letzten 10 Zahlen und zurücksetzen der Variablen mit der gespeicherten Spielerauswahl
@@ -80,23 +93,23 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         print(" und es ist die ")
 
             print(".")
-            Thread.sleep(500)
+            Thread.sleep(600)
             print(".")
-            Thread.sleep(500)
+            Thread.sleep(600)
             print(".")
-            Thread.sleep(500)
+            Thread.sleep(600)
             print(".")
-            Thread.sleep(500)
+            Thread.sleep(600)
             print(".")
-            Thread.sleep(500)
+            Thread.sleep(600)
             print(".")
-            Thread.sleep(500)
+            Thread.sleep(600)
             print(".")
-            Thread.sleep(500)
+            Thread.sleep(600)
             print(".")
-            Thread.sleep(500)
+            Thread.sleep(600)
             print(".")
-            Thread.sleep(500)
+            Thread.sleep(600)
 
         println("$rouletteNumber${FontColors.COLOREND.type}")
         println("===========================================")
@@ -145,23 +158,23 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         print(" und es ist die ")
 
         print(".")
-        Thread.sleep(500)
+        Thread.sleep(600)
         print(".")
-        Thread.sleep(500)
+        Thread.sleep(600)
         print(".")
-        Thread.sleep(500)
+        Thread.sleep(600)
         print(".")
-        Thread.sleep(500)
+        Thread.sleep(600)
         print(".")
-        Thread.sleep(500)
+        Thread.sleep(600)
         print(".")
-        Thread.sleep(500)
+        Thread.sleep(600)
         print(".")
-        Thread.sleep(500)
+        Thread.sleep(600)
         print(".")
-        Thread.sleep(500)
+        Thread.sleep(600)
         print(".")
-        Thread.sleep(500)
+        Thread.sleep(600)
 
         println("$rouletteNumber${FontColors.COLOREND.type}")
         println("===========================================")

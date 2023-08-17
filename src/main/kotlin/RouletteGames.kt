@@ -162,6 +162,7 @@ open class RouletteGames(tableNumber: Int) {
         }
     }
 
+    //Auslagern von Setz- und Eingabe Informationen und um den Code übersichtlicher zu halten und in der class RouletteHighRollers nur diese Funktion aufzurufen
     fun printNumber(player: CasinoPlayer) {
 
         // Ausgabe der "Setz"-Informationen für den Spieler
@@ -178,6 +179,7 @@ open class RouletteGames(tableNumber: Int) {
         amount = -1
     }
 
+    //Auslagern von Setz- und Eingabe Informationen und um den Code übersichtlicher zu halten und in der class RouletteHighRollers nur diese Funktion aufzurufen
     fun printInfoRedOrBlack(player: CasinoPlayer) {
         if (numbersRedOrBlack == 1) {
             // Setzen auf Rot
@@ -200,6 +202,7 @@ open class RouletteGames(tableNumber: Int) {
         amount = -1
     }
 
+    //Auslagern von Setz- und Eingabe Informationen und um den Code übersichtlicher zu halten und in der class RouletteHighRollers nur diese Funktion aufzurufen
     fun printEvenOrNotEven(player: CasinoPlayer) {
         // Überprüfen der gewählten Option und Ausgabe der Setz Informationen
         if (numbersEvenOrNotEven == 1) {
@@ -223,6 +226,7 @@ open class RouletteGames(tableNumber: Int) {
         amount = -1
     }
 
+    //Auslagern von Setz- und Eingabe Informationen und um den Code übersichtlicher zu halten und in der class RouletteHighRollers nur diese Funktion aufzurufen
     fun printThird(player: CasinoPlayer) {
         // Überprüfen des gewählten Drittels und Ausgabe der Setz Informationen
         if (numbersThird == 1) {
@@ -249,6 +253,7 @@ open class RouletteGames(tableNumber: Int) {
         amount = -1
     }
 
+    //Auslagern von Setz- und Eingabe Informationen und um den Code übersichtlicher zu halten und in der class RouletteHighRollers nur diese Funktion aufzurufen
     fun printFirstOrSecondHalf(player: CasinoPlayer) {
         // Überprüfen der gewählten Hälfte und Ausgabe der Setz Informationen
         if (numbersFirstOrSecondHalf == 1) {
