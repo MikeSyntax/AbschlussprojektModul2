@@ -10,7 +10,7 @@
 
 ```
 +---------------------+---------------+-----------------+
-| Ergebnis            | Gewinnfaktor  | Beschreibung   |
+| Ergebnis            | Gewinnfaktor  | Beschreibung    |
 +---------------------+---------------+-----------------+
 | Einzelne Zahl       |   35 zu 1     | Gewinn bei Wahl|
 | (0-36)              |               | der richtigen   |
@@ -24,7 +24,11 @@
 |                     |               | der richtigen   |
 |                     |               | Parität         |
 +---------------------+---------------+-----------------+
-| Niedrig/Hoch        |    1 zu 1     | Gewinn bei Wahl |
+| 1. oder 2. Hälfte   |    1 zu 1     | Gewinn bei Wahl |
+|      1-18           |               | des richtigen   |
+|      19-36          |               | Zahlbereichs    |
++---------------------+---------------+-----------------+
+| 1.2. und 3. Drittel |    1 zu 2     | Gewinn bei Wahl |
 |                     |               | des richtigen   |
 |                     |               | Zahlbereichs    |
 +---------------------+---------------+-----------------+
@@ -52,7 +56,8 @@
 #### - **Einzelne Zahl:** - Wählen Sie eine Zahl von 0 bis 36.
 #### - **Farbe:** Setzen Sie auf Rot oder Schwarz.
 #### - **Gerade/Ungerade:** Wetten Sie darauf, ob die gewählte Zahl gerade oder ungerade ist.
-#### - **Niedrig/Hoch:** Wählen Sie niedrig (1-18) oder hoch (19-36).
+#### - **1. oder 2. Hälfte:** Wählen Sie niedrig (1-18) oder hoch (19-36).
+#### - **1.,2. oder 3. Drittel:** Wählen Sie niedrig (1-12), (13-24) oder (25-36).
 
 ## 4. **Spielablauf:** 
 
@@ -62,9 +67,9 @@
 
 #### Abhängig von Ihrem Wetteinsatz und dem Ergebnis werden Ihre Gewinne basierend auf den Roulette-Gewinnquoten berechnet.
 
-## 6. **Croupier-Wechsel:** 
+## 6. **Croupier-Wechsel und Management:** 
 
-#### Der Croupier wechselt nach jeder 5. Runde am Tisch 1 und nach jeder 7. Runde am Tisch 2.
+#### Der Croupier wechselt nach jeder 5. Runde am Tisch 1 und nach jeder 7. Runde am Tisch 2. Weiterhin werden die Croupiers vom Tisch entfernt sollte dieser durch eine Bank Pleite geschlossen werden.
 
 ## 7. **Spieler-Management:** 
 

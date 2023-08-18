@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Modulabschluß 18.08.2023 gegen 08.27Uhr &#10;FINALER PUSH mit Änderung der Einsatzhöhe bei den Highrollern">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/BreakingTheBank.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/BreakingTheBank.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/FontColors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/FontColors.kt" afterDir="false" />
+    <list default="true" id="9cbfe747-8fbf-4c2e-81a6-766f3b45623f" name="Changes" comment="Modulabschluß 18.08.2023 gegen 09.06Uhr &#10;FINALER PUSH">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/NumberInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/NumberInfo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/RouletteTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/RouletteTable.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,20 +77,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1690522541706</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Abschlussprojekt 10.08 gegen 10.46Uhr">
-      <created>1691657208902</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1691657208902</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Abschlussprojekt 11.08 gegen 13.00Uhr">
-      <created>1691751901495</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1691751901495</updated>
     </task>
     <task id="LOCAL-00020" summary="Abschlussprojekt 11.08 gegen 18.40Uhr">
       <created>1691772060258</created>
@@ -423,7 +407,21 @@
       <option name="project" value="LOCAL" />
       <updated>1692340109244</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Modulabschluß 18.08.2023 gegen 09.04Uhr &#10;FINALER PUSH">
+      <created>1692342291868</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1692342291868</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Modulabschluß 18.08.2023 gegen 09.06Uhr &#10;FINALER PUSH">
+      <created>1692342435901</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1692342435901</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -438,8 +436,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Abschlussprojekt 14.08 gegen 16.30Uhr" />
-    <MESSAGE value="Abschlussprojekt 14.08 gegen 17.38Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 19.27Uhr" />
     <MESSAGE value="Abschlussprojekt 14.08 gegen 19.50Uhr" />
     <MESSAGE value="Abschlussprojekt 15.08 gegen 08.50Uhr" />
@@ -463,6 +459,8 @@
     <MESSAGE value="Modulabschluß 17.08.2023 gegen 18.54Uhr mit Idee von Marianne den Code schlanker zu machen" />
     <MESSAGE value="Modulabschluß 17.08.2023 gegen 18.54Uhr &#10;FINALER PUSH mit SOUND" />
     <MESSAGE value="Modulabschluß 18.08.2023 gegen 08.27Uhr &#10;FINALER PUSH mit Änderung der Einsatzhöhe bei den Highrollern" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modulabschluß 18.08.2023 gegen 08.27Uhr &#10;FINALER PUSH mit Änderung der Einsatzhöhe bei den Highrollern" />
+    <MESSAGE value="Modulabschluß 18.08.2023 gegen 09.04Uhr &#10;FINALER PUSH" />
+    <MESSAGE value="Modulabschluß 18.08.2023 gegen 09.06Uhr &#10;FINALER PUSH" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modulabschluß 18.08.2023 gegen 09.06Uhr &#10;FINALER PUSH" />
   </component>
 </project>
