@@ -30,7 +30,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
         when {
             // Wenn die gewählte Zahl mit der vom Spieler gewählten Zahl übereinstimmt
             (yourNumber == number) -> {
-                // Erhöhe den Kontostand des Spielers um das Gewinnbetrag * 36
+                // Erhöhe den Kontostand des Spielers um das Gewinnbetrag * 35
                 cash += (yourAmount * 35)
                 var winAmount = yourAmount * 35
                 var tipAmount = (winAmount - yourAmount) * tip
@@ -185,7 +185,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
 
             // Wenn die gewählte Zahl mit der vom Spieler gewählten Zahl übereinstimmt
             (numberFreeChoice == number) -> {
-                // Erhöhe den Kontostand des Spielers um das Gewinnbetrag * 36
+                // Erhöhe den Kontostand des Spielers um das Gewinnbetrag * 35
                 cash += (yourAmount * 35)
                 var winAmount = yourAmount * 35
                 var tipAmount = (winAmount - yourAmount) * tip

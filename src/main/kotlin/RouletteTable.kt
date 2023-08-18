@@ -17,7 +17,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     }*/
 
     // Sekundärer Konstruktor, der den primären Konstruktor aufruft und fehlende Parameter mit Standardwerten füllt
-    constructor(tableNumber: Int, croupierName: String, tipForEmployees: Double) : this(tableNumber, croupierName, tipForEmployees, 100000.00, 10.00, 1000.00) {
+    constructor(tableNumber: Int, croupierName: String, tipForEmployees: Double) : this(tableNumber, croupierName, tipForEmployees, 12250.00, 10.00, 350.00) {
 
         // Kommentierte Zeile innerhalb des sekundären Konstruktors
         // println("Das Roulette für Tisch Nr. $tableNumber wurde mit dem sekundären Konstruktor instanziiert")

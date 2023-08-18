@@ -42,7 +42,7 @@ fun main() {
     println("")
 
     // Erstellung eines RouletteTable-Objekts für Tisch 2 mit Croupier Sascha und vorbereiteten Geld- und Trinkgeldbeträgen
-    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 500000.00, 1000.00, 10000.00)
+    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 350000.00, 100.00, 10000.00)
     // Erstellung eines Objekts zur Erkennung, falls die Bank pleite ist
     var breakingTheBank2: BreakingTheBank = BreakingTheBank(2)
 
@@ -64,8 +64,8 @@ fun main() {
     var klaus: CasinoPlayer = CasinoPlayer(1, "Klaus", 600.00, true, 0.01, 23)
     var tatjana: CasinoPlayer = CasinoPlayer(1, "Tatjana", 500.00, true, 0.01, 59)
     var enrico: CasinoPlayer = CasinoPlayer(1, "Enrico", 50.00, false, 0.00, 19)
-    var mike: CasinoPlayer = CasinoPlayer(1, "Mike", 400.00, true, 0.02, 45)
-    var salva: CasinoPlayer = CasinoPlayer(1, "Salva", 800.00, false, 0.04, 71)
+    var mike: CasinoPlayer = CasinoPlayer(1, "Mike", 800.00, true, 0.02, 45)
+    var salva: CasinoPlayer = CasinoPlayer(1, "Salva", 400.00, false, 0.04, 71)
     var claudia: CasinoPlayer = CasinoPlayer(1, "Claudia", 650.00, false, 0.03, 26)
 
     // Erstellung von CasinoPlayer-Objekten für High Roller Spieler

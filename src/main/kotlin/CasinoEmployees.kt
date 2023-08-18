@@ -15,7 +15,7 @@ open class CasinoEmployees(tableNumber: Int, var name: String, var job: String, 
     // Definition der Methode changeCroupier mit den Parametern croupiers und rouletteTable
     fun changeCroupier(croupiers: MutableList<CasinoEmployees>, rouletteTable: RouletteTable) {
         // Beginn der Bedingung, ob round gleich 5 ist
-        if (round == 5) {
+        if (round == 3) {
             // Definition einer neuen Variable newCroupier, die das erste Element aus der croupiers-Liste enthält
             var newCroupier = croupiers.first()
 

@@ -9,8 +9,8 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Generierung einer zufälligen Zahl zwischen 0 und 36
         number = (0..36).random()
 
-        // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
-        amount = (1000..10000).random()
+        // Generierung eines zufälligen Betrags zwischen 100 und 10000 Euro
+        amount = (100..10000).random()
 
         // Speichern der gewählten Zahl und des Einsatzbetrags im Spieler Objekt
         player.yourNumber = number
@@ -28,8 +28,8 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Generierung einer zufälligen Zahl zwischen 1 und 2, um rot oder schwarz zu wählen
         numbersRedOrBlack = (1..2).random()
 
-        // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
-        amount = (1000..10000).random()
+        // Generierung eines zufälligen Betrags zwischen 100 und 10000 Euro
+        amount = (100..10000).random()
 
         // Speichern der gewählten Option (rot oder schwarz) im Spieler Objekt
         player.redBlack = numbersRedOrBlack
@@ -49,8 +49,8 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Generierung einer zufälligen Zahl zwischen 1 und 2, um gerade oder ungerade zu wählen
         numbersEvenOrNotEven = (1..2).random()
 
-        // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
-        amount = (1000..10000).random()
+        // Generierung eines zufälligen Betrags zwischen 100 und 10000 Euro
+        amount = (100..10000).random()
 
         // Speichern der gewählten Option (gerade oder ungerade) im Spieler Objekt
         player.evenOrNot = numbersEvenOrNotEven
@@ -70,8 +70,8 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Generierung einer zufälligen Zahl zwischen 1 und 3, um das Drittel zu wählen
         numbersThird = (1..3).random()
 
-        // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
-        amount = (1000..10000).random()
+        // Generierung eines zufälligen Betrags zwischen 100 und 10000 Euro
+        amount = (100..10000).random()
 
         // Speichern des gewählten Drittels im Spieler Objekt
         player.thirdThird = numbersThird
@@ -91,8 +91,8 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
         // Generierung einer zufälligen Zahl zwischen 1 und 2, um die Hälfte zu wählen
         numbersFirstOrSecondHalf = (1..2).random()
 
-        // Generierung eines zufälligen Betrags zwischen 1000 und 10000 Euro
-        amount = (1000..10000).random()
+        // Generierung eines zufälligen Betrags zwischen 100 und 10000 Euro
+        amount = (100..10000).random()
 
         // Speichern der gewählten Hälfte im Spieler Objekt
         player.half = numbersFirstOrSecondHalf
@@ -125,7 +125,7 @@ class RouletteHighRoller(tableNumber: Int) : RouletteGames(tableNumber) {
 
             // Überprüfung, ob der eingegebene Einsatz gültig ist und innerhalb der erlaubten Bandbreite liegt
             // sowie ob der Spieler genügend Guthaben hat
-            if (amount != null && amount in 1000..10000 && amount <= player.cash) {
+            if (amount != null && amount in 100..10000 && amount <= player.cash) {
                 // Speichern der gewählten Zahl und des Einsatzes im Spieler Objekt
                 player.yourNumber = numberFreeChoice
                 player.yourAmount = amount

@@ -10,7 +10,7 @@ class CasinoHighRollerEmployees(tableNumber: Int, name: String, job: String, age
     // Definition der Methode changeHighRollerCroupier mit den Parametern highRollerCroupiers und rouletteTable
     fun changeHighRollerCroupier(highRollerCroupiers: MutableList<CasinoHighRollerEmployees>, rouletteTable: RouletteTable) {
         // Beginn der Bedingung, ob die Anzahl der Runden roundHighRoller gleich 7 ist
-        if (roundHighRoller == 7) {
+        if (roundHighRoller == 5) {
             // Zuweisen des ersten Elements aus der highRollerCroupiers-Liste an die Variable newCroupier
             var newCroupier = highRollerCroupiers.first()
 
