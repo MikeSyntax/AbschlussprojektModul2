@@ -42,7 +42,7 @@ fun main() {
     println("")
 
     // Erstellung eines RouletteTable-Objekts für Tisch 2 mit Croupier Sascha und vorbereiteten Geld- und Trinkgeldbeträgen
-    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 350000.00, 100.00, 10000.00)
+    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, -1.00, 100.00, 10000.00)
     // Erstellung eines Objekts zur Erkennung, falls die Bank pleite ist
     var breakingTheBank2: BreakingTheBank = BreakingTheBank(2)
 
@@ -134,7 +134,7 @@ fun main() {
         // Entfernen von Spielern ohne Geld am Tisch 1
         rouletteAtTable1.removePlayerWithNoMoney(players)
         // Prüfen, ob die Bank an Tisch1 pleite ist und falls ja, dann wird bankHasMoney auf true gesetzt und die Schleife beendet
-        breakingTheBank1.breakingBank1(rouletteAtTable1, players)
+        breakingTheBank1.breakingBank1(rouletteAtTable1, players, croupiers)
         // Erhöhen der Runde am Tisch 1
         round++
         // Ändern des Croupiers am Tisch 1
@@ -146,7 +146,7 @@ fun main() {
         // Entfernen von High Roller Spielern ohne Geld am Tisch 2
         rouletteAtTable2.removePlayerHighRollerWithNoMoney(playersHighRoller)
         // Prüfen, ob die Bank an Tisch2 pleite ist und falls ja, dann wird bankHasMoney auf true gesetzt und die Schleife beendet
-        breakingTheBank2.breakingBank2(rouletteAtTable2, playersHighRoller)
+        breakingTheBank2.breakingBank2(rouletteAtTable2, playersHighRoller, highRollerCroupiers)
         // Erhöhen der Runde am High Roller Tisch 2
         roundHighRoller++
         // Ändern des High Roller Croupiers am Tisch 2

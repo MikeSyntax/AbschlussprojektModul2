@@ -17,7 +17,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     }*/
 
     // Sekundärer Konstruktor, der den primären Konstruktor aufruft und fehlende Parameter mit Standardwerten füllt
-    constructor(tableNumber: Int, croupierName: String, tipForEmployees: Double) : this(tableNumber, croupierName, tipForEmployees, 12250.00, 10.00, 350.00) {
+    constructor(tableNumber: Int, croupierName: String, tipForEmployees: Double) : this(tableNumber, croupierName, tipForEmployees, -1.00, 10.00, 350.00) {
 
         // Kommentierte Zeile innerhalb des sekundären Konstruktors
         // println("Das Roulette für Tisch Nr. $tableNumber wurde mit dem sekundären Konstruktor instanziiert")
@@ -64,16 +64,23 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
 
     // Methode zum Roulette Rad, die Kugel soll rollen und random eine Zahl auswählen
     fun rollingNumbers(): Int {
-        // Generiere eine zufällige Zahl zwischen 0 und 36 (einschließlich)
+        // Aufruf der Methode für den Roulette Sound
         playSound()
+        // Generiere eine zufällige Zahl zwischen 0 und 36 (einschließlich)
         return (0..36).random()
     }
 
+    // Methode zum Abspielen eines Roulette Sounds
     fun playSound() {
+        // Variable wird mit File und Pfad des Streams initialisiert
         val audioFile = File("/Users/mikereich/Downloads/Wheel.wav")
+            // Variable wird mit dem Aufruf der audioFile initialisiert bzw. erstellt
             val audioInputStream = AudioSystem.getAudioInputStream(audioFile)
+            // hier wird das AudioSystem.getClip aufgerufen und erstellt
             val clip = AudioSystem.getClip()
+            // mit clip.open wird die Wiedergabe vorbereitet in dem der audioInputStream geöffnet wird
             clip.open(audioInputStream)
+            // Start des Clips
             clip.start()
     }
 

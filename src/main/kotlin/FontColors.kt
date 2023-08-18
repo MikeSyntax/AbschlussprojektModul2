@@ -1,4 +1,6 @@
 // Definition des Enumerations FontColors zur Darstellung von Farbcodes in der Konsole
+// enum wird verwendet, um eine feste Menge an mögliche Werten für eine Variable anzulegen
+
 enum class FontColors(val type: String) {
     RED("\u001B[31m"),      // Roter Text
     GREEN("\u001B[32m"),    // Grüner Text
