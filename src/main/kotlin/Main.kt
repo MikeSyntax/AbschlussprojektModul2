@@ -42,7 +42,7 @@ fun main() {
     println("")
 
     // Erstellung eines RouletteTable-Objekts für Tisch 2 mit Croupier Sascha und vorbereiteten Geld- und Trinkgeldbeträgen
-    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, -1.00, 100.00, 10000.00)
+    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 350000.00, 100.00, 10000.00)
     // Erstellung eines Objekts zur Erkennung, falls die Bank pleite ist
     var breakingTheBank2: BreakingTheBank = BreakingTheBank(2)
 
