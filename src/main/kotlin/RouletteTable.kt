@@ -65,7 +65,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
     // Methode zum Roulette Rad, die Kugel soll rollen und random eine Zahl auswählen
     fun rollingNumbers(): Int {
         // Aufruf der Methode für den Roulette Sound
-        playSound()
+        //5playSound()
         // Generiere eine zufällige Zahl zwischen 0 und 36 (einschließlich)
         return (0..36).random()
     }

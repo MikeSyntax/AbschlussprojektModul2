@@ -28,7 +28,7 @@
 |      1-18           |               | des richtigen   |
 |      19-36          |               | Zahlbereichs    |
 +---------------------+---------------+-----------------+
-| 1.2. und 3. Drittel |    1 zu 2     | Gewinn bei Wahl |
+| 1.2. und 3. Drittel |    2 zu 1     | Gewinn bei Wahl |
 |                     |               | des richtigen   |
 |                     |               | Zahlbereichs    |
 +---------------------+---------------+-----------------+
@@ -69,7 +69,7 @@
 
 ## 6. **Croupier-Wechsel und Management:** 
 
-#### Der Croupier wechselt nach jeder 5. Runde am Tisch 1 und nach jeder 7. Runde am Tisch 2. Weiterhin werden die Croupiers vom Tisch entfernt sollte dieser durch eine Bank Pleite geschlossen werden.
+#### Der Croupier wechselt nach jeder 3. Runde am Tisch 1 und nach jeder 5. Runde am Tisch 2. Weiterhin werden die Croupiers vom Tisch entfernt sollte dieser durch eine Bank Pleite geschlossen werden.
 
 ## 7. **Spieler-Management:** 
 
