@@ -1,6 +1,5 @@
 // Import der round-Funktion aus dem Kotlin-Math-Modul
 import kotlin.math.round
-
 import javax.sound.sampled.AudioSystem
 import java.io.File
 
@@ -214,7 +213,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         println("")
     }
 
-    // Methode zum Entfernen von Spielern ohne Geld aus der Liste der HighRoller-Spieler
+    // Methode zum Entfernen von Spielern ohne Geld aus der Liste der Spieler am normalen Tisch
     fun removePlayerWithNoMoney(players: MutableList<CasinoPlayer>) {
         // Filtern der Spieler, die kein Geld mehr haben
         var removePlayer = players.filter { player -> player.cash <= 0 } // Man könnte auch einfach "it" schreiben und so die Lambda noch mal verkürzen, aber zur besseren Lesbarkeit so geschrieben
@@ -258,7 +257,7 @@ class RouletteTable(tableNumber: Int, var croupierName: String, var tipForEmploy
         }
     }
 
-    // Funktion zur Rückgabe von Informationen (rot/schwarz, gerade/ungerade, zero) aus der Map "numberInfoMap" basierend auf der gezogenen Zahl
+    // Funktion zur Rückgabe von Informationen (rot/schwarz, gerade/ungerade, zero) aus der Map "numberInfoMap" in der NumberInfo.kt basierend auf der gezogenen Zahl
     fun getNumberInfo(number: Int): NumberInfo? {
         return numberInfoMap[number]
     }

@@ -42,6 +42,7 @@ class CasinoPlayer(tableNumber: Int, val name: String, var cash: Double, var dri
                 // Rückgabe einer Nachricht über den Gewinn und den aktualisierten Kontostand
                 return "${FontColors.GREEN.type}${(winAmount - yourAmount)}€${FontColors.COLOREND.type} gewonnen! Neuer Cashbestand abzügl. ${FontColors.GREEN.type}${round(tipAmount * 100) / 100}€${FontColors.COLOREND.type} Trinkgeld ergibt ${FontColors.GREEN.type}${round(cash * 100) / 100}€${FontColors.COLOREND.type}"
             }
+
             // Wenn die gewählte Zahl rot ist und der Spieler "Schwarz" gewählt hat
             (redNumbers.contains(number) && redBlack == 1) -> {
                 // Erhöhe den Kontostand des Spielers um den Gewinnbetrag * 2

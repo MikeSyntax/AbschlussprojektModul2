@@ -11,6 +11,8 @@ fun main() {
                 "          Y8888Y   Y8888Y  Y88888Y          Y8888P   YP   YP  VP   V8P  YP   YD        \n" +
                 "                                                                                       \n" +
                 "                                                                                       \n" +
+                "                                                                                       \n" +
+                "                                                                                       \n" +
                 "           d888b   d88888b  db   d8b   db  d8888b  d8b   db  d8b   db  d888888b        \n" +
                 "          88  88b  88       88   I8I   88    88    888o  88  888o  88     88           \n" +
                 "          88       8888888  88   I8I   88    88    88V8o 88  88V8o 88     88           \n" +
@@ -42,7 +44,7 @@ fun main() {
     println("")
 
     // Erstellung eines RouletteTable-Objekts für Tisch 2 mit Croupier Sascha und vorbereiteten Geld- und Trinkgeldbeträgen
-    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 350000.00, 100.00, 10000.00)
+    var rouletteAtTable2: RouletteTable = RouletteTable(2, "Sascha", 0.00, 250000.00, 100.00, 10000.00)
     // Erstellung eines Objekts zur Erkennung, falls die Bank pleite ist
     var breakingTheBank2: BreakingTheBank = BreakingTheBank(2)
 
